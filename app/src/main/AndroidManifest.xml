@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.miyin.klg">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.LoginActivity" />
+
+        <meta-data
+            android:name="design_width"
+            android:value="640" />
+        <meta-data
+            android:name="design_height"
+            android:value="1136" />
+
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.UpdatePasswordActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.SYSActivity" />
+        <activity android:name=".activity.GRZLActivity" />
+        <activity android:name=".activity.UpdateInfoActivity" />
+        <activity android:name=".activity.AccountSecurityActivity" />
+        <activity android:name=".activity.TwoPasswordActivity" />
+        <activity android:name=".activity.ForgetTwoPasswordActivity" />
+        <activity android:name=".activity.BindingMobileActivity" />
+        <activity android:name=".activity.FeedbackActivity" />
+        <activity android:name=".activity.XYSActivity" />
+        <activity android:name=".activity.WDKBActivity" />
+        <activity android:name=".activity.HGActivity" />
+        <activity android:name=".activity.ZZActivity" />
+        <activity android:name=".activity.WYTJActivity" />
+        <activity android:name=".activity.XFJLActivity" />
+        <activity android:name=".activity.PTSJActivity" />
+        <activity android:name=".activity.ZNSMZDActivity" />
+        <activity android:name=".activity.STSJActivity" />
+        <activity android:name=".activity.ProductDetailsActivity" />
+        <activity android:name=".activity.ShopDetailsActivity" />
+        <activity android:name=".activity.ShopItemDetailsActivity" />
+        <activity android:name=".activity.TestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.CZActivity" />
+        <activity android:name=".activity.SPGLActivity" />
+        <activity android:name=".activity.XFDJActivity" />
+        <activity android:name=".activity.DDGLActivity" />
+        <activity android:name=".activity.YYEJLActivity" />
+        <activity android:name=".activity.DDGLDetailsActivity"></activity>
+    </application>
+
+</manifest>

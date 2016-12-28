@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:background="@color/colorBackgroundGary" />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="订单号：000000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="6px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="6px"
+            android:background="@drawable/gary_stoke"
+            android:paddingBottom="6px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:paddingTop="6px"
+            android:text="已撤销" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:background="@color/colorBackgroundGary">
+
+        <com.miyin.klg.customview.CircleImageview
+            android:id="@+id/item_ddglIv"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_centerVertical="true"
+            android:layout_margin="10px"
+            android:src="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/item_ddglTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/item_ddglIv"
+            android:text="测试" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_ddglTitle"
+            android:layout_toRightOf="@id/item_ddglIv"
+            android:text="ID 0000000"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="60px"
+            android:text="￥0.00" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20px"
+            android:text="2016-12-23 17:40:18" />
+
+        <TextView
+            android:id="@+id/item_ddglCZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="6px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="6px"
+            android:background="@drawable/red_shape"
+            android:paddingBottom="6px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:paddingTop="6px"
+            android:text="操作"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="6px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="6px"
+            android:layout_toLeftOf="@+id/item_ddglCZ"
+            android:background="@drawable/red_stoke"
+            android:paddingBottom="6px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:paddingTop="6px"
+            android:text="查看"
+            android:textColor="@color/colorRed" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoLinearLayout>

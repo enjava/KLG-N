@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.miyin.klg.fragment.SJGLFragment">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sjgl_one"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom"
+            android:drawableRight="@drawable/goin"
+            android:gravity="center_vertical"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:text="消费管理" />
+
+        <TextView
+            android:id="@+id/sjgl_two"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom"
+            android:drawableRight="@drawable/goin"
+            android:gravity="center_vertical"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:text="消费登记" />
+
+        <TextView
+            android:id="@+id/sjgl_three"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom"
+            android:drawableRight="@drawable/goin"
+            android:gravity="center_vertical"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:text="订单管理" />
+
+        <TextView
+            android:id="@+id/sjgl_four"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom"
+            android:drawableRight="@drawable/goin"
+            android:gravity="center_vertical"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:text="营业额记录" />
+    </com.zhy.autolayout.AutoLinearLayout>
+</FrameLayout>

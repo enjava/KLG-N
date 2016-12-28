@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGary"
+    android:paddingBottom="20px">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260px"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/item_spglIv"
+            android:layout_width="160px"
+            android:layout_height="160px"
+            android:layout_margin="20px"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="160px"
+            android:layout_height="40px"
+            android:layout_below="@+id/item_spglIv"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/red_shape"
+            android:gravity="center"
+            android:text="查看图片"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/item_spglTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/item_spglIv"
+            android:text="测试标题" />
+
+        <TextView
+            android:id="@+id/item_spglCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_spglTitle"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_spglIv"
+            android:text="编码"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_spglType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_spglCode"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_spglIv"
+            android:text="型号"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_spglPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_spglType"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_spglIv"
+            android:text="单价"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_spglImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_spglPrice"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_spglIv"
+            android:text="app图片:以展示"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_spglPrice"
+            android:layout_marginLeft="10px"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_spglImage"
+            android:background="@drawable/red_stoke"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:text="取消展示"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/text_12sp" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorRed"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/edittext"
+                android:gravity="center"
+                android:text="编辑"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/details"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="@color/colorWhite" />
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

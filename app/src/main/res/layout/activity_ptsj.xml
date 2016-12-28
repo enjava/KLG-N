@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ptsj"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/ptsj_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundGary">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280px">
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:id="@+id/ptsj_sumMoneyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorWhite">
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_sumMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="实体商家累计消费(万元)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_sumMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10px"
+                        android:layout_marginTop="10px"
+                        android:background="@color/colorLineGary" />
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_xszdsumMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="销售终端累计消费(万元)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_xszdsumMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/ptsj_sumMoneyLayout"
+                    android:background="#FF9156">
+
+                    <ImageView
+                        android:id="@+id/ptsj_sumMoneyIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="40px"
+                        android:background="@drawable/ptsjs" />
+
+                    <TextView
+                        android:id="@+id/ptsj_sumMoneyHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40px"
+                        android:layout_toRightOf="@id/ptsj_sumMoneyIv"
+                        android:text="平台累计销售总额（万元）"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ptsj_sumMoneyHint"
+                        android:layout_marginTop="20px"
+                        android:layout_toRightOf="@id/ptsj_sumMoneyIv"
+                        android:text="0.00"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+                </com.zhy.autolayout.AutoRelativeLayout>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280px"
+                android:layout_marginTop="40px">
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:id="@+id/ptsj_yeMoneyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorWhite">
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_yeMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="实体商家累计消费(万元)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_yeMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10px"
+                        android:layout_marginTop="10px"
+                        android:background="@color/colorLineGary" />
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_xszdyeMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="销售终端累计消费(万元)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_xszdyeMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/ptsj_yeMoneyLayout"
+                    android:background="#50B0DA">
+
+                    <ImageView
+                        android:id="@+id/ptsj_yeMoneyIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="40px"
+                        android:background="@drawable/ptsjs" />
+
+                    <TextView
+                        android:id="@+id/ptsj_yeMoneyHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40px"
+                        android:layout_toRightOf="@id/ptsj_yeMoneyIv"
+                        android:text="昨日销售总额（万元）"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ptsj_yeMoneyHint"
+                        android:layout_marginTop="20px"
+                        android:layout_toRightOf="@id/ptsj_yeMoneyIv"
+                        android:text="0.00"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+                </com.zhy.autolayout.AutoRelativeLayout>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280px"
+                android:layout_marginTop="40px">
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:id="@+id/ptsj_sjMoneyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorWhite">
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_sjMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="平台商家数(家)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_sjMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="10px"
+                        android:layout_marginTop="10px"
+                        android:background="@color/colorLineGary" />
+
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/ptsj_xszdsjMoney"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="智能售卖终端数(家)"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ptsj_xszdsjMoney"
+                            android:layout_centerHorizontal="true"
+                            android:text="0.00"
+                            android:textColor="@color/colorTextGary"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/ptsj_sjMoneyLayout"
+                    android:background="#45C797">
+
+                    <ImageView
+                        android:id="@+id/ptsj_sjMoneyIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="40px"
+                        android:background="@drawable/ptsjs" />
+
+                    <TextView
+                        android:id="@+id/ptsj_sjMoneyHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40px"
+                        android:layout_toRightOf="@id/ptsj_sjMoneyIv"
+                        android:text="平台商家总数（家）"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ptsj_sjMoneyHint"
+                        android:layout_marginTop="20px"
+                        android:layout_toRightOf="@id/ptsj_sjMoneyIv"
+                        android:text="0.00"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="50px"
+                        android:textStyle="bold" />
+                </com.zhy.autolayout.AutoRelativeLayout>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180px"
+                android:layout_marginTop="40px"
+                android:background="#FB7077">
+
+                <ImageView
+                    android:id="@+id/ptsj_rsMoneyIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="40px"
+                    android:background="@drawable/ptsjssss" />
+
+                <TextView
+                    android:id="@+id/ptsj_rsMoneyHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:layout_toRightOf="@id/ptsj_rsMoneyIv"
+                    android:text="平台消费酷友总数（家）"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/text_12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ptsj_rsMoneyHint"
+                    android:layout_marginTop="20px"
+                    android:layout_toRightOf="@id/ptsj_rsMoneyIv"
+                    android:text="0.00"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="50px"
+                    android:textStyle="bold" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </ScrollView>
+</com.zhy.autolayout.AutoLinearLayout>

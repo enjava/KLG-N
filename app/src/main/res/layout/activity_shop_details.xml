@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shop_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/shop_details_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:background="@color/colorRed">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/item_znsmzdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:layout_alignParentBottom="true"
+            android:background="#E93F40">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="热销"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="饮料"
+                android:textColor="@color/colorWhite" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/item_znsmzdLayout"
+            android:gravity="center_vertical">
+
+            <com.miyin.klg.customview.CircleImageview
+                android:id="@+id/item_znsmzdIv"
+                android:layout_width="90px"
+                android:layout_height="90px"
+                android:layout_margin="20px"
+                android:src="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/item_znsmzdCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20px"
+                android:layout_toRightOf="@id/item_znsmzdIv"
+                android:text="NO：00000"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_16sp" />
+
+            <TextView
+                android:id="@+id/item_znsmzdAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_znsmzdCode"
+                android:layout_marginTop="10px"
+                android:layout_toRightOf="@id/item_znsmzdIv"
+                android:text="杭州市"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_12sp" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shop_datailsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackgroundGary"></android.support.v7.widget.RecyclerView>
+
+</com.zhy.autolayout.AutoLinearLayout>

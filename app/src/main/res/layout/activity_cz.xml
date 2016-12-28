@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_cz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGary"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/cz_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:layout_marginTop="20px"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/cz_Iv"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_centerVertical="true"
+            android:layout_margin="10px"
+            android:background="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/cz_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/cz_Iv"
+            android:text="中国农业银行"
+            android:textSize="@dimen/text_14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cz_bank"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/cz_Iv"
+            android:text="尾号00000000000"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:gravity="center_vertical"
+        android:padding="20px"
+        android:text="该卡本次最多可充值10,000.00元" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="20px"
+            android:text="金额" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:hint="请输入充值金额"
+            android:textSize="@dimen/text_14sp" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_margin="40px"
+        android:background="@drawable/red_shape"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/colorWhite" />
+</com.zhy.autolayout.AutoLinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="240px"
+    android:layout_margin="10px"
+    android:background="@drawable/white_shape">
+
+    <ImageView
+        android:id="@+id/item_yyeHeadIv"
+        android:layout_width="160px"
+        android:layout_height="160px"
+        android:layout_centerVertical="true"
+        android:layout_margin="30px"
+        android:background="@drawable/yyes" />
+
+    <TextView
+        android:id="@+id/item_yyeHeadSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40px"
+        android:layout_toRightOf="@id/item_yyeHeadIv"
+        android:text="营业额合计    0.00" />
+
+    <TextView
+        android:id="@+id/item_yyeHeadSum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_yyeHeadSum"
+        android:layout_marginTop="30px"
+        android:layout_toRightOf="@id/item_yyeHeadIv"
+        android:text="以让利合计    0.00" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_yyeHeadSum1"
+        android:layout_marginTop="30px"
+        android:layout_toRightOf="@id/item_yyeHeadIv"
+        android:text="待让利合计    0.00" />
+</com.zhy.autolayout.AutoRelativeLayout>

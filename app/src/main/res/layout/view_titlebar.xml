@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titleBar"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#FFFFFF"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/titlebar_while_back"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/head_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_back" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/head_title"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="#A3AAAD"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/titlebar_while_right"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/head_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#A3AAAD"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/head_right_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/titltBar_linear"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/titlebar_while_back"
+        android:background="#F1F1F1" />
+</RelativeLayout>

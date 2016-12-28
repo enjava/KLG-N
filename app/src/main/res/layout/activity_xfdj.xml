@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_xfdj"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGary"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/xfdj_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_margin="20px"
+        android:background="@drawable/white_shape"
+        android:drawableLeft="@drawable/xiaofeis"
+        android:drawablePadding="30px"
+        android:gravity="center_vertical"
+        android:hint="朋友身份"
+        android:paddingLeft="20px"
+        android:textSize="@dimen/text_14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_marginLeft="20px"
+        android:layout_marginRight="20px"
+        android:background="@drawable/white_shape"
+        android:drawableLeft="@drawable/xiaofeiss"
+        android:drawablePadding="30px"
+        android:gravity="center_vertical"
+        android:hint="消费金额"
+        android:paddingLeft="20px"
+        android:textSize="@dimen/text_14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_margin="20px"
+        android:background="@drawable/white_shape"
+        android:drawableLeft="@drawable/xiaofeisss"
+        android:drawablePadding="30px"
+        android:gravity="center_vertical"
+        android:hint="提醒"
+        android:paddingLeft="20px"
+        android:textSize="@dimen/text_14sp" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px"
+        android:orientation="horizontal">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_shape"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="添加商品"
+                android:textColor="@color/colorWhite" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_shape"
+                android:gravity="center"
+                android:padding="20px"
+                android:text="提交订单"
+                android:textColor="@color/colorWhite" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/xfdj_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+</com.zhy.autolayout.AutoLinearLayout>

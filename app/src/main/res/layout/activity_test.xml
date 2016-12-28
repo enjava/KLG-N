@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/vip"
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:text="会员版本" />
+
+    <Button
+        android:id="@+id/hhr"
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:text="合伙人版本" />
+</LinearLayout>

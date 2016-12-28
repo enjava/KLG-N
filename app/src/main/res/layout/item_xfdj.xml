@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundGary"
+    android:paddingBottom="20px">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/item_xfdjIv"
+            android:layout_width="120px"
+            android:layout_height="120px"
+            android:layout_margin="20px"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/item_xfdjTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/item_xfdjIv"
+            android:text="测试" />
+
+        <TextView
+            android:id="@+id/item_xfdjcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_xfdjTitle"
+            android:layout_toRightOf="@id/item_xfdjIv"
+            android:text="编号"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_xfdjType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_xfdjcode"
+            android:layout_toRightOf="@id/item_xfdjIv"
+            android:text="型号"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_xfdjPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_xfdjType"
+            android:layout_toRightOf="@id/item_xfdjIv"
+            android:text="单价"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/item_xfdjSumPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_xfdjPrice"
+            android:layout_toRightOf="@id/item_xfdjIv"
+            android:text="总价"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

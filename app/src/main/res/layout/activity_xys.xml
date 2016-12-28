@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_xys"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/xys_titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="96px">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:background="@color/colorRed">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/xys_ProgressBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/xys_ProgressBarwh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40px"
+                    android:background="@drawable/xyswenhao" />
+
+                <ProgressBar
+                    android:id="@+id/xys_ProgressBar"
+                    style="@style/ProgressBar_Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20px"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="40px"
+                    android:layout_marginRight="10px"
+                    android:layout_toLeftOf="@id/xys_ProgressBarwh" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/xys_ProgressBar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10px"
+                    android:text="+1颗幸运树"
+                    android:textColor="@color/colorWhite" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_margin="10px"
+                android:background="@color/colorWhite" />
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/xys_ProgressBarwh1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="40px"
+                    android:background="@drawable/xyswenhao" />
+
+                <ProgressBar
+                    android:id="@+id/xys_ProgressBar1"
+                    style="@style/ProgressBar_Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20px"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="40px"
+                    android:layout_marginRight="10px"
+                    android:layout_toLeftOf="@id/xys_ProgressBarwh1"
+                    android:progress="50" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/xys_ProgressBar1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10px"
+                    android:text="-1颗幸运树"
+                    android:textColor="@color/colorWhite" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/xys_ProgressBarLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20px"
+            android:text="0"
+            android:textColor="@color/colorWhite"
+            android:textSize="80px" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.miyin.klg.customview.ViewPagerIndicator
+        android:id="@+id/xys_ViewPagerIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:background="@android:color/white"
+        app:item_count="2"></com.miyin.klg.customview.ViewPagerIndicator>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/xys_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+</com.zhy.autolayout.AutoLinearLayout>

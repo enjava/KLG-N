@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shop_item_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGary">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.miyin.klg.customview.BlackTitleBar
+            android:id="@+id/shop_item_detailsTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.miyin.klg.customview.BlackTitleBar>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400px"
+            android:background="@color/colorAccent" />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:layout_marginTop="20px">
+
+            <TextView
+                android:id="@+id/shop_item_detailsgoBuy"
+                android:layout_width="120px"
+                android:layout_height="120px"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorRed"
+                android:gravity="center"
+                android:text="￥0.00\n实付金额"
+                android:textColor="@color/colorWhite" />
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/shop_item_detailsgoBuy"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_line_bottom"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20px"
+                    android:text="价格：￥0.00" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20px"
+                    android:text="优惠：暂无优惠" />
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20px"
+            android:text="商品详情\n存于阴凉处" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorRed"
+        android:gravity="center"
+        android:text="下单付款"
+        android:textColor="@color/colorWhite" />
+</com.zhy.autolayout.AutoRelativeLayout>

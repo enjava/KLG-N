@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200px"
+    android:background="@drawable/background_line_bottom">
+
+    <ImageView
+        android:id="@+id/item_xfjlstsjIv"
+        android:layout_width="160px"
+        android:layout_height="160px"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20px"
+        android:background="@color/colorRed" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="20px"
+        android:layout_toRightOf="@id/item_xfjlstsjIv"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_xfjlstsjTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="酷么小卖店"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单编号：00000000"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:text="下单时间：2016-12-22 14:48"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:text="订单状态：已取货"
+            android:textColor="@color/colorTextGary"
+            android:textSize="@dimen/text_12sp" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <ImageView
+        android:id="@+id/item_xfjlstsjMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="20px"
+        android:background="@drawable/goin" />
+
+    <TextView
+        android:id="@+id/item_xfjlstsjTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/item_xfjlstsjMoney"
+        android:text="￥0.00"
+        android:textColor="@color/colorRed"
+        android:textSize="@dimen/text_16sp" />
+</com.zhy.autolayout.AutoRelativeLayout>

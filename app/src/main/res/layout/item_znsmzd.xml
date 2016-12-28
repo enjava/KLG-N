@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_line_bottom"
+    android:orientation="vertical">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/item_znsmzdHintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:background="@color/colorBackgroundGary">
+
+        <TextView
+            android:id="@+id/item_znsmzdHint"
+            android:layout_width="match_parent"
+            android:layout_height="60px"
+            android:layout_marginLeft="20px"
+            android:gravity="center_vertical"
+            android:text="最近使用"
+            android:textSize="@dimen/text_12sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120px">
+
+        <com.miyin.klg.customview.CircleImageview
+            android:id="@+id/item_znsmzdIv"
+            android:layout_width="90px"
+            android:layout_height="90px"
+            android:layout_margin="20px"
+            android:src="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/item_znsmzdCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/item_znsmzdIv"
+            android:text="NO：00000"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/item_znsmzdAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_znsmzdCode"
+            android:layout_marginTop="10px"
+            android:layout_toRightOf="@id/item_znsmzdIv"
+            android:text="杭州市"
+            android:textSize="@dimen/text_12sp" />
+
+        <ImageView
+            android:id="@+id/item_znsmzdAddressFJ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="20px"
+            android:background="@drawable/znsmzds" />
+
+        <TextView
+            android:id="@+id/item_znsmzdAddressFJIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/item_znsmzdAddressFJ"
+            android:text="50m" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

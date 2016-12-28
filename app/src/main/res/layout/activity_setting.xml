@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/setting_exitTv"
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="40px"
+        android:background="@drawable/red_shape"
+        android:gravity="center"
+        android:text="退出"
+        android:textColor="@color/colorWhite" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/setting_exitTv"
+        android:orientation="vertical">
+
+        <com.miyin.klg.customview.BlackTitleBar
+            android:id="@+id/setting_titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.miyin.klg.customview.BlackTitleBar>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_zhsz"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:layout_marginTop="40px"
+            android:background="@drawable/background_line_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40px"
+                android:drawableLeft="@drawable/setting_one"
+                android:drawablePadding="20px"
+                android:gravity="center_vertical"
+                android:text="账户安全" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40px"
+                android:background="@drawable/goin" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_bbxx"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:layout_marginTop="40px"
+            android:background="@drawable/background_line_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40px"
+                android:drawableLeft="@drawable/setting_two"
+                android:drawablePadding="20px"
+                android:gravity="center_vertical"
+                android:text="账号信息" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40px"
+                android:text="V1.0" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_gyht"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40px"
+                android:drawableLeft="@drawable/setting_three"
+                android:drawablePadding="20px"
+                android:gravity="center_vertical"
+                android:text="关于辉腾" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40px"
+                android:background="@drawable/goin" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_yjfk"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40px"
+                android:drawableLeft="@drawable/setting_four"
+                android:drawablePadding="20px"
+                android:gravity="center_vertical"
+                android:text="意见反馈" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40px"
+                android:background="@drawable/goin" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_xxtx"
+            android:layout_width="match_parent"
+            android:layout_height="96px"
+            android:background="@drawable/background_line_bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40px"
+                android:drawableLeft="@drawable/setting_five"
+                android:drawablePadding="20px"
+                android:gravity="center_vertical"
+                android:text="消息提醒" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40px"
+                android:background="@drawable/goin" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ddgl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/ddgl_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <com.miyin.klg.customview.ViewPagerIndicator
+        android:id="@+id/ddgl_ViewPagerIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:background="@color/colorWhite"
+        app:item_count="4"></com.miyin.klg.customview.ViewPagerIndicator>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ddgl_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+</com.zhy.autolayout.AutoLinearLayout>

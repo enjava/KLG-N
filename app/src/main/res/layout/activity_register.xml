@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/kmkj_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20px"
+        android:text="版权@酷么科技"
+        android:textColor="@color/colorTextGary" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/kmkj_logo"
+        android:orientation="vertical">
+
+        <com.miyin.klg.customview.BlackTitleBar
+            android:id="@+id/register_titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.miyin.klg.customview.BlackTitleBar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorLineGary" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/register_id"
+                android:drawablePadding="20px"
+                android:hint="请输入推荐人ID"
+                android:textColor="@color/colorTextGary"
+                android:textColorHint="@color/colorTextGary"
+                android:textSize="@dimen/text_16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="40px"
+                android:background="@drawable/register_idcode" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/login_username"
+                android:drawablePadding="20px"
+                android:hint="请输入用户名"
+                android:textColor="@color/colorTextGary"
+                android:textColorHint="@color/colorTextGary"
+                android:textSize="@dimen/text_16sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/login_phone"
+                android:drawablePadding="20px"
+                android:hint="请输入手机号"
+                android:textColor="@color/colorTextGary"
+                android:textColorHint="@color/colorTextGary"
+                android:textSize="@dimen/text_16sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/register_code"
+                android:drawablePadding="20px"
+                android:hint="请输入验证码"
+                android:textColor="@color/colorTextGary"
+                android:textColorHint="@color/colorTextGary"
+                android:textSize="@dimen/text_16sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40px"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:drawableLeft="@drawable/login_password"
+                android:drawablePadding="20px"
+                android:hint="请输入6-8位密码"
+                android:textColor="@color/colorTextGary"
+                android:textColorHint="@color/colorTextGary"
+                android:textSize="@dimen/text_16sp" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="98px"
+            android:layout_marginBottom="50px"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="50px"
+            android:background="@drawable/gray_shape"
+            android:gravity="center"
+            android:text="立即注册"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="点击“立即注册”即表示您同意并愿意遵守\n注册协议和隐私协议" />
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

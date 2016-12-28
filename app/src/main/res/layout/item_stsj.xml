@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_account_security"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_line_bottom">
+
+    <com.miyin.klg.customview.CircleImageview
+        android:id="@+id/item_stsjIv"
+        android:layout_width="120px"
+        android:layout_height="120px"
+        android:layout_margin="20px"
+        android:src="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/item_stsjTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:layout_toRightOf="@id/item_stsjIv"
+        android:text="测试店铺" />
+
+    <ImageView
+        android:id="@+id/item_stsjRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_stsjTitle"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@id/item_stsjIv"
+        android:background="@drawable/wuxing" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_stsjRatingBar"
+        android:layout_marginTop="20px"
+        android:layout_toRightOf="@id/item_stsjIv"
+        android:text="测试店铺"
+        android:textColor="@color/colorTextGary"
+        android:textSize="@dimen/text_12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20px"
+        android:text="50m"
+        android:textColor="@color/colorTextGary"
+        android:textSize="@dimen/text_12sp" />
+</com.zhy.autolayout.AutoRelativeLayout>

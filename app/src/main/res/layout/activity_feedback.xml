@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/feedback_titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.miyin.klg.customview.BlackTitleBar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:background="#f1f1f1"
+        android:gravity="center_vertical"
+        android:paddingLeft="20px"
+        android:text="感谢您对我们的产品提出宝贵的意见" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:background="@drawable/background_line_bottom"
+        android:hint="联系方式"
+        android:paddingLeft="20px"
+        android:textSize="@dimen/text_14sp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="320px"
+        android:background="@color/colorWhite"
+        android:gravity="start"
+        android:hint="意见详情"
+        android:paddingLeft="20px"
+        android:paddingTop="20px"
+        android:textSize="@dimen/text_14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="96px"
+        android:layout_margin="40px"
+        android:background="@drawable/red_shape"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/colorWhite" />
+</com.zhy.autolayout.AutoLinearLayout>
