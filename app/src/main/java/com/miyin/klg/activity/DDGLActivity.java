@@ -1,9 +1,8 @@
 package com.miyin.klg.activity;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.adapter.FragmentPagerBaseAdapter;
@@ -11,7 +10,6 @@ import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.customview.ViewPagerIndicator;
 import com.miyin.klg.fragment.DDGLFragment;
-import com.miyin.klg.fragment.XYSFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;

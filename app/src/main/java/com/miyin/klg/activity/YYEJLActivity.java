@@ -1,6 +1,5 @@
 package com.miyin.klg.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +8,6 @@ import com.miyin.klg.R;
 import com.miyin.klg.adapter.YYEAdapter;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
-import com.zhy.adapter.recyclerview.CommonAdapter;
 
 import java.util.Arrays;
 import java.util.List;

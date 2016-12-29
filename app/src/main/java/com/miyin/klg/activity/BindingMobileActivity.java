@@ -1,6 +1,5 @@
 package com.miyin.klg.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.miyin.klg.R;
@@ -16,6 +15,7 @@ public class BindingMobileActivity extends BaseActivity implements BlackTitleBar
     @Override
     public int setLayout() {
         return R.layout.activity_binding_mobile;
+
     }
 
     @Override
