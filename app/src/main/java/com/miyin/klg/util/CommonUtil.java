@@ -34,7 +34,6 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.lang.System.currentTimeMillis;
 
 public class CommonUtil {
 
@@ -225,7 +224,7 @@ public class CommonUtil {
         int difference_hours;
         int difference_days;
         int difference_months;
-        long curTime = currentTimeMillis();
+        long curTime = System.currentTimeMillis();
         difference_months = (int) (((curTime / 2592000) % 12) - ((created / 2592000) % 12));
         if (difference_months > 0) {
             when.append(difference_months + "月");
