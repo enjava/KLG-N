@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
+import com.miyin.klg.app.CMApp;
+import com.miyin.klg.util.HttpUtil.HttpCookie;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -17,11 +20,13 @@ import java.util.TimerTask;
  */
 public abstract class BaseActivity extends AppCompatActivity {
     private boolean isExit = false; // 是否退出按钮的转态标记
-    protected Context mContext;
+    protected static Context mContext;
+    protected  HttpCookie mCookie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mCookie=((CMApp)getApplication()).cookie;
         setContentView(setLayout());
         initView(savedInstanceState);
         initDate();
@@ -33,6 +38,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract void initView(Bundle savedInstanceState);
 
     public abstract void initDate();
+
+    protected void showToast(Context context,String content) {
+        Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
+    }
 
     protected void showToast(String content) {
         Toast.makeText(mContext, content, Toast.LENGTH_SHORT).show();
@@ -128,5 +137,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+    //设置Cookie
+    public void saveCookie() {
+        if (mCookie!=null&& !TextUtils.isEmpty(mCookie.toString()))
+            ((CMApp)getApplication()).setCookie(mCookie);
     }
 }

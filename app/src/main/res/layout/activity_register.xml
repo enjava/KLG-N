@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -42,6 +42,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/et_userCode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -63,27 +64,7 @@
                 android:background="@drawable/register_idcode" />
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="98px"
-            android:layout_marginLeft="30px"
-            android:background="@drawable/background_line_bottom"
-            android:orientation="horizontal">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10px"
-                android:layout_weight="1"
-                android:background="@color/colorWhite"
-                android:drawableLeft="@drawable/login_username"
-                android:drawablePadding="20px"
-                android:hint="请输入用户名"
-                android:textColor="@color/colorTextGary"
-                android:textColorHint="@color/colorTextGary"
-                android:textSize="@dimen/text_16sp" />
-
-        </com.zhy.autolayout.AutoLinearLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
@@ -103,32 +84,63 @@
                 android:hint="请输入手机号"
                 android:textColor="@color/colorTextGary"
                 android:textColorHint="@color/colorTextGary"
-                android:textSize="@dimen/text_16sp" />
+                android:textSize="@dimen/text_16sp"
+                android:maxLines="1"
+                android:maxLength="15"
+                android:id="@+id/et_phoneNum" />
 
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <com.zhy.autolayout.AutoLinearLayout
+
+        <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="98px"
             android:layout_marginLeft="30px"
-            android:background="@drawable/background_line_bottom"
-            android:orientation="horizontal">
+            android:background="@drawable/background_line_bottom">
 
             <EditText
+                android:id="@+id/et_code"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10px"
-                android:layout_weight="1"
+                android:layout_toLeftOf="@id/up_codeLine"
+                android:layout_toRightOf="@id/up_codeHint"
                 android:background="@color/colorWhite"
-                android:drawableLeft="@drawable/register_code"
-                android:drawablePadding="20px"
                 android:hint="请输入验证码"
+                android:layout_marginLeft="10px"
                 android:textColor="@color/colorTextGary"
+                android:drawableLeft="@drawable/register_code"
                 android:textColorHint="@color/colorTextGary"
+                android:drawablePadding="20px"
+                android:maxLines="1"
+                android:maxLength="8"
                 android:textSize="@dimen/text_16sp" />
 
-        </com.zhy.autolayout.AutoLinearLayout>
+            <TextView
+                android:id="@+id/up_codeLine"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20px"
+                android:layout_marginTop="20px"
+                android:layout_toLeftOf="@id/up_codeBtn"
+                android:background="@color/colorLineGary" />
 
+            <Button
+                android:id="@+id/up_codeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="40px"
+                android:paddingRight="40px"
+                android:text="获取验证码"
+                android:onClick="btnOnClick"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/text_16sp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
             android:layout_height="98px"
@@ -136,6 +148,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/et_pass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="40px"
@@ -146,21 +159,26 @@
                 android:hint="请输入6-8位密码"
                 android:textColor="@color/colorTextGary"
                 android:textColorHint="@color/colorTextGary"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:maxLength="15"
                 android:textSize="@dimen/text_16sp" />
 
         </com.zhy.autolayout.AutoLinearLayout>
 
-        <TextView
+        <Button
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="98px"
             android:layout_marginBottom="50px"
             android:layout_marginLeft="30px"
             android:layout_marginRight="30px"
             android:layout_marginTop="50px"
-            android:background="@drawable/gray_shape"
+            android:background="@drawable/me_ok_selector"
+            android:onClick="btnOnClick"
             android:gravity="center"
             android:text="立即注册"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/txt_btn_selector"
             android:textSize="@dimen/text_16sp" />
 
         <TextView
