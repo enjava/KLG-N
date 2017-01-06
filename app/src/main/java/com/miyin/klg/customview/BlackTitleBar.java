@@ -183,6 +183,7 @@ public class BlackTitleBar extends RelativeLayout implements OnClickListener {
         void onBackClick();
 
         void onRightClick();
+
     }
 
     @Override
@@ -191,7 +192,8 @@ public class BlackTitleBar extends RelativeLayout implements OnClickListener {
         if (id == R.id.titlebar_while_back) {
             if (callback != null) {
                 callback.onBackClick();
-            }
+            }//垃圾形成
+           
             return;
         }
         if (id == R.id.titlebar_while_right) {

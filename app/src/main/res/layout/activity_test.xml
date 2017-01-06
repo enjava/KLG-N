@@ -9,12 +9,12 @@
     <Button
         android:id="@+id/vip"
         android:layout_width="match_parent"
-        android:layout_height="96px"
+        android:layout_height="wrap_content"
         android:text="会员版本" />
 
     <Button
         android:id="@+id/hhr"
         android:layout_width="match_parent"
-        android:layout_height="96px"
+        android:layout_height="wrap_content"
         android:text="合伙人版本" />
 </LinearLayout>

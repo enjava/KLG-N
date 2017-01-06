@@ -97,12 +97,12 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                 break;
         }
     }
-
+    private int ispinner;
     private void login() {
         String username = etUserName.getText().toString();
         String password = etPassword.getText().toString();
-        int i = spinner.getSelectedItemPosition();
-        Log.i(tag, "i:" + i + " username:" + username + " password:" + password);
+        ispinner = spinner.getSelectedItemPosition();
+        Log.i(tag, "i:" + ispinner + " username:" + username + " password:" + password);
         if (TextUtils.isEmpty(username))
             showToast("账户不能为空");
         else if (TextUtils.isEmpty(password))
@@ -151,7 +151,7 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                     showToast("网络异常");
                     break;
                 case LOGIN_SUCCESS:
-                    showToast("登录成功");
+                    startLogin();
                     break;
                 case LOGIN_ERROR:
                     showToast("账户密码错误");
@@ -161,4 +161,12 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
             }
         }
     };
+    private void startLogin()
+    {
+        Bundle bundle = new Bundle();
+        bundle.putInt("type",ispinner==0?1:-1);
+        openActivity(HomeActivity.class, bundle);
+        finish();
+
+    }
 }
