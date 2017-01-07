@@ -21,7 +21,7 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/tv"
         android:textStyle="bold"
-        android:text="物联网+新零售+金融"
+        android:text="物联网+新零售+新媒体"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/text_16sp"/>
 

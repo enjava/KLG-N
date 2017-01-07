@@ -13,7 +13,7 @@
             android:layout_height="fill_parent"
             android:layout_gravity="center" />
 
-        <com.tenray.qr.zxing.view.ViewfinderView
+        <com.miyin.klg.zxing.view.ViewfinderView
             android:id="@+id/viewfinder_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

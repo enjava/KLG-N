@@ -3,8 +3,41 @@
     android:id="@+id/activity_sys"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="扫码"/>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="返回" />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="扫描二维码" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:gravity="center_horizontal"
+        android:lines="2"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/qrcode_bitmap"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/result" />
 </RelativeLayout>
