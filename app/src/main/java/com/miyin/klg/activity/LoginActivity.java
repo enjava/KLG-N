@@ -62,7 +62,7 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
 
         //数据
         data_list = new ArrayList<String>();
-        data_list.add("酷么会员");
+        data_list.add("酷友");
         data_list.add("酷么合伙人");
 
         //适配器
