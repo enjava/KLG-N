@@ -20,7 +20,7 @@ package com.miyin.klg.zxing.decoding;
  * This class provides the constants to use when sending an Intent to Barcode Scanner.
  * These strings are effectively API and cannot be changed.
  */
-public final class Intents {
+public class Intents {
   private Intents() {
   }
 

@@ -34,7 +34,7 @@ import java.io.IOException;
  * both preview and decoding.
  *
  */
-public final class CameraManager {
+public  class CameraManager {
 
   private static final String TAG = CameraManager.class.getSimpleName();
 

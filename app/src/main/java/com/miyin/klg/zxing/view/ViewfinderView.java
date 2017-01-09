@@ -41,7 +41,7 @@ import java.util.HashSet;
  * 
  */
 
-public final class ViewfinderView extends View {
+public class ViewfinderView extends View {
 	private static final String TAG = "log";
 	/**
 	 * 刷新界面的时间

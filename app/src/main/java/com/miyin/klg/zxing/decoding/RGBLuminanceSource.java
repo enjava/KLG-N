@@ -29,7 +29,7 @@ import java.io.FileNotFoundException;
  * 
  * @author dswitkin@google.com (Daniel Switkin)
  */
-public final class RGBLuminanceSource extends LuminanceSource {
+public class RGBLuminanceSource extends LuminanceSource {
 	private final byte[] luminances;
 
 	public RGBLuminanceSource(String path) throws FileNotFoundException {

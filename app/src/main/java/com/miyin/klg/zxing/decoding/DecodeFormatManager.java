@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Vector;
 import java.util.regex.Pattern;
 
-final class DecodeFormatManager {
+public class DecodeFormatManager {
 
   private static final Pattern COMMA_PATTERN = Pattern.compile(",");
 

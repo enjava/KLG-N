@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Finishes an activity after a period of inactivity.
  */
-public final class InactivityTimer {
+public  class InactivityTimer {
 
   private static final int INACTIVITY_DELAY_SECONDS = 5 * 60;
 

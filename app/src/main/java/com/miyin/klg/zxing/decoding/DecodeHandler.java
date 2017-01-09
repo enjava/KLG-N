@@ -36,7 +36,7 @@ import com.miyin.klg.zxing.camera.PlanarYUVLuminanceSource;
 
 import java.util.Hashtable;
 
-final class DecodeHandler extends Handler {
+public class DecodeHandler extends Handler {
 
   private static final String TAG = DecodeHandler.class.getSimpleName();
 

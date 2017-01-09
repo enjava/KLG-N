@@ -28,7 +28,7 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.regex.Pattern;
 
-final class CameraConfigurationManager {
+public class CameraConfigurationManager {
 
   private static final String TAG = CameraConfigurationManager.class.getSimpleName();
 

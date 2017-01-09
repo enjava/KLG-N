@@ -22,7 +22,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-final class PreviewCallback implements Camera.PreviewCallback {
+public class PreviewCallback implements Camera.PreviewCallback {
 
   private static final String TAG = PreviewCallback.class.getSimpleName();
 
