@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
+import com.miyin.klg.zxing.activity.CaptureActivity;
 
 public class SYSActivity extends BaseActivity {
     private final static int SCANNIN_GREQUEST_CODE = 1;
@@ -30,7 +31,7 @@ public class SYSActivity extends BaseActivity {
         mTextView = (TextView) findViewById(R.id.result);
         mImageView = (ImageView) findViewById(R.id.qrcode_bitmap);
         Intent intent = new Intent();
-        intent.setClass(SYSActivity.this, MipcaActivityCapture.class);
+        intent.setClass(SYSActivity.this, CaptureActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         //点击按钮跳转到二维码扫描界面，这里用的是startActivityForResult跳转
@@ -48,7 +49,7 @@ public class SYSActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(SYSActivity.this, MipcaActivityCapture.class);
+                intent.setClass(SYSActivity.this, CaptureActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                // openActivityForResult(intent,null,SCANNIN_GREQUEST_CODE);
                 startActivityForResult(intent, SCANNIN_GREQUEST_CODE);

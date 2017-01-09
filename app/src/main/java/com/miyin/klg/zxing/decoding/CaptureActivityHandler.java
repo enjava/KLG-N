@@ -28,12 +28,12 @@ import android.util.Log;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.miyin.klg.R;
-import com.miyin.klg.activity.MipcaActivityCapture;
+import com.miyin.klg.zxing.activity.CaptureActivity;
 import com.miyin.klg.zxing.camera.CameraManager;
 import com.miyin.klg.zxing.view.ViewfinderResultPointCallback;
 
-
 import java.util.Vector;
+
 
 /**
  * This class handles all the messaging which comprises the state machine for capture.
@@ -42,7 +42,7 @@ public final class CaptureActivityHandler extends Handler {
 
   private static final String TAG = CaptureActivityHandler.class.getSimpleName();
 
-  private final MipcaActivityCapture activity;
+  private final CaptureActivity activity;
   private final DecodeThread decodeThread;
   private State state;
 
@@ -52,8 +52,8 @@ public final class CaptureActivityHandler extends Handler {
     DONE
   }
 
-  public CaptureActivityHandler(MipcaActivityCapture activity, Vector<BarcodeFormat> decodeFormats,
-      String characterSet) {
+  public CaptureActivityHandler(CaptureActivity activity, Vector<BarcodeFormat> decodeFormats,
+                                String characterSet) {
     this.activity = activity;
     decodeThread = new DecodeThread(activity, decodeFormats, characterSet,
         new ViewfinderResultPointCallback(activity.getViewfinderView()));
@@ -86,9 +86,9 @@ public final class CaptureActivityHandler extends Handler {
         
         /***********************************************************************/
         Bitmap barcode = bundle == null ? null :
-            (Bitmap) bundle.getParcelable(DecodeThread.BARCODE_BITMAP);//���ñ����߳�
+            (Bitmap) bundle.getParcelable(DecodeThread.BARCODE_BITMAP);//閿熸枻鎷烽敓鐭唻鎷烽敓鏂ゆ嫹閿熺绛规嫹
         
-        activity.handleDecode((Result) message.obj, barcode);//���ؽ��?        /***********************************************************************/
+        activity.handleDecode((Result) message.obj, barcode);//閿熸枻鎷烽敓鎴枻鎷烽敓锟�       /***********************************************************************/
         break;
       case R.id.decode_failed:
         // We're decoding as fast as possible, so when one decode fails, start another.
