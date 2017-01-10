@@ -29,6 +29,7 @@ import java.util.Map;
 public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
     private static final int LOGIN_SUCCESS = 10;//登录成功
     private static final int LOGIN_ERROR = 11;//账号密码错误
+    private static final int LOGIN_BAN = 12;//禁止登录
     private BlackTitleBar mTitleBar;
     private TextView login_forgetPassword, login_register, login_ok;
     private Spinner spinner;
@@ -133,6 +134,8 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                     msg.what = LOGIN_SUCCESS;
                 } else if (postJson.indexOf("用户名或密码错误") != -1) {
                     msg.what = LOGIN_ERROR;
+                } else if (postJson.indexOf("您被禁止登录") != -1) {
+                    msg.what = LOGIN_BAN;//登录禁止
                 } else {
                     Log.i(tag, postJson);
                 }
@@ -154,8 +157,11 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                     startLogin();
                     break;
                 case LOGIN_ERROR:
-                    showToast("账户密码错误");
+                    CommonUtil.showInfoDialog(LoginActivity.this,"账户密码错误");
                     break;
+                case LOGIN_BAN:
+                    CommonUtil.showInfoDialog(LoginActivity.this,"您的账号已被管理停用，如有疑问，请联系管理员");
+                break;
                 default:
                     break;
             }
