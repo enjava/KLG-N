@@ -7,6 +7,7 @@ import android.view.View;
 import com.miyin.klg.R;
 import com.miyin.klg.activity.GRZLActivity;
 import com.miyin.klg.activity.HGActivity;
+import com.miyin.klg.activity.LoginActivity;
 import com.miyin.klg.activity.PTSJActivity;
 import com.miyin.klg.activity.STSJActivity;
 import com.miyin.klg.activity.WDKBActivity;
@@ -26,9 +27,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     private static final String ARG_PARAM1 = "param1";
     private CircleMenu circleMenu;
     private AutoRelativeLayout userInfoLayout;
-    private String[] mItemTexts = new String[]{"我的幸运树 ", "我的酷币", "回购", "转赠 ", "我要推荐", "消费记录", "平台数据", "智能售卖终端", "实体商家",
+    private String[] mItemTexts = new String[]{"我的心愿盒", "我的酷币",  "我要推荐", "消费记录", "平台数据", "智能售卖终端", "实体商家",
     };
-    private int[] mItemImgs = new int[]{R.drawable.xys, R.drawable.wokb, R.drawable.gm, R.drawable.zz,
+    private int[] mItemImgs = new int[]{R.mipmap.xyh, R.mipmap.mykubi,
             R.drawable.wydz, R.drawable.xf, R.drawable.ptsj, R.drawable.hg, R.drawable.stsj
     };
 
@@ -80,6 +81,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -107,14 +109,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 case 1:
                     openActivity(WDKBActivity.class);
                     break;
-                //回购
-                case 2:
-                    openActivity(HGActivity.class);
-                    break;
-                //转增
-                case 3:
-                    openActivity(ZZActivity.class);
-                    break;
+//                //回购
+//                case 2:
+//                    openActivity(HGActivity.class);
+//                    break;
+//                //转增
+//                case 3:
+//                    openActivity(ZZActivity.class);
+//                    break;
                 //我要推荐
                 case 4:
                     openActivity(WYTJActivity.class);

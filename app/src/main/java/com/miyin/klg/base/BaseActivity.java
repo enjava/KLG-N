@@ -2,6 +2,7 @@ package com.miyin.klg.base;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -27,6 +28,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mCookie=((CMApp)getApplication()).cookie;
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);// 横屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
         setContentView(setLayout());
         initView(savedInstanceState);
         initDate();
@@ -39,9 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public abstract void initDate();
 
-    protected void showToast(Context context,String content) {
-        Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
-    }
 
     protected void showToast(String content) {
         Toast.makeText(mContext, content, Toast.LENGTH_SHORT).show();

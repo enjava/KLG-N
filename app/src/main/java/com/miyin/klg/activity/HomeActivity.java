@@ -13,6 +13,7 @@ import com.miyin.klg.fragment.GMZDFragment;
 import com.miyin.klg.fragment.HomeFragment;
 import com.miyin.klg.fragment.SJGLFragment;
 import com.miyin.klg.fragment.XFDJFragment;
+import com.miyin.klg.util.StatusBarUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
@@ -24,6 +25,8 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public int setLayout() {
+        StatusBarUtil.transparencyBar(this);
+        StatusBarUtil.StatusBarLightMode(this);
         return R.layout.activity_home;
     }
 
@@ -32,6 +35,18 @@ public class HomeActivity extends BaseActivity {
         mainNavigateTabBar = $(R.id.home_MainNavigateTabBar);
         mainNavigateTabBar.onRestoreInstanceState(savedInstanceState);
         home_sysLayout = $(R.id.home_sysLayout);
+    }
+
+    public void   imageViewOnClick(View v){
+        switch (v.getId() ){
+            case R.id.iv_login:
+                openActivity(LoginActivity.class);
+
+                break;
+
+            default:
+                break;
+        }
     }
 
     @Override

@@ -26,22 +26,23 @@ import java.util.Map;
 public class HttpUtil {
 
     private final static int CONNECT_TIMEOUT = 5000; // in milliseconds
+
     /**
-     * @param url 请求地址
+     * @param url    请求地址
      * @param cookie cokie
      * @return
      */
-    public static String post(String url,HttpCookie cookie) {
-           return post(url,null,cookie);
+    public static String post(String url, HttpCookie cookie) {
+        return post(url, null, cookie);
     }
 
     /**
-     * @param url 请求地址
+     * @param url           请求地址
      * @param requestParams requestParams
      * @return
      */
-    public static String post(String url ,Map<String, String> requestParams) {
-        return post(url,requestParams,null);
+    public static String post(String url, Map<String, String> requestParams) {
+        return post(url, requestParams, null);
     }
 
     /**
@@ -49,7 +50,7 @@ public class HttpUtil {
      * @return
      */
     public static String post(String url) {
-        return post(url,null,null);
+        return post(url, null, null);
     }
 
     /**
@@ -59,8 +60,8 @@ public class HttpUtil {
      * @return
      */
     public static String post(String url, Map<String, String> requestParams, HttpCookie cookie) {
-        if (cookie==null){
-            cookie=new HttpCookie();
+        if (cookie == null) {
+            cookie = new HttpCookie();
         }
         PrintWriter printWriter = null;
         BufferedReader bufferedReader = null;
@@ -108,7 +109,7 @@ public class HttpUtil {
             int responseCode = httpURLConnection.getResponseCode();
             if (responseCode != 200) {
                 System.out.println(" Error===" + responseCode);
-                return responseCode+"";
+                return responseCode + "";
             } else {
                 System.out.println("Post Success!");
             }
@@ -122,8 +123,8 @@ public class HttpUtil {
             String cookieValue = httpURLConnection.getHeaderField("Set-Cookie");
             System.out.println("cookie value:" + cookieValue);
             if (!TextUtils.isEmpty(cookieValue)) {
-              String  cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
-                System.out.println("cookie:"+cookies);
+                String cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
+                System.out.println("cookie:" + cookies);
                 cookie.set(cookies);
             }
 
@@ -152,7 +153,7 @@ public class HttpUtil {
      * @param url
      * @return
      */
-    public static String get(String url){
+    public static String get(String url) {
         return get(url, null);
     }
 
@@ -161,9 +162,9 @@ public class HttpUtil {
      * @param cookie
      * @return
      */
-    public static String get(String url, HttpCookie cookie){
-        if (cookie==null){
-            cookie=new HttpCookie();
+    public static String get(String url, HttpCookie cookie) {
+        if (cookie == null) {
+            cookie = new HttpCookie();
         }
         PrintWriter printWriter = null;
         BufferedReader bufferedReader = null;
@@ -194,13 +195,13 @@ public class HttpUtil {
             String cookieValue = httpURLConnection.getHeaderField("Set-Cookie");
             System.out.println("cookie value:" + cookieValue);
             if (!TextUtils.isEmpty(cookieValue)) {
-               String  cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
-                System.out.println("cookie:"+cookies);
+                String cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
+                System.out.println("cookie:" + cookies);
                 cookie.set(cookies);
             }
-        }  catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             httpURLConnection.disconnect();
             try {
                 if (printWriter != null) {
@@ -236,14 +237,12 @@ public class HttpUtil {
         BufferedReader reader = null;
         StringBuffer resultBuffer = new StringBuffer();
         String tempLine = null;
-
+        HttpURLConnection httpURLConnection = null;
         try {
             // 统一资源
             URL url = new URL(actionUrl);
-            // 连接类的父类，抽象类
-            URLConnection urlConnection = url.openConnection();
             // http的连接类
-            HttpURLConnection httpURLConnection = (HttpURLConnection) urlConnection;
+            httpURLConnection = (HttpURLConnection) url.openConnection();
 
             // 设置是否从httpUrlConnection读入，默认情况下是true;
             httpURLConnection.setDoInput(true);
@@ -292,7 +291,6 @@ public class HttpUtil {
                 inputStream = httpURLConnection.getInputStream();
                 inputStreamReader = new InputStreamReader(inputStream);
                 reader = new BufferedReader(inputStreamReader);
-                tempLine = null;
                 resultBuffer = new StringBuffer();
                 while ((tempLine = reader.readLine()) != null) {
                     resultBuffer.append(tempLine);
@@ -303,6 +301,8 @@ public class HttpUtil {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+            if (httpURLConnection != null)
+                httpURLConnection.disconnect();
             if (ds != null) {
                 try {
                     ds.close();
@@ -337,11 +337,8 @@ public class HttpUtil {
     }
 
     /**
-     *
-     * @param urlPath
-     *            下载路径
-     * @param downloadDir
-     *            下载存放目录
+     * @param urlPath     下载路径
+     * @param downloadDir 下载存放目录
      * @return 返回下载文件
      */
     public static File downloadFile(String urlPath, String downloadDir) {
@@ -401,7 +398,7 @@ public class HttpUtil {
 
     }
 
-    public static class HttpCookie{
+    public static class HttpCookie {
         private String cookie;
 
         public String get() {

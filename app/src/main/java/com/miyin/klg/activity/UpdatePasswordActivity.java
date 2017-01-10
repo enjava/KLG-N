@@ -115,6 +115,7 @@ public class UpdatePasswordActivity extends BaseActivity implements BlackTitleBa
             }
         });
     }
+
     //更改密码
     private void updatePwd() {
         final String pwd1 = etPwd.getText().toString();//密码
@@ -163,7 +164,7 @@ public class UpdatePasswordActivity extends BaseActivity implements BlackTitleBa
                 super.run();
                 Map<String, String> request = new HashMap<>();
                 request.put("mobile", mobile);
-                String result = HttpUtil.postData(ConstantsURL.USER_MOBILEEXISTED_URL, request);
+                String result = HttpUtil.post(ConstantsURL.USER_MOBILEEXISTED_URL, request);
                 Message msg = new Message();
                 if (!TextUtils.isEmpty(result) && result.indexOf("该手机号已存在") != -1) {
                     //手机号码已经存在

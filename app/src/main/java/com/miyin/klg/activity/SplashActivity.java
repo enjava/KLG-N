@@ -14,6 +14,7 @@ import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.util.Constants;
 import com.miyin.klg.util.SpUtil;
+import com.miyin.klg.util.StatusBarUtil;
 
 
 public class SplashActivity extends BaseActivity {
@@ -22,6 +23,8 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public int setLayout() {
+        StatusBarUtil.transparencyBar(this);
+        StatusBarUtil.StatusBarLightMode(this);
         return R.layout.activity_splash;
     }
 
@@ -73,17 +76,22 @@ public class SplashActivity extends BaseActivity {
                 // 否则跳主页面
                 boolean isFirstEnter = SpUtil.getBoolean(SplashActivity.this, Constants.IS_FIRST_ENTER, true);
                 Intent intent;
+                Bundle bundle = new Bundle();
                 if (isFirstEnter){
                     // 新手引导
-                    intent = new Intent(getApplicationContext(),
-                            LoginActivity.class);
+//                    intent = new Intent(getApplicationContext(),
+//                            LoginActivity.class);
+
+                    bundle.putInt("type", 1);
+
                 }
                 else {
                     // 主页面
-                    intent = new Intent(getApplicationContext(),
-                            LoginActivity.class);
+//                    intent = new Intent(getApplicationContext(),
+//                            LoginActivity.class);
+                    bundle.putInt("type", 1);
                 }
-                startActivity(intent);
+                openActivity(HomeActivity.class, bundle);
                 finish();// 结束当前页面
             }
         });

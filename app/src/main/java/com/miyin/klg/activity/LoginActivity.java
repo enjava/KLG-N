@@ -17,6 +17,7 @@ import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.util.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +43,8 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
 
     @Override
     public int setLayout() {
+        StatusBarUtil.transparencyBar(this);
+        StatusBarUtil.StatusBarLightMode(this);
         return R.layout.activity_main;
     }
 
@@ -62,12 +65,12 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
         login_ok.setOnClickListener(this);
 
         //数据
-        data_list = new ArrayList<String>();
+        data_list = new ArrayList<>();
         data_list.add("酷友");
         data_list.add("酷么合伙人");
 
         //适配器
-        arr_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        arr_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, data_list);
         //设置样式
         arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //加载适配器
@@ -99,6 +102,7 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
         }
     }
     private int ispinner;
+
     private void login() {
         String username = etUserName.getText().toString();
         String password = etPassword.getText().toString();
