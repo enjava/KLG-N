@@ -47,8 +47,9 @@
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/userInfoLayout"
-                android:layout_width="246px"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center">
 
                 <com.miyin.klg.customview.CircleImageview
@@ -80,12 +81,13 @@
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <View
-                android:layout_width="1dp"
+                android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:background="@color/colorLineGary" />
 
             <com.zhy.autolayout.AutoLinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -111,14 +113,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/home_jrjlHint"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10px"
                             android:drawableLeft="@mipmap/todaykubi"
                             android:drawablePadding="10px"
                             android:gravity="center"
                             android:text="68.50"
-                            android:textColor="@color/colorRed" />
+                            android:textColor="@color/colorRed"
+                            android:layout_below="@+id/home_jrjlHint"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/textView"/>
                     </com.zhy.autolayout.AutoRelativeLayout>
 
                     <View
