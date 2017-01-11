@@ -2,7 +2,6 @@ package com.miyin.klg.view;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -126,13 +125,14 @@ public class CircleButton extends ImageView {
         pressedRingWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, DEFAULT_PRESSED_RING_WIDTH_DIP, getResources()
                 .getDisplayMetrics());
 
-        int color = Color.BLACK;
-        if (attrs != null) {
-            final TypedArray a = context.obtainStyledAttributes(attrs, at.markushi.circlebutton.R.styleable.CircleButton);
-            color = a.getColor(at.markushi.circlebutton.R.styleable.CircleButton_cb_color, color);
-            pressedRingWidth = (int) a.getDimension(at.markushi.circlebutton.R.styleable.CircleButton_cb_pressedRingWidth, pressedRingWidth);
-            a.recycle();
-        }
+        //int color = Color.WHITE;//设置颜色
+        int color = 0x00FFFFFF;//设置颜色
+//        if (attrs != null) {
+//            final TypedArray a = context.obtainStyledAttributes(attrs, at.markushi.circlebutton.R.styleable.CircleButton);
+//            color = a.getColor(at.markushi.circlebutton.R.styleable.CircleButton_cb_color, color);
+//            pressedRingWidth = (int) a.getDimension(at.markushi.circlebutton.R.styleable.CircleButton_cb_pressedRingWidth, pressedRingWidth);
+//            a.recycle();
+//        }
 
         setColor(color);
 

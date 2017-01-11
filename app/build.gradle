@@ -31,5 +31,4 @@ dependencies {
     compile 'com.zhy:base-rvadapter:3.0.3'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:percent:24.2.0'
-    compile 'com.github.markushi:circlebutton:1.1'
 }
