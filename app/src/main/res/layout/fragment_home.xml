@@ -1,25 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.percent.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <com.miyin.klg.view.PercentLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.zhy.autolayout.AutoRelativeLayout
+        <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="96px"
+            android:layout_height="0dp"
+            app:layout_heightPercent="8%"
             android:background="@drawable/background_line_bottom">
             <ImageView
                 android:id="@+id/iv_login"
                 android:layout_width="wrap_content"
                android:layout_centerVertical="true"
-                android:layout_marginLeft="20px"
+                app:layout_marginLeftPercent="3%"
                 android:layout_height="wrap_content"
                 android:onClick="imageViewOnClick"
                 android:background="@mipmap/login_main" />
@@ -32,26 +34,27 @@
                 android:layout_width="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20px"
+                app:layout_marginRightPercent="3%"
                 android:layout_height="wrap_content"
                 android:background="@mipmap/message" />
-        </com.zhy.autolayout.AutoRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
 
-        <com.zhy.autolayout.AutoLinearLayout
+        <com.miyin.klg.view.PercentLinearLayout
             android:layout_width="match_parent"
-            android:layout_height="184px"
+            android:layout_height="0dp"
+            app:layout_heightPercent="20%"
             android:orientation="horizontal">
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/userInfoLayout"
-                android:layout_width="226px"
+                android:layout_width="246px"
                 android:layout_height="match_parent"
                 android:gravity="center">
 
                 <com.miyin.klg.customview.CircleImageview
                     android:id="@+id/home_CircleImageview"
-                    android:layout_width="90px"
-                    android:layout_height="90px"
+                    android:layout_width="120px"
+                    android:layout_height="120px"
                     android:layout_centerHorizontal="true"
                     android:src="@mipmap/headimg" />
                 <TextView
@@ -69,7 +72,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/home_username"
                     android:layout_centerHorizontal="true"
-                    android:text="ID 666" />
+                    android:drawableLeft="@mipmap/id"
+                    android:drawablePadding="3dp"
+                    android:text="666" />
 
 
             </com.zhy.autolayout.AutoRelativeLayout>
@@ -219,34 +224,71 @@
                        />
                 </com.zhy.autolayout.AutoLinearLayout>
             </com.zhy.autolayout.AutoLinearLayout>
-        </com.zhy.autolayout.AutoLinearLayout>
+        </com.miyin.klg.view.PercentLinearLayout>
 
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:layout_width="800px"
-            android:layout_height="0px"
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="0dp"
+            app:layout_widthPercent="125%"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/home_background">
-
-
             <com.miyin.klg.customview.CircleMenu
                 android:id="@+id/circle_menu_items"
-                android:layout_width="600px"
-                android:layout_height="600px"
+                android:layout_width="0dp"
+                app:layout_widthPercent="80%"
+                android:layout_height="0dp"
+                app:layout_heightPercent="82%"
                 android:background="@mipmap/yuan"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="25dp"
-                android:layout_marginEnd="25dp" />
+                app:layout_marginRightPercent="5%"
+             />
             <ImageView
-                android:layout_width="400px"
-                android:layout_height="408px"
-                android:layout_marginTop="168px"
+                android:layout_width="0dp"
+                app:layout_widthPercent="50%"
+                android:layout_height="0dp"
+                app:layout_heightPercent="51.2%"
+                app:layout_marginTopPercent="22.7%"
                 android:scaleType="fitXY"
                 android:src="@mipmap/banyuan"/>
-        </com.zhy.autolayout.AutoRelativeLayout>
+            <TextView
+                android:id="@+id/tv_xinyuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="心愿盒子"
+                android:textColor="@color/colorRed"
+                app:layout_marginTopPercent="35%"
+                app:layout_marginLeftPercent="1%"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="0dp"
+                app:layout_widthPercent="12.5%"
+                android:layout_height="0dp"
+                app:layout_heightPercent="30%"
+                android:layout_below="@+id/tv_xinyuan"
+                app:layout_marginTopPercent="3%"
+                app:layout_marginLeftPercent="1%"
+                android:text="累计消费满五百元，系统将赠送您一个心愿盒子"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:textSize="11dp"
+                />
+            <com.miyin.klg.view.CircleButton
+                android:id="@+id/elife"
+                android:layout_width="0dp"
+                app:layout_widthPercent="16%"
+                android:layout_height="0dp"
+                app:layout_heightPercent="16%"
+                app:layout_marginLeftPercent="47%"
+                app:layout_marginTopPercent="42%"
+                android:src="@drawable/e_life_press"
+                app:cb_color="#0FFF"
+                />
+        </android.support.percent.PercentRelativeLayout>
 
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </com.miyin.klg.view.PercentLinearLayout>
 
-</FrameLayout>
+</android.support.percent.PercentFrameLayout>
