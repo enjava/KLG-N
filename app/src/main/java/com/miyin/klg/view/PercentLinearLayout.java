@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 /**
  * Created by en on 2017/1/10.
  */
-
+//线性百分比布局
 public class PercentLinearLayout extends LinearLayout
 {
 
