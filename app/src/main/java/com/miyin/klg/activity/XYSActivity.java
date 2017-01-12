@@ -40,7 +40,7 @@ public class XYSActivity extends BaseActivity implements BlackTitleBar.ClickCall
     @Override
     public void initDate() {
         blackTitleBar.setClickCallback(this);
-        blackTitleBar.setTitle("幸运树");
+        blackTitleBar.setTitle("心愿指数");
         viewPagerIndicator.setTabItemTitles(mDatas);
         for (String title :
                 mDatas) {

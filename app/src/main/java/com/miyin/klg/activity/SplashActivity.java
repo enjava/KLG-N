@@ -16,7 +16,9 @@ import com.miyin.klg.util.Constants;
 import com.miyin.klg.util.SpUtil;
 import com.miyin.klg.util.StatusBarUtil;
 
-
+/*
+*引导页
+ */
 public class SplashActivity extends BaseActivity {
     private final String tag= getClass().getSimpleName();
     RelativeLayout activitySplash;

@@ -12,7 +12,9 @@ import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.zxing.activity.CaptureActivity;
 
 import static com.miyin.klg.R.id.result;
-
+/*
+*二维码扫描
+ */
 public class SYSActivity extends BaseActivity {
     private final static int SCANNIN_GREQUEST_CODE = 1;
     /**

@@ -5,7 +5,11 @@ import android.os.Bundle;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
-
+/*
+*找回二级密码
+*
+*
+ */
 public class ForgetTwoPasswordActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
     private BlackTitleBar mTitleBar;
 
