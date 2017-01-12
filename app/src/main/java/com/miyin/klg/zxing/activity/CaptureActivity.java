@@ -97,7 +97,13 @@ public class CaptureActivity extends Activity implements Callback {
 		((TextView) findViewById(R.id.tv_left_title)).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				onBackPressed();
+				Intent resultIntent = new Intent();
+				Bundle bundle = new Bundle();
+				bundle.putString("result", "CMresult");
+				resultIntent.putExtras(bundle);
+				CaptureActivity.this.setResult(RESULT_OK, resultIntent);
+				CaptureActivity.this.finish();
+				//onBackPressed();
 			}
 		});
 	}
@@ -390,4 +396,15 @@ public class CaptureActivity extends Activity implements Callback {
 		}
 	};
 
+	@Override
+	public void onBackPressed() {
+
+		Intent resultIntent = new Intent();
+		Bundle bundle = new Bundle();
+		bundle.putString("result", "CMresult");
+		resultIntent.putExtras(bundle);
+		this.setResult(RESULT_OK, resultIntent);
+		this.finish();
+		super.onBackPressed();
+	}
 }

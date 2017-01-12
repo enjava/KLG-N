@@ -11,6 +11,8 @@ import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.zxing.activity.CaptureActivity;
 
+import static com.miyin.klg.R.id.result;
+
 public class SYSActivity extends BaseActivity {
     private final static int SCANNIN_GREQUEST_CODE = 1;
     /**
@@ -28,7 +30,7 @@ public class SYSActivity extends BaseActivity {
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        mTextView = (TextView) findViewById(R.id.result);
+        mTextView = (TextView) findViewById(result);
         mImageView = (ImageView) findViewById(R.id.qrcode_bitmap);
         Intent intent = new Intent();
         intent.setClass(SYSActivity.this, CaptureActivity.class);
@@ -70,12 +72,17 @@ public class SYSActivity extends BaseActivity {
             case SCANNIN_GREQUEST_CODE:
                 if(resultCode == RESULT_OK){
                     Bundle bundle = data.getExtras();
+                String      result=   bundle.getString("result");
+                    if ("CMresult".equals(result))
+                        finish();
+                    else
                     //显示扫描到的内容
-                    mTextView.setText(bundle.getString("result"));
+                    mTextView.setText(result);
                     //显示
                     //mImageView.setImageBitmap((Bitmap) data.getParcelableExtra("bitmap"));
                 }
                 break;
+
         }
     }
 }

@@ -1,13 +1,10 @@
 package com.miyin.klg.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.activity.GRZLActivity;
-import com.miyin.klg.activity.HGActivity;
-import com.miyin.klg.activity.LoginActivity;
 import com.miyin.klg.activity.PTSJActivity;
 import com.miyin.klg.activity.STSJActivity;
 import com.miyin.klg.activity.WDKBActivity;
@@ -15,7 +12,6 @@ import com.miyin.klg.activity.WYTJActivity;
 import com.miyin.klg.activity.XFJLActivity;
 import com.miyin.klg.activity.XYSActivity;
 import com.miyin.klg.activity.ZNSMZDActivity;
-import com.miyin.klg.activity.ZZActivity;
 import com.miyin.klg.base.BaseFragment;
 import com.miyin.klg.customview.CircleMenu;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -118,23 +114,23 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 //                    openActivity(ZZActivity.class);
 //                    break;
                 //我要推荐
-                case 4:
+                case 2:
                     openActivity(WYTJActivity.class);
                     break;
                 //消费记录
-                case 5:
+                case 3:
                     openActivity(XFJLActivity.class);
                     break;
                 //平台数据
-                case 6:
+                case 4:
                     openActivity(PTSJActivity.class);
                     break;
                 //智能售卖终端
-                case 7:
+                case 5:
                     openActivity(ZNSMZDActivity.class);
                     break;
                 //实体商家
-                case 8:
+                case 6:
                     openActivity(STSJActivity.class);
                     break;
                 default:
