@@ -105,11 +105,12 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
 
         mBlackTitleBar.setTitle("个人资料");
         mBlackTitleBar.setClickCallback(this);
-        grzl_gotoSetting.setOnClickListener(this);
-        grzl_userNameLayout.setOnClickListener(this);
+        if (store==null) {
+            grzl_gotoSetting.setOnClickListener(this);
+            grzl_userNameLayout.setOnClickListener(this);
 
-        grzl_addressLayout.setOnClickListener(this);
-
+            grzl_addressLayout.setOnClickListener(this);
+        }
 
         if (store==null) {
             String username = user.data.username; //用户名
