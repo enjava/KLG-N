@@ -15,8 +15,10 @@ import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.CommonUtil;
+import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.StatusBarUtil;
@@ -132,7 +134,12 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
             @Override
             public void run() {
                 super.run();
-                String postJson = HttpUtil.post(ConstantsURL.USER_LOGIN_URL, request, mCookie);
+                String url="";
+                if (ispinner==1)
+                    url=ConstantsStoreURL.STORE_LOGIN_URL;
+                else
+                    url= ConstantsURL.USER_LOGIN_URL;
+                String postJson = HttpUtil.post(url, request, mCookie);
                 Message msg = Message.obtain();
                 if (TextUtils.isEmpty(postJson)) {
                     msg.what = SEND_NET_ERROR;
@@ -140,11 +147,18 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                     saveCookie();
                     Gson gson = new Gson();
                     //String postUser = HttpUtil.post(ConstantsURL.USER_MYUSERINFO_URL, null, mCookie);
+                    if (ispinner==1)  {
+                        Store store=gson.fromJson(postJson,Store.class);
+                        mApp.setUser(null);
+                        mApp.setStore(store);
 
-                    User person = gson.fromJson(postJson,User.class);
-                    mApp.setUser(person);
-
+                    }else {
+                        User person = gson.fromJson(postJson, User.class);
+                        mApp.setStore(null);
+                        mApp.setUser(person);
+                    }
                     msg.what = LOGIN_SUCCESS;
+
                 } else if (postJson.indexOf("用户名或密码错误") != -1) {
                     msg.what = LOGIN_ERROR;
                 } else if (postJson.indexOf("您被禁止登录") != -1) {

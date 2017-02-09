@@ -17,6 +17,7 @@ import com.miyin.klg.activity.ZNSMZDActivity;
 import com.miyin.klg.base.BaseFragment;
 import com.miyin.klg.customview.CircleImageview;
 import com.miyin.klg.customview.CircleMenu;
+import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.CommonUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -78,14 +79,21 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     }
 
     private User user;
+    private Store store;
     @Override
     protected void initData(){
         mTvriqi.setText(CommonUtil.formatDate("(yyyy-MM-dd)"));
         user= fragmentApp.getUser();
+        store= fragmentApp.getStore();
         if (user!=null) {
             mTvuserid.setText(user.data.userId+"");
             if (!TextUtils.isEmpty(user.data.username)){
                 mTvusername.setText(user.data.username);
+            }
+        }else if (store!=null){
+            mTvuserid.setText(store.data.userId+"");
+            if (!TextUtils.isEmpty(store.data.realName)){
+                mTvusername.setText(store.data.realName);
             }
         }
     }

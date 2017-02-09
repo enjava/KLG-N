@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -20,8 +21,10 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
     private BlackTitleBar mBlackTitleBar;
     private TextView grzl_gotoSetting,grzl_userID,grzl_userName,grzl_zsxm,grzl_szd,grzl_IDcardIv,grzl_tjrName,grzl_tjrID;
     private AutoRelativeLayout grzl_userNameLayout, grzl_tureNameLayout, grzl_addressLayout, grzl_IDcardLayout;
-   private ImageView imageView_id,grzl_trueNameIv;
+    private ImageView imageView_id,grzl_trueNameIv;
     private User user;
+    private Store store;
+    private Object objectUser;
     @Override
     public int setLayout() {
         return R.layout.activity_grzl;
@@ -49,14 +52,27 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
         imageView_id = $(R.id.imageView_id);//身份证imageView
         grzl_trueNameIv = $(R.id.grzl_trueNameIv);//真实姓名imageView
 
-        user= mApp.getUser();
+        store= mApp.getStore();
+        if (store==null) {
+            user = mApp.getUser();
+        }
         //grzl_userID
     }
 
     @Override
     public void initDate() {
-        String cardNum=user.data.cardNum; //身份证
-        String realName=user.data.realName; //真实姓名
+        String cardNum="";
+        String realName="";
+      if (store!=null) {
+          cardNum = store.data.userCard; //身份证
+          realName = store.data.realName; //真实姓名
+          grzl_userID.setText(""+store.data.userId);//用户id
+      }
+        else{
+          cardNum = user.data.cardNum; //身份证
+          realName = user.data.realName; //真实姓名
+          grzl_userID.setText(""+user.data.userId);//用户id
+      }
 
         if (!TextUtils.isEmpty(cardNum)) {
             grzl_IDcardIv.setText(cardNum.substring(0, 5) + "***********" + cardNum.substring(16, 18));
@@ -82,6 +98,9 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
 
 
         }
+        if (store!=null){
+            grzl_userNameLayout.setVisibility(View.GONE);
+        }
         //grzl_trueNameIv
 
         mBlackTitleBar.setTitle("个人资料");
@@ -92,20 +111,39 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
         grzl_addressLayout.setOnClickListener(this);
 
 
+        if (store==null) {
+            String username = user.data.username; //用户名
+            if (!TextUtils.isEmpty(username))
+                grzl_userName.setText(username);
+            else
+                grzl_userName.setText("未设置");
 
-        grzl_userID.setText(""+user.data.userId);//用户id
-        String username=user.data.username; //用户名
-        if (!TextUtils.isEmpty(username))
-            grzl_userName.setText(username);
-        else
-            grzl_userName.setText("未设置");
-
-
+        }
         String addr="";
-        String sheng=user.data.sheng;//省
-        String city=user.data.city;//市
-        String area=user.data.area;//区
-        String address=user.data.address;//详细地址
+        String sheng="";//省
+
+        String city="";//市
+
+        String area="";//区
+
+        String address="";//详细地址
+        int recommendID;
+        String recommendName;
+        if (store!=null){
+            sheng=store.data.sheng;//省
+            city=store.data.city;//市
+            area=store.data.area;//区
+            address=store.data.address;//详细地址
+            recommendID= store.data.businessId; //推荐人id
+            recommendName=store.data.busUserName; //推荐人用户名
+        }else {
+            sheng=user.data.sheng;//省
+            city=user.data.city;//市
+            area=user.data.area;//区
+            address=user.data.address;//详细地址
+            recommendID= user.data.recommend; //推荐人id
+             recommendName=user.data.recommendName; //推荐人用户名
+        }
         if (!TextUtils.isEmpty(sheng))
             addr+=sheng;
         if (!TextUtils.isEmpty(city))
@@ -121,13 +159,13 @@ public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCal
 
 
 
-        int recommendID= user.data.recommend; //推荐人id
+
         if (recommendID>0)
-            grzl_tjrID.setText(recommendID);
+            grzl_tjrID.setText(recommendID+"");
         else
             grzl_tjrID.setText("无");
 
-        String recommendName=user.data.recommendName; //推荐人用户名
+
         if (!TextUtils.isEmpty(recommendName))
             grzl_tjrName.setText(recommendName);
         else

@@ -54,8 +54,8 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void setting(){
-        if (mApp.getUser()==null)
-          openActivity(LoginActivity.class);
+        if (mApp.getUser() == null && mApp.getStore()== null)
+           openActivity(LoginActivity.class);
         else
             openActivity(GRZLActivity.class);
     }

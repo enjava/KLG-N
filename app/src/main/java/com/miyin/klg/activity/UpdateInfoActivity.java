@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
@@ -50,12 +51,15 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
     public void onRightClick() {
 
         String text = updateInfo_tv.getText().toString();
+        store=mApp.getStore();
+        user=mApp.getUser();
         if ("用户名".equals(title)) {
             if (TextUtils.isEmpty(text)) {
                 showToast("用户名不能为空");
             } else if (text.length() > 20) {
                 showToast("用户名过长无法保存");
             } else {
+
                 threadHttp(ConstantsURL.USER_MODIFYUSERNAME_URL,new String[]{"username"},new String[]{text});
             }
         }else if ("真实姓名".equals(title)){
@@ -64,6 +68,10 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
             } else if (text.length() > 50) {
                 showToast("姓名过长，无法保存");
             } else {
+//                if (store!=null)
+//
+//                threadHttp(ConstantsStoreURL.USER_MODIFYREALNAME_URL,new String[]{"realName"},new String[]{text});
+//                else
                 threadHttp(ConstantsURL.USER_MODIFYREALNAME_URL,new String[]{"realName"},new String[]{text});
             }
         }else if ("身份证号".equals(title)){
@@ -88,6 +96,8 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
             }
         }
     }
+    private User user;
+    private Store store;
 
     private void threadHttp(final String url, final String [] keys,  final String [] values){
         new Thread(){
@@ -97,9 +107,11 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
                 String postJson=  HttpUtil.post(url,keys,values,mCookie);
 
                 Message msg=Message.obtain();
+
                 if (postJson.indexOf("操作成功")!=-1){
                     if ("用户名".equals(title)) {
                         User user = mApp.getUser();
+
                         user.data.username = values[0];
                         mApp.setUser(user);
                         msg.what = SUCCESS;

@@ -5,6 +5,7 @@ public class ConstantsURL {
 	 * 基础URL
 	 */
 	public static final String USER_BASE_URl ="http://wpt.zmdb8.com/kuma/api/user/";
+
 	/**
 	 *1 用户注册接口
 	 */
