@@ -31,11 +31,13 @@
                 android:layout_centerInParent="true"
                 android:background="@mipmap/home_title" />
             <ImageView
+                android:id="@+id/iv_message"
                 android:layout_width="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 app:layout_marginRightPercent="3%"
                 android:layout_height="wrap_content"
+                android:onClick="imageViewOnClick"
                 android:background="@mipmap/message" />
         </android.support.percent.PercentRelativeLayout>
 
@@ -53,29 +55,31 @@
                 android:gravity="center">
 
                 <com.miyin.klg.customview.CircleImageview
-                    android:id="@+id/home_CircleImageview"
+
+                    android:id="@+id/iv_main_CircleImageview"
                     android:layout_width="120px"
                     android:layout_height="120px"
                     android:layout_centerHorizontal="true"
                     android:src="@mipmap/headimg" />
                 <TextView
-                    android:id="@+id/home_username"
+                    android:id="@+id/tv_main_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="马云"
+                    android:text="未知"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/text_16sp"
-                    android:layout_below="@+id/home_CircleImageview"
+                    android:layout_below="@+id/iv_main_CircleImageview"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
+                    android:id="@+id/tv_main_userid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/home_username"
+                    android:layout_below="@id/tv_main_username"
                     android:layout_centerHorizontal="true"
                     android:drawableLeft="@mipmap/id"
                     android:drawablePadding="3dp"
-                    android:text="666" />
+                    android:text="未登录" />
 
 
             </com.zhy.autolayout.AutoRelativeLayout>
@@ -104,7 +108,7 @@
                         android:gravity="center_vertical">
 
                         <TextView
-                            android:id="@+id/home_jrjlHint"
+                            android:id="@+id/tv_home_jrjlHint"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
@@ -116,11 +120,11 @@
                             android:drawableLeft="@mipmap/todaykubi"
                             android:drawablePadding="10px"
                             android:gravity="center"
-                            android:text="68.50"
+                            android:text="0.0"
                             android:textColor="@color/colorRed"
-                            android:layout_below="@+id/home_jrjlHint"
+                            android:layout_below="@+id/tv_home_jrjlHint"
                             android:layout_centerHorizontal="true"
-                            android:id="@+id/textView"/>
+                            android:id="@+id/tv_main_jrjl"/>
                     </com.zhy.autolayout.AutoRelativeLayout>
 
                     <View
@@ -147,15 +151,16 @@
                             android:layout_height="wrap_content"
                             android:textSize="@dimen/text_12sp"
                             android:text="普通酷币" />
-                        <TextView
-                            android:id="@+id/home_ptkb2"
-                            android:layout_alignLeft="@id/home_ptkb"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/colorRed"
-                            android:layout_marginLeft="5px"
-                            android:textSize="@dimen/text_12sp"
-                            android:text="82440.20" />
+
+                            <TextView
+                                android:id="@+id/tv_main_ptkb"
+                                android:layout_alignLeft="@id/home_ptkb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorRed"
+                                android:layout_marginLeft="5px"
+                                android:textSize="@dimen/text_12sp"
+                                android:text="0.00" />
                         </com.zhy.autolayout.AutoLinearLayout>
                         <com.zhy.autolayout.AutoLinearLayout
                             android:layout_width="wrap_content"
@@ -165,25 +170,24 @@
                             android:layout_below="@+id/auto_ll"
                             >
                         <TextView
-                            android:id="@+id/home_jlkb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/home_ptkb2"
+                            android:layout_below="@id/tv_main_ptkb"
                             android:layout_marginTop="6px"
                             android:textSize="@dimen/text_12sp"
                             android:text="奖励酷币" />
 
 
                         <TextView
-                            android:id="@+id/home_jlkb2"
-                            android:layout_below="@id/home_jlkb"
+                            android:id="@+id/tv_main_jlkb"
+                            android:layout_below="@id/tv_main_jlkb"
                             android:layout_marginTop="6px"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorRed"
                             android:textSize="@dimen/text_12sp"
                             android:layout_marginLeft="5px"
-                            android:text="220.00" />
+                            android:text="0.00" />
                         </com.zhy.autolayout.AutoLinearLayout>
 
                     </com.zhy.autolayout.AutoRelativeLayout>
@@ -199,7 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="40px"
+                        android:layout_marginLeft="20px"
                         android:text="心愿指数"
                         android:textColor="@color/colorRed"
                         android:textSize="@dimen/text_16sp"
@@ -207,23 +211,27 @@
                         android:src="@mipmap/xinyuanzhishu"/>
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="40px"
-                        android:drawableRight="@mipmap/todaykubi"
-                        android:drawablePadding="10px"
-                        android:textColor="@color/colorRed"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="120.33" />
-
-                    <TextView
+                        android:id="@+id/tv_main_xinyuan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="10px"
-                       />
+                        android:drawableLeft="@mipmap/todaykubi"
+                        android:drawablePadding="10px"
+                        android:textColor="@color/colorRed"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="0" />
+                    <TextView
+                        android:id="@+id/tv_main_riqi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/colorTextGary"
+                        android:paddingLeft="10px"
+                        android:text="(2017-02-06)"/>
+
+
                 </com.zhy.autolayout.AutoLinearLayout>
             </com.zhy.autolayout.AutoLinearLayout>
         </com.miyin.klg.view.PercentLinearLayout>
@@ -255,7 +263,7 @@
                 android:scaleType="fitXY"
                 android:src="@mipmap/banyuan"/>
             <TextView
-                android:id="@+id/tv_xinyuan"
+                android:id="@+id/tv_xinyuan3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="心愿盒子"
@@ -269,7 +277,7 @@
                 app:layout_widthPercent="12.5%"
                 android:layout_height="0dp"
                 app:layout_heightPercent="30%"
-                android:layout_below="@+id/tv_xinyuan"
+                android:layout_below="@+id/tv_xinyuan3"
                 app:layout_marginTopPercent="3%"
                 app:layout_marginLeftPercent="1%"
                 android:text="累计消费满五百元，系统将赠送您一个心愿盒子"

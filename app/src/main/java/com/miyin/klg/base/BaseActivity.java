@@ -23,11 +23,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     private boolean isExit = false; // 是否退出按钮的转态标记
     protected static Context mContext;
     protected  HttpCookie mCookie;
-
+    protected  CMApp mApp;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCookie=((CMApp)getApplication()).cookie;
+        mApp= ((CMApp)getApplication());
+        mCookie=mApp.cookie;
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);// 横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
         setContentView(setLayout());

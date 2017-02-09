@@ -40,13 +40,24 @@ public class HomeActivity extends BaseActivity {
     public void   imageViewOnClick(View v){
         switch (v.getId() ){
             case R.id.iv_login:
-                openActivity(LoginActivity.class);
 
+                setting();
                 break;
+            case R.id.iv_message:
+                openActivity(MessageActivity.class);
+                break;
+
 
             default:
                 break;
         }
+    }
+
+    private void setting(){
+        if (mApp.getUser()==null)
+          openActivity(LoginActivity.class);
+        else
+            openActivity(GRZLActivity.class);
     }
 
     @Override

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/kmkj_logo"
+        android:orientation="vertical">
+
+        <com.miyin.klg.customview.BlackTitleBar
+            android:id="@+id/message_titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.miyin.klg.customview.BlackTitleBar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/colorLineGary" />
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@mipmap/message01"/>
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_18sp"
+
+                    android:text="消息提示"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_12sp"
+                    android:paddingTop="10px"
+                    android:text="酷优生活热心为你服务"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@mipmap/message02"/>
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_18sp"
+                    android:text="回购消息"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_12sp"
+                    android:paddingTop="10px"
+                    android:text="回购消息最新进度情况"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140px"
+            android:layout_marginLeft="30px"
+            android:background="@drawable/background_line_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:src="@mipmap/message03"/>
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_18sp"
+                    android:text="平台通知"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_12sp"
+                    android:paddingTop="10px"
+                    android:text="系统通知公告"/>
+            </com.zhy.autolayout.AutoLinearLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoRelativeLayout>

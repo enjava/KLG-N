@@ -82,7 +82,28 @@ public class ConstantsURL {
 	 */
 	public static final String USER_MODIFYMOBILE_URL =USER_BASE_URl+"modifyMobile" ;
 	/**
-	 *20 获取用户钱包信息
+	 *20 查看终端里的商品
+	 */
+	public static final String USER_TERMINALID_URL =USER_BASE_URl+"terminalId" ;
+	/**
+	 *22 发送反馈消息
+	 */
+	public static final String USER_BACKMESSAGE_URL =USER_BASE_URl+"backMessage" ;
+	/**
+	 *23 获取用户钱包信息
 	 */
 	public static final String USER_GETWALLETINFO_URL =USER_BASE_URl+"getWalletInfo" ;
+	/**
+	 *24 获取消息列表
+	 */
+	public static final String USER_MESSAGELIST_URL =USER_BASE_URl+"messageList" ;
+	/**
+	 *25 获取订单列表
+	 */
+	public static final String USER_orderInfo_URL =USER_BASE_URl+"orderInfo" ;
+
+	/**
+	 *26 获取版本号
+	 */
+	public static final String USER_VERSION_URL =USER_BASE_URl+"getNewVarsion";
 }

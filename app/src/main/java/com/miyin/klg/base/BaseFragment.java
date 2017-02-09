@@ -1,5 +1,6 @@
 package com.miyin.klg.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import com.miyin.klg.app.CMApp;
+
 
 /**
  * Created by Administrator on 2016/11/7 0007.
@@ -23,8 +26,17 @@ public abstract class BaseFragment extends Fragment {
     private boolean isPrepared;
     private String TAG = "BaseFragment";
     private View view;
+    protected CMApp fragmentApp;
+    public Activity mActivity;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mActivity=getActivity();
+        fragmentApp= (CMApp) mActivity.getApplication();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         if (getContentViewLayoutID() != 0) {
             view = inflater.inflate(getContentViewLayoutID(), null);
             return view;
@@ -44,10 +56,13 @@ public abstract class BaseFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViewsAndEvents(view);
+        initData();
     }
 
-    protected abstract int getContentViewLayoutID();
+    protected void initData(){return;}
 
+    protected abstract int getContentViewLayoutID();
+    //初始化数据和事件
     protected abstract void initViewsAndEvents(View view);
 
     @Override

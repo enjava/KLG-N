@@ -1,7 +1,9 @@
 package com.miyin.klg.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.activity.GRZLActivity;
@@ -13,7 +15,10 @@ import com.miyin.klg.activity.XFJLActivity;
 import com.miyin.klg.activity.XYSActivity;
 import com.miyin.klg.activity.ZNSMZDActivity;
 import com.miyin.klg.base.BaseFragment;
+import com.miyin.klg.customview.CircleImageview;
 import com.miyin.klg.customview.CircleMenu;
+import com.miyin.klg.entity.User;
+import com.miyin.klg.util.CommonUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
@@ -22,6 +27,13 @@ import com.zhy.autolayout.AutoRelativeLayout;
 public class HomeFragment extends BaseFragment implements View.OnClickListener, CircleMenu.OnItemClickListener {
     private static final String ARG_PARAM1 = "param1";
     private CircleMenu circleMenu;
+    private TextView mTvjlkb;//奖励酷币
+    private TextView mTvptkb;//普通酷币
+    private TextView mTvjrjl;//今日激励
+    private TextView mTvxinyuan;//心愿指数
+    private TextView mTvuserid,mTvusername;//user id
+    private TextView mTvriqi;//日期
+    private CircleImageview mHeadImg;//用户头像
     private AutoRelativeLayout userInfoLayout;
     private String[] mItemTexts = new String[]{"我的心愿盒", "我的酷币",  "我要推荐", "消费记录", "平台数据", "智能售卖终端", "实体商家",
     };
@@ -55,6 +67,27 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         circleMenu.setIconSize(20);//图标大小，单位为dp
         circleMenu.setTextSize(16);
         circleMenu.setOnItemClickListener(this);
+        mTvjlkb= $(R.id.tv_main_jlkb);//奖励酷币
+        mTvptkb= $(R.id.tv_main_ptkb);//普通酷币
+        mTvjrjl= $(R.id.tv_main_jrjl);//今日激励
+        mTvxinyuan= $(R.id.tv_main_xinyuan);//心愿指数
+        mTvuserid= $(R.id.tv_main_userid);//user id
+        mTvusername= $(R.id.tv_main_username);//user id
+        mTvriqi= $(R.id.tv_main_riqi);//日期
+        mHeadImg= $(R.id.iv_main_CircleImageview);//user id
+    }
+
+    private User user;
+    @Override
+    protected void initData(){
+        mTvriqi.setText(CommonUtil.formatDate("(yyyy-MM-dd)"));
+        user= fragmentApp.getUser();
+        if (user!=null) {
+            mTvuserid.setText(user.data.userId+"");
+            if (!TextUtils.isEmpty(user.data.username)){
+                mTvusername.setText(user.data.username);
+            }
+        }
     }
 
     @Override

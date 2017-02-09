@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_grzl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -49,7 +49,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20px"
-                        android:background="@drawable/goin" />
+                         />
 
                     <com.miyin.klg.customview.CircleImageview
                         android:layout_width="96px"
@@ -57,7 +57,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20px"
                         android:layout_toLeftOf="@id/grzl_userIconIv"
-                        android:src="@color/colorRed" />
+                        android:src="@mipmap/headimg" />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
                 <com.zhy.autolayout.AutoRelativeLayout
@@ -109,6 +109,7 @@
                         android:background="@drawable/goin" />
 
                     <TextView
+                        android:id="@+id/grzl_userName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -148,6 +149,7 @@
                         android:layout_marginRight="20px"
                         android:layout_toLeftOf="@id/grzl_trueNameIv"
                         android:text="00000"
+                        android:id="@+id/grzl_zsxm"
                         android:textColor="@color/colorTextGary" />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -175,6 +177,7 @@
                         android:background="@drawable/goin" />
 
                     <TextView
+                        android:id="@+id/grzl_szd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -199,7 +202,7 @@
                         android:textColor="@color/colorTextGary" />
 
                     <ImageView
-                        android:id="@+id/grzl_IDcardIv"
+                        android:id="@+id/imageView_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -208,11 +211,12 @@
                         android:background="@drawable/goin" />
 
                     <TextView
+                        android:id="@+id/grzl_IDcardIv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20px"
-                        android:layout_toLeftOf="@id/grzl_IDcardIv"
+                        android:layout_toLeftOf="@id/imageView_id"
                         android:text="00000000000000000000000"
                         android:textColor="@color/colorTextGary" />
                 </com.zhy.autolayout.AutoRelativeLayout>
@@ -240,6 +244,7 @@
 
 
                     <TextView
+                        android:id="@+id/grzl_tjrName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -264,6 +269,7 @@
 
 
                     <TextView
+                        android:id="@+id/grzl_tjrID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"

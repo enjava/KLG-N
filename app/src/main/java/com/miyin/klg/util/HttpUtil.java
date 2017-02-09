@@ -17,6 +17,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -45,13 +46,37 @@ public class HttpUtil {
         return post(url, requestParams, null);
     }
 
+    public static String post(String url,String[] keys, String[] values) {
+        if (keys==null||keys.length!=values.length)
+            return "";
+        Map<String, String> requestParams=new HashMap<>();
+
+        for (int i=0 ;i<keys.length;i++) {
+            requestParams.put(keys[i],values[i]);
+        }
+
+        return post(url, requestParams, null);
+    }
+
+    public static String post(String url,String[] keys, String[] values,HttpCookie cookie) {
+        if (keys==null||keys.length!=values.length)
+            return "";
+        Map<String, String> requestParams=new HashMap<>();
+
+        for (int i=0 ;i<keys.length;i++) {
+            requestParams.put(keys[i],values[i]);
+        }
+
+        return post(url, requestParams, cookie);
+    }
+
     /**
      * @param url
      * @return
      */
-    public static String post(String url) {
-        return post(url, null, null);
-    }
+//    public static String post(String url) {
+//        return post(url, null, null);
+//    }
 
     /**
      * @param url
@@ -90,8 +115,7 @@ public class HttpUtil {
             // 设置通用的请求属性
             httpURLConnection.setRequestProperty("accept", "*/*");
             httpURLConnection.setRequestProperty("connection", "Keep-Alive");
-            httpURLConnection.setRequestProperty("Content-Length", String
-                    .valueOf(params.length()));
+            //httpURLConnection.setRequestProperty("Content-Length", String.valueOf(params.length()));
             // 发送POST请求必须设置如下两行
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);

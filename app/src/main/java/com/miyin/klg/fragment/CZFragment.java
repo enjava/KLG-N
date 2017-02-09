@@ -14,7 +14,7 @@ import com.miyin.klg.customview.BlackTitleBar;
 public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallback {
 
     private static final String ARG_PARAM1 = "param1";
-    private BlackTitleBar wdkb_titleBar;
+    //private BlackTitleBar wdkb_titleBar;
 
     public static CZFragment newInstance(String param1) {
         CZFragment fragment = new CZFragment();
@@ -31,9 +31,9 @@ public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallb
 
     @Override
     protected void initViewsAndEvents(View view) {
-        wdkb_titleBar = $(R.id.wdkb_titleBar);
-        wdkb_titleBar.setTitle("我的酷币");
-        wdkb_titleBar.setClickCallback(this);
+        //wdkb_titleBar = $(wdkb_titleBar);
+        //wdkb_titleBar.setTitle("我的酷币");
+       // wdkb_titleBar.setClickCallback(this);
         $(R.id.cz_layout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -3,6 +3,7 @@ package com.miyin.klg.app;
 import android.app.Application;
 import android.util.Log;
 
+import com.miyin.klg.entity.User;
 import com.miyin.klg.util.HttpUtil.HttpCookie;
 
 
@@ -13,6 +14,7 @@ import com.miyin.klg.util.HttpUtil.HttpCookie;
 public class CMApp extends Application {
    public static HttpCookie cookie;
    private static final String tag=CMApp.class.getSimpleName();
+   public User user;//用户
    @Override
    public void onCreate() {
       super.onCreate();
@@ -23,5 +25,13 @@ public class CMApp extends Application {
    public static void setCookie(HttpCookie cookie) {
       CMApp.cookie = cookie;
       Log.i(tag,CMApp.cookie.toString());
+   }
+
+   public User getUser() {
+      return user;
+   }
+
+   public void setUser(User user) {
+      this.user = user;
    }
 }

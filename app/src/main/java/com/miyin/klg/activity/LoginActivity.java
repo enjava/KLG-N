@@ -11,9 +11,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.entity.User;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
@@ -31,6 +33,7 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
     private static final int LOGIN_SUCCESS = 10;//登录成功
     private static final int LOGIN_ERROR = 11;//账号密码错误
     private static final int LOGIN_BAN = 12;//禁止登录
+    private static final int LOGIN_NOUSER = 13;//禁止登录
     private BlackTitleBar mTitleBar;
     private TextView login_forgetPassword, login_register, login_ok;
     private Spinner spinner;
@@ -135,12 +138,20 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                     msg.what = SEND_NET_ERROR;
                 } else if (postJson.indexOf("登录成功") != -1) {
                     saveCookie();
+                    Gson gson = new Gson();
+                    //String postUser = HttpUtil.post(ConstantsURL.USER_MYUSERINFO_URL, null, mCookie);
+
+                    User person = gson.fromJson(postJson,User.class);
+                    mApp.setUser(person);
+
                     msg.what = LOGIN_SUCCESS;
                 } else if (postJson.indexOf("用户名或密码错误") != -1) {
                     msg.what = LOGIN_ERROR;
                 } else if (postJson.indexOf("您被禁止登录") != -1) {
                     msg.what = LOGIN_BAN;//登录禁止
-                } else {
+                } else if (postJson.indexOf("用户不存在") != -1) {
+                    msg.what = LOGIN_NOUSER;
+                }else {
                     Log.i(tag, postJson);
                 }
                 mHandler.sendMessage(msg);
@@ -166,6 +177,9 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                 case LOGIN_BAN:
                     CommonUtil.showInfoDialog(LoginActivity.this,"您的账号已被管理停用，如有疑问，请联系管理员");
                 break;
+                case LOGIN_NOUSER:
+                    CommonUtil.showInfoDialog(LoginActivity.this,"用户不存在,请先注册");
+                    break;
                 default:
                     break;
             }
