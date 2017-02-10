@@ -44,7 +44,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorWhite"
                 android:gravity="center_vertical"
-                android:text="15888888888"
+                android:text="请输入手机号"
                 android:textSize="@dimen/text_16sp" />
         </com.zhy.autolayout.AutoLinearLayout>
 

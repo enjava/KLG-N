@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,6 +18,7 @@ import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.CountDownTimer;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.zxing.activity.CaptureActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -145,7 +147,7 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
         password=mEtPass.getText().toString();
         String code=mEtPhoneCode.getText().toString();
         if (TextUtils.isEmpty(phoneCode)) {
-            showToast("验证码不能为空");
+            showToast("验证码输入不正确");
         }else if (TextUtils.isEmpty(password)){
             showToast("密码不能为空");
         }
@@ -206,6 +208,20 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
         mTitleBar.setClickCallback(this);
         mTitleBar.setTitle("注册");
         mTitleBar.getRightView().setText("登录");
+       Intent intent=  getIntent();
+        if (intent!=null){
+            String extras = intent.getStringExtra("result");
+            if (!TextUtils.isEmpty(extras)&&extras.indexOf("CMZCuserCode=")!=-1){
+                mEtUserCode.setText(extras.replace("CMZCuserCode=",""));
+                mEtUserCode.setEnabled(false);
+            }
+        }
+    }
+
+    public void saoyisao(View view){
+        Bundle bundle = new Bundle();
+        bundle.putString("userCode", "userId");
+        openActivityForResult(CaptureActivity.class, bundle,1);
     }
 
     @Override
@@ -288,6 +304,24 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
     }
 
     private static boolean btnPressed = false;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (resultCode) {
+            case RESULT_OK:
+
+                    Bundle bundle = data.getExtras();
+                    String      result=   bundle.getString("result");
+                if(!TextUtils.isEmpty(result)&&result.indexOf("CMZCuserCode=")!=-1){
+                    result=result.replace("CMZCuserCode=","");
+                    mEtUserCode.setText(result);
+                }else
+                showToast("无法获取正确的推荐码");
+                break;
+
+        }
+    }
 
     class TimeCount extends CountDownTimer {
 

@@ -5,18 +5,13 @@
     tools:context="com.miyin.klg.fragment.FKFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="20px"
-        android:gravity="center"
-        android:text=""
-        android:textColor="@color/colorWhite" />
+
+
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_margin="20px"
+
         android:layout_height="match_parent">
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -24,35 +19,19 @@
             android:layout_width="match_parent"
             android:layout_height="300px"
             android:background="@color/colorWhite">
-
-            <com.zhy.autolayout.AutoRelativeLayout
+            <TextView
+                android:id="@+id/wdkb_titleBar"
                 android:layout_width="match_parent"
-                android:layout_height="160px">
+                android:layout_height="96px"
+                android:textSize="42px"
+                android:gravity="center"
+                android:text="付款">
 
-                <ImageView
-                    android:id="@+id/wytj_userIcon"
-                    android:layout_width="100px"
-                    android:layout_height="100px"
-                    android:layout_margin="20px"
-                    android:background="@mipmap/ic_launcher" />
-
-                <View
-                    android:id="@+id/wytj_userLine"
-                    android:layout_width="1px"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20px"
-                    android:layout_toRightOf="@id/wytj_userIcon"
-                    android:background="@color/colorLineGary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/wytj_userLine"
-                    android:gravity="center_vertical"
-                    android:text=""
-                    android:textSize="@dimen/text_16sp" />
-            </com.zhy.autolayout.AutoRelativeLayout>
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/wdkb_titleBar"/>
 
         </com.zhy.autolayout.AutoRelativeLayout>
 

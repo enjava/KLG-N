@@ -57,13 +57,15 @@ public class HomeActivity extends BaseActivity {
         if (mApp.getUser() == null && mApp.getStore()== null)
            openActivity(LoginActivity.class);
         else
-            openActivity(GRZLActivity.class);
+            openActivity(SettingActivity.class);
     }
 
     @Override
     public void initDate() {
         mainNavigateTabBar.setDefaultLayout(R.layout.comui_tab_view);
         int type = getIntent().getExtras().getInt("type");
+        if (mApp.getStore()!=null)
+            type=-1;
         mainNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.drawable.home, R.drawable.home_select, "首页"));
         mainNavigateTabBar.addTab(type == 1 ? CZFragment.class : SJGLFragment.class,
                 new MainNavigateTabBar.TabParam(type == 1 ? R.drawable.cz : R.drawable.sjgl,

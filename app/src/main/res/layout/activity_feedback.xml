@@ -22,6 +22,7 @@
         android:text="感谢您对我们的产品提出宝贵的意见" />
 
     <EditText
+        android:id="@+id/fee_lxfs"
         android:layout_width="match_parent"
         android:layout_height="96px"
         android:background="@drawable/background_line_bottom"
@@ -30,6 +31,7 @@
         android:textSize="@dimen/text_14sp" />
 
     <EditText
+        android:id="@+id/fee_idea"
         android:layout_width="match_parent"
         android:layout_height="320px"
         android:background="@color/colorWhite"
@@ -39,12 +41,15 @@
         android:paddingTop="20px"
         android:textSize="@dimen/text_14sp" />
 
-    <TextView
+    <Button
+        android:id="@+id/setting_exitTv"
         android:layout_width="match_parent"
         android:layout_height="96px"
+        android:layout_alignParentBottom="true"
         android:layout_margin="40px"
-        android:background="@drawable/red_shape"
+        android:background="@drawable/me_ok_selector"
+        android:onClick="onClick"
         android:gravity="center"
         android:text="提交"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/txt_btn_selector" />
 </com.zhy.autolayout.AutoLinearLayout>

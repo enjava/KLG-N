@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_update_password"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,62 +31,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="手机号码: "
+                android:text="原始密码:"
                 android:textSize="@dimen/text_16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorWhite"
-                android:gravity="center_vertical"
-                android:hint="请输入手机号"
-                android:textSize="@dimen/text_16sp" />
-        </com.zhy.autolayout.AutoLinearLayout>
-
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="98px"
-            android:layout_marginLeft="20px"
-            android:background="@drawable/background_line_bottom">
-
-            <TextView
-                android:id="@+id/up_codeHint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="短信验证码:"
-                android:textSize="@dimen/text_16sp" />
-
-            <TextView
-                android:id="@+id/up_codeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:paddingLeft="40px"
-                android:paddingRight="40px"
-                android:text="获取验证码"
-                android:textColor="@color/colorRed"
-                android:textSize="@dimen/text_16sp" />
-
-            <TextView
-                android:id="@+id/up_codeLine"
-                android:layout_width="1px"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="20px"
-                android:layout_marginTop="20px"
-                android:layout_toLeftOf="@id/up_codeBtn"
-                android:background="@color/colorLineGary" />
 
             <EditText
+                android:id="@+id/updatepass_et_oldpass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toLeftOf="@id/up_codeLine"
-                android:layout_toRightOf="@id/up_codeHint"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
                 android:background="@color/colorWhite"
-                android:hint="请输入验证码"
+                android:hint="旧密码"
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:maxLines="1"
+                android:textColorHint="@color/colorTextGary"
                 android:textSize="@dimen/text_16sp" />
-        </com.zhy.autolayout.AutoRelativeLayout>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+
 
         <com.zhy.autolayout.AutoLinearLayout
             android:layout_width="match_parent"
@@ -100,14 +63,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="新二级密码:"
+                android:text="新  密  码:"
                 android:textSize="@dimen/text_16sp" />
 
             <EditText
+                android:id="@+id/updatepass_et_newpass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
                 android:background="@color/colorWhite"
-                android:hint="请输入新二级密码"
+                android:hint="请输入新密码"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorTextGary"
                 android:textSize="@dimen/text_16sp" />
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -122,26 +89,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="确认二级密码:"
+                android:text="确认密码:"
                 android:textSize="@dimen/text_16sp" />
 
             <EditText
+                android:id="@+id/updatepass_et_newpassconfirm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10px"
                 android:background="@color/colorWhite"
-                android:hint="请再次输入二级密码"
+                android:hint="请再次输入密码"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorTextGary"
                 android:textSize="@dimen/text_16sp" />
         </com.zhy.autolayout.AutoLinearLayout>
 
 
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <TextView
+    <Button
+        android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="98px"
         android:layout_margin="40px"
-        android:background="@drawable/red_shape"
+        android:background="@drawable/me_ok_selector"
         android:gravity="center"
+        android:onClick="btnOnClick"
         android:text="确认"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/txt_btn_selector" />
 </com.zhy.autolayout.AutoLinearLayout>

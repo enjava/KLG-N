@@ -21,7 +21,7 @@ public class ConstantsURL {
 	/**
 	 *4 校验验证码
 	 */
-	public static final String USER_checkExamine_URL =USER_BASE_URl+"checkExamine";
+	public static final String USER_CHECKEXAMINE_URL =USER_BASE_URl+"checkExamine";
 	/**
 	 *5 判断手机号是否存在
 	 */

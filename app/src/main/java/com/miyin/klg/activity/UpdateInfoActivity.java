@@ -46,10 +46,8 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
     public void onBackClick() {
         finish();
     }
-
     @Override
     public void onRightClick() {
-
         String text = updateInfo_tv.getText().toString();
         store=mApp.getStore();
         user=mApp.getUser();
@@ -68,10 +66,7 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
             } else if (text.length() > 50) {
                 showToast("姓名过长，无法保存");
             } else {
-//                if (store!=null)
-//
-//                threadHttp(ConstantsStoreURL.USER_MODIFYREALNAME_URL,new String[]{"realName"},new String[]{text});
-//                else
+
                 threadHttp(ConstantsURL.USER_MODIFYREALNAME_URL,new String[]{"realName"},new String[]{text});
             }
         }else if ("身份证号".equals(title)){
@@ -103,7 +98,6 @@ public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.Cl
         new Thread(){
             @Override
             public void run() {
-               // String postJson=  HttpUtil.post(ConstantsURL.USER_MODIFYUSERNAME_URL,new String[]{"username"},new String[]{str},mCookie);
                 String postJson=  HttpUtil.post(url,keys,values,mCookie);
 
                 Message msg=Message.obtain();

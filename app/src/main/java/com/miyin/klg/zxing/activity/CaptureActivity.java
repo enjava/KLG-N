@@ -37,6 +37,7 @@ import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.miyin.klg.R;
+import com.miyin.klg.activity.RegisterActivity;
 import com.miyin.klg.zxing.camera.CameraManager;
 import com.miyin.klg.zxing.decoding.CaptureActivityHandler;
 import com.miyin.klg.zxing.decoding.InactivityTimer;
@@ -70,7 +71,7 @@ public class CaptureActivity extends Activity implements Callback {
 	private Vector<BarcodeFormat> decodeFormats;
 	private InactivityTimer inactivityTimer;
 	private static final float BEEP_VOLUME = 0.10f;
-
+	private String userCode;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -160,10 +161,17 @@ public class CaptureActivity extends Activity implements Callback {
 		playBeepSoundAndVibrate();
 		String resultString = result.getText();
 		// FIXME
-		if (resultString.equals("")) {
+		if (TextUtils.isEmpty(resultString)) {
 			Toast.makeText(CaptureActivity.this, "扫描失败!", Toast.LENGTH_SHORT)
 					.show();
-		} else {
+		}
+		else if(resultString.indexOf("CMZCuserCode=")!=-1){
+
+			Intent resultIntent = new Intent(this, RegisterActivity.class);
+			resultIntent.putExtra("result", resultString);
+			startActivity(resultIntent);
+		}
+		else {
 
 			Intent resultIntent = new Intent();
 			Bundle bundle = new Bundle();

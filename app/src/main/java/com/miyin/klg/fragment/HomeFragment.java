@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.activity.GRZLActivity;
+import com.miyin.klg.activity.LoginActivity;
 import com.miyin.klg.activity.PTSJActivity;
 import com.miyin.klg.activity.STSJActivity;
 import com.miyin.klg.activity.WDKBActivity;
@@ -36,7 +37,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     private TextView mTvriqi;//日期
     private CircleImageview mHeadImg;//用户头像
     private AutoRelativeLayout userInfoLayout;
-    private String[] mItemTexts = new String[]{"我的心愿盒", "我的酷币",  "我要推荐", "消费记录", "平台数据", "智能售卖终端", "实体商家",
+    private String[] mItemTexts = new String[]{" 我的心愿盒 ", "    我的酷币  ",  "    我要推荐  ", "    消费记录  ", "    平台数据  ", "智能售卖终端", "    实体商家",
     };
     private int[] mItemImgs = new int[]{R.mipmap.xyh, R.mipmap.mykubi,
             R.drawable.wydz, R.drawable.xf, R.drawable.ptsj, R.drawable.hg, R.drawable.stsj
@@ -62,7 +63,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         circleMenu = $(R.id.circle_menu_items);
         circleMenu.setAngle(180f);
         userInfoLayout = $(R.id.userInfoLayout);
-        userInfoLayout.setOnClickListener(this);
+
         circleMenu.setRotating(true);//是否启用旋转
         circleMenu.setItems(mItemTexts, mItemImgs);//显示文字及图标
         circleMenu.setIconSize(20);//图标大小，单位为dp
@@ -76,6 +77,19 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         mTvusername= $(R.id.tv_main_username);//user id
         mTvriqi= $(R.id.tv_main_riqi);//日期
         mHeadImg= $(R.id.iv_main_CircleImageview);//user id
+
+        userInfoLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                    if (fragmentApp.getUser() == null && fragmentApp.getStore()== null)
+                        openActivity(LoginActivity.class);
+                    else
+                        openActivity(GRZLActivity.class);
+
+            }
+        });
     }
 
     private User user;

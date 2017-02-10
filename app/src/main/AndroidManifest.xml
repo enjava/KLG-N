@@ -56,7 +56,9 @@
         <activity android:name=".activity.ShopDetailsActivity" />
         <activity android:name=".activity.ShopItemDetailsActivity" />
         <activity android:name=".activity.MessageActivity" />
+        <activity android:name=".activity.UpdatePassActivity"/>
         <activity android:name=".activity.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

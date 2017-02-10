@@ -15,6 +15,7 @@
     </com.miyin.klg.customview.BlackTitleBar>
 
     <TextView
+        android:id="@+id/wytj_tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -52,14 +53,24 @@
                     android:layout_margin="20px"
                     android:layout_toRightOf="@id/wytj_userIcon"
                     android:background="@color/colorLineGary" />
-
+                <TextView
+                    android:id="@+id/wytj_tv_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="40px"
+                    android:layout_toRightOf="@id/wytj_userLine"
+                    android:gravity="center_vertical"
+                    android:text="我是miyin周"
+                    android:textSize="@dimen/text_16sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/wytj_userLine"
+                    android:layout_below="@+id/wytj_tv_name2"
+                    android:paddingTop="10px"
                     android:gravity="center_vertical"
-                    android:text="我是miyin周\n我为酷么代言"
+                    android:text="我为酷友代言"
                     android:textSize="@dimen/text_16sp" />
             </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -80,8 +91,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40px"
                 android:drawablePadding="20px"
-                android:drawableTop="@drawable/wytjtj"
-                android:text="长按图片，识别图中的二维码"
+                android:text=""
                 android:textColor="@color/colorWhite" />
 
             <TextView
@@ -91,15 +101,16 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="20px"
                 android:gravity="center"
-                android:text="全民化，痕迹化，系统化，持续化\n \n酷么会员系统"
+                android:text="全民化，痕迹化，系统化，持续化\n \n酷优生活会员系统"
                 android:textColor="@color/colorWhite" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/wdtj_iv"
+            android:layout_width="400px"
+            android:layout_height="400px"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="200px"
-            android:background="@drawable/wytjcode" />
+            />
     </com.zhy.autolayout.AutoRelativeLayout>
 </com.zhy.autolayout.AutoLinearLayout>

@@ -3,11 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.miyin.klg.fragment.SJGLFragment">
-
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120px"
+            android:gravity="center"
+            android:text="商家管理"
+            android:paddingTop="10px"
+            android:textSize="@dimen/text_18sp"
+            android:background="@drawable/background_line_bottom"/>
+
 
         <TextView
             android:id="@+id/sjgl_one"

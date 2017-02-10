@@ -34,18 +34,24 @@
             android:background="@drawable/background_line_bottom">
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="用户名" />
+                android:text="用户名"
+                android:id="@+id/textView"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="11dp"
+                android:text="测试"
+                android:layout_alignBaseline="@+id/textView"
+                android:layout_alignBottom="@+id/textView"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="20px"
-                android:text="测试" />
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="11dp"
+                android:id="@+id/asa_tv_username"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -61,6 +67,7 @@
                 android:text="用户ID" />
 
             <TextView
+                android:id="@+id/asa_tv_userid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -91,19 +98,23 @@
             android:layout_marginLeft="40px"
             android:background="@drawable/background_line_bottom">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="登录密码" />
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="20px"
-                android:background="@drawable/goin" />
+                android:background="@drawable/goin"
+                android:id="@+id/imageView2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录密码"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView2"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -171,7 +182,8 @@
                 android:layout_marginRight="20px"
                 android:drawablePadding="20px"
                 android:drawableRight="@drawable/goin"
-                android:text="未绑定" />
+                android:textColor="@color/colorRed"
+                android:text="已绑定" />
         </com.zhy.autolayout.AutoRelativeLayout>
 
     </com.zhy.autolayout.AutoLinearLayout>

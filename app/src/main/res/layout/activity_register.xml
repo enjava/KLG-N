@@ -57,9 +57,11 @@
                 android:textSize="@dimen/text_16sp" />
 
             <ImageView
+                android:id="@+id/saoyisao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:onClick="saoyisao"
                 android:layout_marginRight="40px"
                 android:background="@drawable/register_idcode" />
         </com.zhy.autolayout.AutoLinearLayout>
