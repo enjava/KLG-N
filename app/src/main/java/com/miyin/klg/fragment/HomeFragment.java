@@ -100,12 +100,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         user= fragmentApp.getUser();
         store= fragmentApp.getStore();
         if (user!=null) {
-            mTvuserid.setText(user.data.userId+"");
+            mTvuserid.setText(user.data.userCode+"");
             if (!TextUtils.isEmpty(user.data.username)){
                 mTvusername.setText(user.data.username);
             }
         }else if (store!=null){
-            mTvuserid.setText(store.data.userId+"");
+            mTvuserid.setText(store.data.userCode+"");
             if (!TextUtils.isEmpty(store.data.realName)){
                 mTvusername.setText(store.data.realName);
             }

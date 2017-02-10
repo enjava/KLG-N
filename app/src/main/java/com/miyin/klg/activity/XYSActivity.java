@@ -16,12 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 幸运树
+ * 心愿指数
  */
 public class XYSActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
-    private List<String> mDatas = Arrays.asList("24系幸运树记录", "12系幸运树记录");
+    private List<String> mDatas = Arrays.asList("24系心愿盒子记录", "12系心愿盒子记录");
     private List<Fragment> list = new ArrayList<>();
     private BlackTitleBar blackTitleBar;
 
