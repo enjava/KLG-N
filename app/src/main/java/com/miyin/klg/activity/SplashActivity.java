@@ -265,9 +265,8 @@ public class SplashActivity extends BaseActivity {
 		 * intent.setType("application/vnd.android.package-archive");
 		 */
         intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-        // startActivity(intent);
-        startActivityForResult(intent, 0);
-
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
        // ACTION_PACKAGE_REPLACED(ACTION_PACKAGE_REPLACED);
     }
 
@@ -302,8 +301,7 @@ public class SplashActivity extends BaseActivity {
                 // 发送请求获取数据,参数则为请求json的链接地址
                 Message msg = Message.obtain();
                 try {
-                        String json=  HttpUtil.post(ConstantsURL.USER_VERSION_URL,new String[]{"isAndroid"},new String[]{"1"});
-                        //String json=  HttpUtil.post("http://192.168.1.189/version.json",new String[]{"isAndroid"},new String[]{"1"});
+                       String json=  HttpUtil.post(ConstantsURL.USER_VERSION_URL,new String[]{"isAndroid"},new String[]{"1"});
                         if (!TextUtils.isEmpty(json)&&json.indexOf("status")!=-1) {
                             Log.i(TAG, json);
                             try {
@@ -383,7 +381,6 @@ public class SplashActivity extends BaseActivity {
         }
         return null;
     }
-
 
 
 }

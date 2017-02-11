@@ -27,6 +27,7 @@ public class HomeActivity extends BaseActivity {
     public int setLayout() {
         StatusBarUtil.transparencyBar(this);
         StatusBarUtil.StatusBarLightMode(this);
+
         return R.layout.activity_home;
     }
 
