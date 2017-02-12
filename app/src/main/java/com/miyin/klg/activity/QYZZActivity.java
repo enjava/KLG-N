@@ -13,13 +13,13 @@ import com.miyin.klg.view.RedTitleBar;
 public class QYZZActivity extends BaseActivity implements RedTitleBar.ClickCallback{
     private RedTitleBar titleBar;
     @Override
-    public int setLayout() {
-        return R.layout.activity_grzz;
+        public int setLayout() {
+            return R.layout.activity_qyzz;
     }
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        titleBar= $(R.id.grzz_TitleBar);
+        titleBar= $(R.id.qyzz_TitleBar);
         titleBar.setClickCallback(this);
 
     }

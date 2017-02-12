@@ -41,6 +41,6 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     }
 
     public void nextBtn(View view){
-        openActivity(GRZZActivity.class);
+        openActivity(QYZZActivity.class);
     }
 }
