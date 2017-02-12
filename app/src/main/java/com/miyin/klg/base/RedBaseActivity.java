@@ -3,7 +3,6 @@ package com.miyin.klg.base;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -34,7 +33,6 @@ public abstract class RedBaseActivity extends AppCompatActivity {
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);// 横屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
         StatusBarUtil.transparencyBar(this);
-        StatusBarUtil.setStatusBarColor(this, Color.WHITE);
 
         setContentView(setLayout());
         initView(savedInstanceState);

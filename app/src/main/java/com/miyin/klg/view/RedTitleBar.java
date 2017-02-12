@@ -36,7 +36,7 @@ public class RedTitleBar extends RelativeLayout implements OnClickListener {
     public RedTitleBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         View view = LayoutInflater.from(context).inflate(
-                R.layout.view_titlebar, this, true);
+                R.layout.view_redtitlebar, this, true);
         leftView = (ImageView) view.findViewById(R.id.head_left);
         titleView = (TextView) view.findViewById(R.id.head_title);
         rightView = (TextView) view.findViewById(R.id.head_right);

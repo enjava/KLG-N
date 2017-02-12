@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miyin.klg.view.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="@color/colorBackgroundGary"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.miyin.klg.view.RedTitleBar
+        android:id="@+id/buscheckin_TitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.miyin.klg.view.RedTitleBar>
+
+    <com.miyin.klg.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="8%"
+        android:background="@drawable/background_line_bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:drawableLeft="@drawable/shape_point_red"
+            android:text="您需要完成以下三部操作"
+            android:drawablePadding="10dp"
+            android:textSize="14dp" />
+
+
+    </com.miyin.klg.view.PercentLinearLayout >
+<android.support.percent.PercentRelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+    <com.miyin.klg.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="16%"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_line_bottom"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_yuan_red"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="1"
+                android:textColor="@color/colorRed" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12dp"
+                android:layout_marginTop="10dp"
+                android:text="店铺信息"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_yuan_red"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="2"
+                android:textColor="@color/colorRed" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:text="资质信息"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_yuan_red"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="3"
+                android:textColor="@color/colorRed" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12dp"
+                android:text="银行账户信息"
+                 />
+        </LinearLayout>
+
+    </com.miyin.klg.view.PercentLinearLayout>
+    <com.miyin.klg.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="12%">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_widthPercent="20%"
+            app:layout_marginLeftPercent="24%"
+            android:layout_marginTop="34dp"
+            android:background="@color/colorRed"
+           />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_widthPercent="20%"
+            app:layout_marginLeftPercent="12%"
+            android:layout_marginTop="34dp"
+            android:background="@color/colorRed"
+            />
+    </com.miyin.klg.view.PercentLinearLayout>
+
+</android.support.percent.PercentRelativeLayout>
+    <com.miyin.klg.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_heightPercent="8%"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_line_bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:drawableLeft="@drawable/shape_point_red"
+            android:text="您需要准备以下材料"
+            android:drawablePadding="10dp"
+            android:textSize="14dp" />
+
+
+    </com.miyin.klg.view.PercentLinearLayout >
+    <com.miyin.klg.customview.ViewPagerIndicator
+        android:id="@+id/buscheckin_ViewPagerIndicator"
+        android:layout_width="match_parent"
+
+        android:layout_height="96px"
+
+        android:background="@android:color/white"
+        app:item_count="2"></com.miyin.klg.customview.ViewPagerIndicator>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/buscheckin_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.view.ViewPager>
+
+</com.miyin.klg.view.PercentLinearLayout>

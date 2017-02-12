@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class * extends Android.app.Activity
+-keep class * extends android.support.v4.app.Fragment
+-keep class * extends com.miyin.klg.base.BaseActivity
+-keep class * extends com.miyin.klg.base.BaseFragment
+

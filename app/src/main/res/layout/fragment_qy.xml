@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+    >
+
+    <com.miyin.klg.view.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+       >
+
+        <com.miyin.klg.view.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackgroundGary">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#FFF"
+                    android:gravity="center"
+                    android:text="网站截图"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp"
+                    android:src="@mipmap/menlan"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="1 门脸图"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#FFF"
+                    android:src="@mipmap/handidcard"
+                   />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="2 手持身份证"/>
+            </RelativeLayout>
+        </com.miyin.klg.view.PercentLinearLayout>
+
+        <com.miyin.klg.view.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackgroundGary">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/yingyezhizhao"
+                    android:layout_margin="10dp"
+                    android:background="#FFF"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="3 营业执照"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:background="#A0522D"
+                    android:gravity="center"
+                    android:text="承诺书拍照"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp"/>
+            </RelativeLayout>
+        </com.miyin.klg.view.PercentLinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:checked="true"
+                android:text="我已阅读并同意"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《酷优生活商家入驻协议》"
+                android:textColor="#4876FF"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_qy"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/me_ok_selector"
+            android:gravity="center"
+            android:text="开始填写"
+            android:textColor="@color/txt_btn_selector" />
+    </com.miyin.klg.view.PercentLinearLayout>
+
+
+</android.support.percent.PercentFrameLayout>

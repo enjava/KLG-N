@@ -58,7 +58,11 @@
         <activity android:name=".activity.ShopItemDetailsActivity" />
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.UpdatePassActivity"/>
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.GRDPActivity"/>
+        <activity android:name=".activity.GRZZActivity"/>
+        <activity android:name=".activity.QYDPActivity"/>
+        <activity android:name=".activity.QYZZActivity"/>
+        <activity android:name=".activity.BusCheckInActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
