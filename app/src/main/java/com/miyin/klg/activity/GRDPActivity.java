@@ -48,6 +48,10 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     @Override
     public int setLayout() {
         storeConfig=new StoreConfig();
+        storeConfig.setWZ(false);
+        storeConfig.setHandID(false);
+        storeConfig.setLicence(false);
+        storeConfig.setChengnuo(false);
         return R.layout.activity_grdp;
     }
 
@@ -57,7 +61,6 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
         selectarea = $(R.id.grdp_selectarea);
         address = $(R.id.grdp_tv_address);
         grdp_wangzhanjietu= $(R.id.grdp_wangzhanjietu);
-
 
         gedp_et_name= $(R.id.gedp_et_name);//店铺名称
         gedp_et_phone= $(R.id.gedp_et_phone);//店铺电话
@@ -93,15 +96,34 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
        String dplx= grdp_hangye.getText().toString();
        String dptime= grdp_yingyeTime.getText().toString();
        String dpjs= grdp_dpjs.getText().toString();
-        if (TextUtils.isEmpty(dpName)||TextUtils.isEmpty(dpphone)||TextUtils.isEmpty(dpwz)||
-        TextUtils.isEmpty(dplx)||TextUtils.isEmpty(dptime)||TextUtils.isEmpty(dpjs))
-            showToast("请先完成上面的所有要填写的项目");
+        if (TextUtils.isEmpty(dpName))
+            showToast("店铺名称为必填");
+        else if (dpName.length()<3)
+            showToast("店铺名称输入格式不正确,请认真填写");
+        else if (TextUtils.isEmpty(dpphone))
+            showToast("店铺电话号码必填,不能为空");
+        else if (dpphone.length()<11)
+            showToast("店铺电话号码不正确,请认真填写");
+        else if (TextUtils.isEmpty(dpwz))
+            showToast("网址不能为空");
+        else if (dpwz.length()<4)
+            showToast("网址输入不正确,请认真填写");
+        else if (TextUtils.isEmpty(dplx))
+            showToast("所属行业必填,不能为空");
+        else if (dplx.length()<2)
+            showToast("所属行业不正确,请认真填写");
+        else if (TextUtils.isEmpty(dptime))
+            showToast("营业时间必填,不能为空");
+        else if (TextUtils.isEmpty(dpjs))
+            showToast("店铺介绍不能为空");
+        else if (dpjs.length()<7)
+            showToast("店铺介绍不能少于7个字");
         else if (TextUtils.isEmpty(sheng))
             showToast("请选择所在区域");
         else if (!storeConfig.isWZ())
             showToast("请上传网站截图");
         else {
-
+            isupload=false;
             storeConfig.setType(1);
             storeConfig.setStoreName(dpName);//店铺名称
             storeConfig.setStorePhone(dpphone);//店铺电话
@@ -128,14 +150,14 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                 break;
             case R.id.grdp_wangzhanjietu:
                 if (!isupload){
-                    isupload=true;
+
                 Intent intent = new Intent();
                 /* 开启Pictures画面Type设定为image */
                 intent.setType("image/*");
                 /* 使用Intent.ACTION_GET_CONTENT这个Action */
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 /* 取得相片后返回本画面 */
-                startActivityForResult(intent, 1);
+                startActivityForResult(intent, 11);
             }
                 break;
             default:
@@ -167,7 +189,9 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                         address.setText(sheng + city + area);
                     }
                 }
-                else {
+                else if (requestCode==11){
+                    isupload=true;
+
                     Uri uri = data.getData();
                     Log.e("uri", uri.toString());
 
@@ -182,9 +206,6 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                     ContentResolver cr = this.getContentResolver();
                     try {
                          bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri));
-//                        ImageView imageView = (ImageView) findViewById(R.id.iv01);
-//                /* 将Bitmap设定到ImageView */
-//                        imageView.setImageBitmap(bitmap);
                      InputStream inputStream= CommonUtil.Bitmap2InputStream(bitmap,60);
                         grdp_wangzhanjietu.setText("图片上传中...");
                         upFileThread(ConstantsStoreURL.STORE_UPSTOREPHOTO_URL,"storePaperPic",inputStream);

@@ -64,15 +64,25 @@ public class GRZZActivity extends BaseActivity implements RedTitleBar.ClickCallb
         String idNum= gedp_et_idNum.getText().toString();
         String phone= gedp_phone.getText().toString();
 
-        if (TextUtils.isEmpty(realName)||TextUtils.isEmpty(idNum)||TextUtils.isEmpty(phone) )
-            showToast("您还没有完成上面的所有要填写的项目,无法提交");
-        else if (IdcardValidator.isValidate18Idcard(idNum))
+        if (TextUtils.isEmpty(realName))
+            showToast("姓名不能为空");
+        else if (realName.length()<2)
+            showToast("姓名不正确");
+        else if (TextUtils.isEmpty(idNum))
+            showToast("身份证号必填,请认真填写");
+        else if (!IdcardValidator.isValidate18Idcard(idNum))
             showToast("身份证号不正确,请检查,无法提交");
+        else if (TextUtils.isEmpty(phone))
+            showToast("联系电话号必填不能为空,请认真填写");
+        else if (phone.length()<11)
+            showToast("联系电话号码输入不正确,请认真填写");
         else if (!storeConfig.isHandID())
             showToast("还未上传手持身份证照,无法提交");
-        else if (!storeConfig.isChengnuo())
+        else if (!storeConfig.isChengnuo()) {
             showToast("还未上传商家承诺书,无法提交");
+        }
         else {
+
             storeConfig.setRealName(realName);
             storeConfig.setUserCard(idNum);
             storeConfig.setPhone(phone);
@@ -137,7 +147,6 @@ public class GRZZActivity extends BaseActivity implements RedTitleBar.ClickCallb
         switch (v.getId()) {
             case R.id.grzz_handIdCard:
                 if (!isupload) {
-                    isupload = true;
                     Intent intent = new Intent();
                 /* 开启Pictures画面Type设定为image */
                     intent.setType("image/*");
@@ -146,9 +155,9 @@ public class GRZZActivity extends BaseActivity implements RedTitleBar.ClickCallb
                 /* 取得相片后返回本画面 */
                     startActivityForResult(intent, 11);
                 }
+                break;
             case R.id.grzz_chengnuo:
                 if (!isupload) {
-                    isupload = true;
                     Intent intent = new Intent();
                 /* 开启Pictures画面Type设定为image */
                     intent.setType("image/*");
@@ -173,6 +182,7 @@ public class GRZZActivity extends BaseActivity implements RedTitleBar.ClickCallb
             case RESULT_OK:
 
                 if (requestCode == 11 || requestCode == 10) {
+                    isupload=true;
                     Uri uri = data.getData();
                     Log.e("uri", uri.toString());
 

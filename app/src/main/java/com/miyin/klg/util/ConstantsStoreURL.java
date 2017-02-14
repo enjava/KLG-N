@@ -44,11 +44,11 @@ public class ConstantsStoreURL {
      *8上传手持身份证照片 storeCardPic	file
      */
     public static final String STORE_MODIFYSTORECARDPIC_URL = STORE_BASEA_URL+"modifyStoreCardPic";
-
-    /**
-     *9 身份证照片 cardPic	file
-     */
-    public static final String STORE_MODIFYCARDPIC_URL = STORE_BASEA_URL+"modifyCardPic";
+//
+//    /**
+//     *9 身份证照片 cardPic	file
+//     */
+//    public static final String STORE_MODIFYCARDPIC_URL = STORE_BASEA_URL+"modifyCardPic";
     /**
      *10 营业执照 licenceImg	file
      */

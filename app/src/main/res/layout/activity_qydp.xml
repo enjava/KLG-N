@@ -48,7 +48,7 @@
                     android:text="店铺名称:"
                     android:textSize="12dp" />
                 <EditText
-                    android:id="@+id/gedp_et_name"
+                    android:id="@+id/qydp_et_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -74,7 +74,7 @@
                     android:text="店铺电话:"
                     android:textSize="12dp" />
                 <EditText
-                    android:id="@+id/gedp_et_phone"
+                    android:id="@+id/qydp_et_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -82,6 +82,7 @@
                     android:background="@color/colorWhite"
                     android:gravity="center_vertical|left"
                     android:hint="请输入店铺电话号码"
+                    android:inputType="phone"
                     android:maxLength="50"
                     android:maxLines="1"
                     android:textColorHint="@color/colorTextGary"
@@ -127,7 +128,7 @@
                     android:text="店铺地址:"
                     android:textSize="12dp" />
                 <EditText
-                    android:id="@+id/gedp_address"
+                    android:id="@+id/qydp_address"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"

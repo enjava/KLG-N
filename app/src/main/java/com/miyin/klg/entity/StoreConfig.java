@@ -26,10 +26,10 @@ public class StoreConfig implements Serializable {
     private String realName;//是	负责人姓名
     private String userCard;//是	负责人身份证号
     private String phone;//是	负责人联系电话
-    private boolean isWZ=false;//网站截图 企业为 门店图
-    private boolean isHandID=false;//手持身份证
-    private boolean isChengnuo=false;//承诺书
-    private boolean isLicence=false;//营业执照
+    private boolean isWZ;//网站截图 企业为 门店图
+    private boolean isHandID;//手持身份证
+    private boolean isChengnuo;//承诺书
+    private boolean isLicence;//营业执照
 
     public int getType() {
         return type;

@@ -108,7 +108,7 @@
                     android:text="姓      名:"
                     android:textSize="@dimen/text_12sp" />
                 <EditText
-                    android:id="@+id/gedp_et_name"
+                    android:id="@+id/qyzz_et_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -134,7 +134,7 @@
                     android:text="身份证号:"
                     android:textSize="12dp" />
                 <EditText
-                    android:id="@+id/gedp_et_phone"
+                    android:id="@+id/qyzz_et_idcard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -160,7 +160,7 @@
                     android:text="联系电话:"
                     android:textSize="12dp" />
                 <EditText
-                    android:id="@+id/gedp_phone"
+                    android:id="@+id/qyzz_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -168,7 +168,8 @@
                     android:background="@color/colorWhite"
                     android:gravity="center_vertical|left"
                     android:hint="请输入联系电话"
-                    android:maxLength="50"
+                    android:inputType="phone"
+                    android:maxLength="20"
                     android:maxLines="1"
                     android:textColorHint="@color/colorTextGary"
                     android:textSize="12dp" />
@@ -335,6 +336,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="20dp"
+                android:onClick="finishBtn"
                 android:background="@drawable/me_ok_selector"
                 android:gravity="center"
                 android:text="下一步"

@@ -17,11 +17,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.cascade.activity.AreaSelectActivity;
+import com.miyin.klg.entity.StoreConfig;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.HttpUtil;
@@ -40,18 +42,32 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     private RedTitleBar titleBar;
     private AutoRelativeLayout selectarea;
     private Button qydp_mm;
+    private EditText qydp_et_name,qydp_et_phone,qydp_address,qrdp_hangye,qrdp_yingyeTime,qrdp_dpjs;
 
     @Override
     public int setLayout() {
+        storeConfig=new StoreConfig();
+        storeConfig.setWZ(false);
+        storeConfig.setHandID(false);
+        storeConfig.setLicence(false);
+        storeConfig.setChengnuo(false);
         return R.layout.activity_qydp;
     }
-
+    private StoreConfig storeConfig;
     @Override
     public void initView(Bundle savedInstanceState) {
         titleBar=  $(R.id.qydp_TitleBar);
         address = $(R.id.qydp_tv_address);
         selectarea = $(R.id.qydp_selectarea);
         qydp_mm = $(R.id.qydp_mm);
+
+
+        qydp_et_name = $(R.id.qydp_et_name);
+        qydp_et_phone = $(R.id.qydp_et_phone);
+        qydp_address = $(R.id.qydp_address);
+        qrdp_hangye = $(R.id.qrdp_hangye);
+        qrdp_yingyeTime = $(R.id.qrdp_yingyeTime);
+        qrdp_dpjs = $(R.id.qrdp_dpjs);
     }
 
     @Override
@@ -73,7 +89,59 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     }
 
     public void nextBtn(View view){
-        openActivity(QYZZActivity.class);
+
+        String dpName= qydp_et_name.getText().toString();
+        String dpphone= qydp_et_phone.getText().toString();
+        String dpwz= qydp_address.getText().toString();
+        String dplx= qrdp_hangye.getText().toString();
+        String dptime= qrdp_yingyeTime.getText().toString();
+        String dpjs= qrdp_dpjs.getText().toString();
+
+//        if (TextUtils.isEmpty(dpName)  ||TextUtils.isEmpty(dpphone)||TextUtils.isEmpty(dpwz)||
+//                TextUtils.isEmpty(dplx)||TextUtils.isEmpty(dptime)||TextUtils.isEmpty(dpjs))
+//            showToast("请先完成上面的所有要填写的项目");
+        if (TextUtils.isEmpty(dpName))
+            showToast("店铺名称为必填");
+        else if (dpName.length()<3)
+            showToast("店铺名称输入格式不正确,请认真填写");
+        else if (TextUtils.isEmpty(dpphone))
+            showToast("店铺电话号码必填,不能为空");
+        else if (dpphone.length()<11)
+            showToast("店铺电话号码不正确,请认真填写");
+        else if (TextUtils.isEmpty(dpwz))
+            showToast("详细地址必填,不能为空");
+        else if (dpwz.length()<4)
+            showToast("详细地址不正确,请认真填写");
+        else if (TextUtils.isEmpty(dplx))
+            showToast("所属行业必填,不能为空");
+        else if (dplx.length()<2)
+            showToast("所属行业不正确,请认真填写");
+        else if (TextUtils.isEmpty(dptime))
+            showToast("营业时间必填,不能为空");
+        else if (TextUtils.isEmpty(dpjs))
+            showToast("店铺介绍");
+        else if (dpjs.length()<7)
+            showToast("店铺介绍不能少于7个字");
+        else if (TextUtils.isEmpty(sheng))
+            showToast("请选择所在区域");
+        else if (!storeConfig.isWZ())
+            showToast("请上传门店图");
+        else {
+
+            storeConfig.setType(0);
+            storeConfig.setStoreName(dpName);//店铺名称
+            storeConfig.setStorePhone(dpphone);//店铺电话
+            storeConfig.setAddress(dpwz);//网站地址
+            storeConfig.setBusinessType2(dplx);//行业类型
+            storeConfig.setShopHours(dptime);//营业时间
+            storeConfig.setStoreInfo(dpjs);//店铺介绍
+            storeConfig.setSheng(sheng);
+            storeConfig.setCity(city);
+            storeConfig.setArea(area);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("storeConfig", storeConfig);
+            openActivity(QYZZActivity.class,bundle);
+        }
     }
 
 
@@ -100,6 +168,7 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                     }
                 }
                 else if (requestCode==11){
+                    isupload = true;
                         Uri uri = data.getData();
                         Log.e("uri", uri.toString());
 
@@ -135,7 +204,7 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
         	break;
             case R.id.qydp_mm:
                 if (!isupload){
-                    isupload=true;
+
                     Intent intent = new Intent();
                 /* 开启Pictures画面Type设定为image */
                     intent.setType("image/*");
@@ -144,6 +213,7 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                 /* 取得相片后返回本画面 */
                     startActivityForResult(intent, 11);
                 }
+                break;
         default:
         	break;
         }
@@ -179,6 +249,7 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
                     qydp_mm.setBackground(new BitmapDrawable( bitmap));
                     qydp_mm.setText("上传成功");
                     qydp_mm.setTextColor(getResources().getColor(R.color.colorRed));
+                    storeConfig.setWZ(true);
                     break;
                 case UP_ERROR:
                     qydp_mm.setText("上传失败");

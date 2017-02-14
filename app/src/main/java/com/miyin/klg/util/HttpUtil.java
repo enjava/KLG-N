@@ -108,6 +108,7 @@ public class HttpUtil {
             }
         }
         if (params.length() > 0) {
+            System.out.println(params);
             params.deleteCharAt(params.length() - 1);
         }
 
