@@ -89,7 +89,9 @@ public abstract class BaseActivity extends AppCompatActivity {
             startActivityForResult(intent, requestCode);
         }
     }
-
+    protected void openActivityForResult(Class<?> pClass) {
+        openActivityForResult(pClass,null,88);
+    }
     /**
      * 双击退出程序
      */

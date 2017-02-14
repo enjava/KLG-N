@@ -1,5 +1,6 @@
 package com.miyin.klg.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,8 +39,8 @@ public class HomeActivity extends BaseActivity {
         home_sysLayout = $(R.id.home_sysLayout);
     }
 
-    public void   imageViewOnClick(View v){
-        switch (v.getId() ){
+    public void imageViewOnClick(View v) {
+        switch (v.getId()) {
             case R.id.iv_login:
 
                 setting();
@@ -54,9 +55,9 @@ public class HomeActivity extends BaseActivity {
         }
     }
 
-    private void setting(){
-        if (mApp.getUser() == null && mApp.getStore()== null)
-           openActivity(LoginActivity.class);
+    private void setting() {
+        if (mApp.getUser() == null && mApp.getStore() == null)
+            openActivity(LoginActivity.class);
         else
             openActivity(SettingActivity.class);
     }
@@ -64,9 +65,14 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void initDate() {
         mainNavigateTabBar.setDefaultLayout(R.layout.comui_tab_view);
-        int type = getIntent().getExtras().getInt("type");
-        if (mApp.getStore()!=null)
-            type=-1;
+        int type=1;
+        Intent intent = getIntent();
+        if (intent != null) {
+            if (intent.getExtras() != null)
+                type = intent.getExtras().getInt("type");
+        }
+        if (mApp.getStore() != null)
+            type = -1;
         mainNavigateTabBar.addTab(HomeFragment.class, new MainNavigateTabBar.TabParam(R.drawable.home, R.drawable.home_select, "首页"));
         mainNavigateTabBar.addTab(type == 1 ? CZFragment.class : SJGLFragment.class,
                 new MainNavigateTabBar.TabParam(type == 1 ? R.drawable.cz : R.drawable.sjgl,

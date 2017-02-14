@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/edittext"
+            android:gravity="center_vertical"
+            android:text="请选择-所属银行"
+            android:textColor="#000000"
+            android:textSize="14dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal">
+
+        <com.miyin.klg.wheel.widget.WheelView
+            android:id="@+id/id_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        </com.miyin.klg.wheel.widget.WheelView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_bank_select"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/me_ok_selector"
+        android:gravity="center"
+        android:text="选择"
+        android:textColor="@color/txt_btn_selector"/>
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,6 +27,8 @@ import java.util.Map;
  */
 public class HttpUtil {
 
+    public static final int SUCEESS = 600;
+    public static final int ERROR = 601;
     private final static int CONNECT_TIMEOUT = 5000; // in milliseconds
 
     /**
@@ -240,125 +243,199 @@ public class HttpUtil {
 
         }
 
-        return responseResult.toString();
+        return responseResult.toString().replace("/n", "").trim();
+    }
+
+    public static String uploadFormFile(String urlStr, String key,String path,HttpCookie cookie){
+        Map<String,String> map=new HashMap<>();
+        map.put(key,path);
+       return uploadFormFile(urlStr,map,cookie);
     }
 
     /**
-     * 多文件上传的方法
-     *
-     * @param actionUrl：上传的路径
-     * @param uploadFilePaths：需要上传的文件路径，数组
+     * 上传图片form
+     * @param urlStr 地址
+     * @param fileMap 文件上传map
      * @return
+     * @author wall
+     * @date 2017-2-14
      */
-    public static String uploadFile(String actionUrl, String[] uploadFilePaths) {
-        String end = "\r\n";
-        String twoHyphens = "--";
-        String boundary = "*****";
 
-        DataOutputStream ds = null;
-        InputStream inputStream = null;
-        InputStreamReader inputStreamReader = null;
-        BufferedReader reader = null;
-        StringBuffer resultBuffer = new StringBuffer();
-        String tempLine = null;
-        HttpURLConnection httpURLConnection = null;
+    public static String uploadFormFile(String urlStr, Map<String, String> fileMap,HttpCookie cookie) {
+
+        if (cookie == null) {
+            cookie = new HttpCookie();
+        }
+        String result = "";
+        HttpURLConnection conn = null;
+        //分隔符
+        String finalSplit = "---------------------------123821742118716";
         try {
-            // 统一资源
-            URL url = new URL(actionUrl);
-            // http的连接类
-            httpURLConnection = (HttpURLConnection) url.openConnection();
-
-            // 设置是否从httpUrlConnection读入，默认情况下是true;
-            httpURLConnection.setDoInput(true);
-            // 设置是否向httpUrlConnection输出
-            httpURLConnection.setDoOutput(true);
-            // Post 请求不能使用缓存
-            httpURLConnection.setUseCaches(false);
-            // 设定请求的方法，默认是GET
-            httpURLConnection.setRequestMethod("POST");
-            // 设置字符编码连接参数
-            httpURLConnection.setRequestProperty("Connection", "Keep-Alive");
-            // 设置字符编码
-            httpURLConnection.setRequestProperty("Charset", "UTF-8");
-            // 设置请求内容类型
-            httpURLConnection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
-
-            // 设置DataOutputStream
-            ds = new DataOutputStream(httpURLConnection.getOutputStream());
-            for (int i = 0; i < uploadFilePaths.length; i++) {
-                String uploadFile = uploadFilePaths[i];
-                String filename = uploadFile.substring(uploadFile.lastIndexOf("//") + 1);
-                ds.writeBytes(twoHyphens + boundary + end);
-                ds.writeBytes("Content-Disposition: form-data; " + "name=\"file" + i + "\";filename=\"" + filename
-                        + "\"" + end);
-                ds.writeBytes(end);
-                FileInputStream fStream = new FileInputStream(uploadFile);
-                int bufferSize = 1024;
-                byte[] buffer = new byte[bufferSize];
-                int length = -1;
-                while ((length = fStream.read(buffer)) != -1) {
-                    ds.write(buffer, 0, length);
-                }
-                ds.writeBytes(end);
-                /* close streams */
-                fStream.close();
-            }
-            ds.writeBytes(twoHyphens + boundary + twoHyphens + end);
-            /* close streams */
-            ds.flush();
-            if (httpURLConnection.getResponseCode() >= 300) {
-                throw new Exception(
-                        "HTTP Request is not success, Response code is " + httpURLConnection.getResponseCode());
-            }
-
-            if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                inputStream = httpURLConnection.getInputStream();
-                inputStreamReader = new InputStreamReader(inputStream);
-                reader = new BufferedReader(inputStreamReader);
-                resultBuffer = new StringBuffer();
-                while ((tempLine = reader.readLine()) != null) {
-                    resultBuffer.append(tempLine);
-                    resultBuffer.append("\n");
+            URL url = new URL(urlStr);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(30000);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            conn.setUseCaches(false);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Connection", "Keep-Alive");
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.6)");
+            conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + finalSplit);
+            // 发送POST请求必须设置如下两行
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            if (!TextUtils.isEmpty(cookie.get()))
+                conn.setRequestProperty("Cookie", cookie.get());
+            OutputStream out = new DataOutputStream(conn.getOutputStream());
+            // 上传文件
+            if (fileMap != null) {
+                Iterator<Map.Entry<String, String>> iter = fileMap.entrySet().iterator();
+                while (iter.hasNext()) {
+                    Map.Entry<String, String> entry = iter.next();
+                    String inputName = (String) entry.getKey();
+                    String inputValue = (String) entry.getValue();
+                    if (inputValue == null) {
+                        continue;
+                    }
+                    File file = new File(inputValue);
+                    String filename = file.getName();
+//                    MagicMatch match = Magic.getMagicMatch(file, false, true);
+//                    String filecontentType = match.getMimeType();
+                    String contentType = inputValue.substring(inputValue.lastIndexOf(".") + 1);
+                    //file.ge
+                    StringBuffer strBuf = new StringBuffer();
+                    strBuf.append("\r\n").append("--").append(finalSplit).append("\r\n");
+                    strBuf.append("Content-Disposition: form-data; name=\"" + inputName + "\"; filename=\"" + filename + "\"\r\n");
+                    strBuf.append("Content-Type:" + contentType + "\r\n\r\n");
+                    out.write(strBuf.toString().getBytes());
+                    DataInputStream in = new DataInputStream(new FileInputStream(file));
+                    int bytes = 0;
+                    byte[] bufferOut = new byte[1024];
+                    while ((bytes = in.read(bufferOut)) != -1) {
+                        out.write(bufferOut, 0, bytes);
+                    }
+                    in.close();
                 }
             }
-
+            byte[] endData = ( "\r\n--" + finalSplit + "--\r\n").getBytes();
+            out.write(endData);
+            out.flush();
+            out.close();
+            // 读取返回数据
+            StringBuffer strBuf = new StringBuffer();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                strBuf.append(line).append("\n");
+            }
+            result = strBuf.toString();
+            reader.close();
+            reader = null;
         } catch (Exception e) {
+            System.out.println("上传文件请求失败！" + urlStr);
             e.printStackTrace();
         } finally {
-            if (httpURLConnection != null)
-                httpURLConnection.disconnect();
-            if (ds != null) {
-                try {
-                    ds.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            if (conn != null) {
+                conn.disconnect();
+                conn = null;
             }
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (inputStreamReader != null) {
-                try {
-                    inputStreamReader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (inputStream != null) {
-                try {
-                    inputStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            return resultBuffer.toString();
         }
+        return result;
     }
+
+    public static String uploadFormFile(String urlStr, String key, String fileName,InputStream  inputStream, HttpCookie cookie){
+        Map<String ,String> map=new HashMap<>();
+        map.put(key,fileName);
+        InputStream []inputStreams=new InputStream[] {inputStream};
+        return uploadFormFile(urlStr,map,inputStreams,cookie);
+    };
+
+    public static String uploadFormFile(String urlStr, Map<String, String> fileMap, InputStream [] inputStream, HttpCookie cookie) {
+
+        if (cookie == null) {
+            cookie = new HttpCookie();
+        }
+        String result = "";
+        HttpURLConnection conn = null;
+        //分隔符
+        String finalSplit = "---------------------------123821742118716";
+        try {
+            URL url = new URL(urlStr);
+            conn = (HttpURLConnection) url.openConnection();
+            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(30000);
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            conn.setUseCaches(false);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Connection", "Keep-Alive");
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.6)");
+            conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + finalSplit);
+            // 发送POST请求必须设置如下两行
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            if (!TextUtils.isEmpty(cookie.get()))
+                conn.setRequestProperty("Cookie", cookie.get());
+            OutputStream out = new DataOutputStream(conn.getOutputStream());
+            // 上传文件
+            if (fileMap != null) {
+                Iterator<Map.Entry<String, String>> iter = fileMap.entrySet().iterator();
+                int i=0;
+                while (iter.hasNext()) {
+                    Map.Entry<String, String> entry = iter.next();
+                    String inputName = (String) entry.getKey();
+                    String inputValue = (String) entry.getValue();
+                    if (inputValue == null) {
+                        continue;
+                    }
+                    File file = new File(inputValue);
+                    String filename = file.getName();
+//                    MagicMatch match = Magic.getMagicMatch(file, false, true);
+//                    String filecontentType = match.getMimeType();
+                    String contentType = inputValue.substring(inputValue.lastIndexOf(".") + 1);
+                    //file.ge
+                    StringBuffer strBuf = new StringBuffer();
+                    strBuf.append("\r\n").append("--").append(finalSplit).append("\r\n");
+                    strBuf.append("Content-Disposition: form-data; name=\"" + inputName + "\"; filename=\"" + filename + "\"\r\n");
+                    strBuf.append("Content-Type:" + contentType + "\r\n\r\n");
+                    out.write(strBuf.toString().getBytes());
+                    DataInputStream in = new DataInputStream(inputStream[i]);
+                    i++;
+                    int bytes = 0;
+                    byte[] bufferOut = new byte[1024];
+                    while ((bytes = in.read(bufferOut)) != -1) {
+                        out.write(bufferOut, 0, bytes);
+                    }
+                    in.close();
+                }
+            }
+            byte[] endData = ( "\r\n--" + finalSplit + "--\r\n").getBytes();
+            out.write(endData);
+            out.flush();
+            out.close();
+            // 读取返回数据
+            StringBuffer strBuf = new StringBuffer();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                strBuf.append(line).append("\n");
+            }
+            result = strBuf.toString();
+            reader.close();
+            reader = null;
+        } catch (Exception e) {
+            System.out.println("上传文件请求失败！" + urlStr);
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect();
+                conn = null;
+            }
+        }
+        return result;
+    }
+
 
     /**
      * @param urlPath     下载路径

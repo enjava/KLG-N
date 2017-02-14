@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGary">
+
+    <com.miyin.klg.customview.BlackTitleBar
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="14dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:text="请添加持卡人本人的银行卡"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_line_bottom"
+        android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="持  卡  人:"
+                android:textSize="14dp" />
+            <TextView
+                android:id="@+id/add_cardRealName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite"
+                android:gravity="center_vertical|left"
+                android:hint="您还未实名,实名后才能绑定银行卡"
+                android:textColorHint="@color/colorRed"
+                android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/add_selectBank"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_line_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="开  户  行:"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/add_yinhang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40px"
+            android:drawableRight="@drawable/goin"
+            android:drawablePadding="10dp"
+            android:text="请选择"
+            android:textSize="12dp"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_line_bottom"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="银行卡号:"
+            android:textSize="14dp" />
+        <EditText
+            android:id="@+id/add_cardId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical|left"
+            android:hint="请输入银行卡号"
+            android:maxLength="26"
+            android:maxLines="1"
+            android:inputType="number"
+            android:textSize="12dp" />
+        </LinearLayout>
+
+
+    <Button
+        android:id="@+id/add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="40dp"
+        android:background="@drawable/me_ok_selector"
+        android:gravity="center"
+        android:text="添加"
+        android:textColor="@color/txt_btn_selector" />
+
+</LinearLayout>

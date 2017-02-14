@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
@@ -20,6 +21,12 @@ public class HGActivity extends BaseActivity implements BlackTitleBar.ClickCallb
     @Override
     public void initView(Bundle savedInstanceState) {
         hg_titleBar = $(R.id.hg_titleBar);
+        $(R.id.hg_addcard).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(AddBankCardActivity.class);
+            }
+        });
     }
 
     @Override

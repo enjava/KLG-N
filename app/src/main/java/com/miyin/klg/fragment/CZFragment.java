@@ -5,6 +5,8 @@ import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.activity.CZActivity;
+import com.miyin.klg.activity.HGActivity;
+import com.miyin.klg.activity.ZZActivity;
 import com.miyin.klg.base.BaseFragment;
 import com.miyin.klg.customview.BlackTitleBar;
 
@@ -38,6 +40,18 @@ public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallb
             @Override
             public void onClick(View v) {
                 openActivity(CZActivity.class);
+            }
+        });
+        $(R.id.cz_hg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(HGActivity.class);
+            }
+        });
+        $(R.id.cz_zz).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(ZZActivity.class);
             }
         });
     }

@@ -88,7 +88,7 @@
             android:textSize="12dp" />
     </com.zhy.autolayout.AutoLinearLayout >
     <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/setting_xxtx"
+        android:id="@+id/grdp_selectarea"
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:background="@drawable/background_line_bottom">
@@ -102,6 +102,7 @@
             android:textSize="12dp" />
 
         <TextView
+            android:id="@+id/grdp_tv_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -262,6 +263,7 @@
                     android:text="查看示例"/>
             </com.zhy.autolayout.AutoRelativeLayout>
             <Button
+                android:id="@+id/grdp_wangzhanjietu"
                 android:layout_width="300px"
                 android:layout_height="200px"
                 android:layout_marginTop="10dp"

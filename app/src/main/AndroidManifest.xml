@@ -35,7 +35,7 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.UpdatePasswordActivity" />
         <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.RemindActivity" />
         <activity android:name=".activity.SYSActivity" />
         <activity android:name=".activity.GRZLActivity" />
         <activity android:name=".activity.UpdateInfoActivity" />
@@ -58,11 +58,20 @@
         <activity android:name=".activity.ShopItemDetailsActivity" />
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.UpdatePassActivity"/>
+        <activity android:name=".activity.BusCheckInActivity"/>
         <activity android:name=".activity.GRDPActivity"/>
         <activity android:name=".activity.GRZZActivity"/>
         <activity android:name=".activity.QYDPActivity"/>
         <activity android:name=".activity.QYZZActivity"/>
-        <activity android:name=".activity.BusCheckInActivity">
+        <activity android:name=".activity.AddBankCardActivity"/>
+        <activity android:name=".activity.SelectBankDialog"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth"/>
+        <activity android:name=".activity.RecommendedRecordsActivity"/>
+        <activity
+            android:name=".cascade.activity.AreaSelectActivity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth" >
+        </activity>
+        <activity android:name=".activity.HomeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

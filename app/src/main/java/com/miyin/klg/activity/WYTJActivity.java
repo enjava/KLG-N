@@ -35,6 +35,7 @@ public class WYTJActivity extends BaseActivity implements BlackTitleBar.ClickCal
     public void initDate() {
         wytj_titleBar.setClickCallback(this);
         wytj_titleBar.setTitle("我要推荐");
+        wytj_titleBar.getRightView().setText("记录");
         if (mApp.getStore()!=null){
             userCode="tt=aaaaaaaaaa";
             if (!TextUtils.isEmpty(mApp.getStore().data.realName))
@@ -58,6 +59,6 @@ public class WYTJActivity extends BaseActivity implements BlackTitleBar.ClickCal
 
     @Override
     public void onRightClick() {
-
+        openActivity(RecommendedRecordsActivity.class);
     }
 }

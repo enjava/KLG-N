@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -16,13 +17,19 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -35,6 +42,75 @@ import java.util.regex.Pattern;
 
 
 public class CommonUtil {
+
+    public static File getImageFile(Context context, Uri uri) {
+        String[] proj = {MediaStore.Images.Media.DATA};
+        Cursor actualimagecursor = context.getContentResolver().query(uri, proj, null, null, null);
+        int actual_image_column_index = actualimagecursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        actualimagecursor.moveToFirst();
+        String img_path = actualimagecursor.getString(actual_image_column_index);
+        File file = new File(img_path);
+        return file;
+    }
+    /*
+    quality(0-100) 0是最新  100为最大
+     */
+    public static InputStream Bitmap2InputStream(Bitmap bm, int quality) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.PNG, quality, baos);
+        InputStream is = new ByteArrayInputStream(baos.toByteArray());
+        return is;
+    }
+
+    private Bitmap compressImage(Bitmap image) {
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
+        int options = 100;
+        while ( baos.toByteArray().length / 1024>100) {  //循环判断如果压缩后图片是否大于100kb,大于继续压缩
+            baos.reset();//重置baos即清空baos
+            image.compress(Bitmap.CompressFormat.JPEG, options, baos);//这里压缩options%，把压缩后的数据存放到baos中
+            options -= 10;//每次都减少10
+        }
+        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
+        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
+        return bitmap;
+    }
+
+    private Bitmap comp(Bitmap image) {
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        if( baos.toByteArray().length / 1024>1024) {//判断如果图片大于1M,进行压缩避免在生成图片（BitmapFactory.decodeStream）时溢出
+            baos.reset();//重置baos即清空baos
+            image.compress(Bitmap.CompressFormat.JPEG, 50, baos);//这里压缩50%，把压缩后的数据存放到baos中
+        }
+        ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());
+        BitmapFactory.Options newOpts = new BitmapFactory.Options();
+        //开始读入图片，此时把options.inJustDecodeBounds 设回true了
+        newOpts.inJustDecodeBounds = true;
+        Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
+        newOpts.inJustDecodeBounds = false;
+        int w = newOpts.outWidth;
+        int h = newOpts.outHeight;
+        //现在主流手机比较多是800*480分辨率，所以高和宽我们设置为
+        float hh = 800f;//这里设置高度为800f
+        float ww = 480f;//这里设置宽度为480f
+        //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+        int be = 1;//be=1表示不缩放
+        if (w > h && w > ww) {//如果宽度大的话根据宽度固定大小缩放
+            be = (int) (newOpts.outWidth / ww);
+        } else if (w < h && h > hh) {//如果高度高的话根据宽度固定大小缩放
+            be = (int) (newOpts.outHeight / hh);
+        }
+        if (be <= 0)
+            be = 1;
+        newOpts.inSampleSize = be;//设置缩放比例
+        //重新读入图片，注意此时已经把options.inJustDecodeBounds 设回false了
+        isBm = new ByteArrayInputStream(baos.toByteArray());
+        bitmap = BitmapFactory.decodeStream(isBm, null, newOpts);
+        return compressImage(bitmap);//压缩好比例大小后再进行质量压缩
+    }
 
     public static void showInfoDialog(Context context, String message) {
         showInfoDialog(context, message, "提示", "确定", null);
@@ -313,6 +389,7 @@ public class CommonUtil {
 
     /**
      * 手机号码校验
+     *
      * @param mobiles 手机号码
      * @return 手机号码校验结果
      */
@@ -322,20 +399,21 @@ public class CommonUtil {
         System.out.println(m.matches() + "---");
         return m.matches();
     }
-   //密码正则表达式
-    public static boolean isPwd(String str){
-        boolean rs=false;
-        if(str.length()>5&&str.length()<9){
-            String regEx="^[A-Za-z0-9_]+$";
-            Pattern p=Pattern.compile(regEx);
-            Matcher m=p.matcher(str);
-            if(m.matches()){
-                rs=true;
-            }else{
-                rs=false;
+
+    //密码正则表达式
+    public static boolean isPwd(String str) {
+        boolean rs = false;
+        if (str.length() > 5 && str.length() < 9) {
+            String regEx = "^[A-Za-z0-9_]+$";
+            Pattern p = Pattern.compile(regEx);
+            Matcher m = p.matcher(str);
+            if (m.matches()) {
+                rs = true;
+            } else {
+                rs = false;
             }
-        }else{
-            rs=false;
+        } else {
+            rs = false;
         }
 
         return rs;

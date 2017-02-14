@@ -349,7 +349,7 @@ public class IdcardValidator {
      * @param str
      * @return
      */
-    public static boolean isDigital(String str) {
+    private static boolean isDigital(String str) {
         return str == null || "".equals(str) ? false : str.matches("^[0-9]*$");
     }
 

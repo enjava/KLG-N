@@ -61,6 +61,7 @@
                     android:text="查看示例"/>
             </com.zhy.autolayout.AutoRelativeLayout>
             <Button
+                android:id="@+id/grzz_handIdCard"
                 android:layout_width="300px"
                 android:layout_height="200px"
                 android:layout_marginTop="10dp"
@@ -107,7 +108,7 @@
             android:text="身份证号:"
             android:textSize="12dp" />
         <EditText
-            android:id="@+id/gedp_et_phone"
+            android:id="@+id/gedp_et_idNum"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
@@ -190,6 +191,7 @@
                     android:text=""/>
             </com.zhy.autolayout.AutoRelativeLayout>
             <Button
+                android:id="@+id/grzz_chengnuo"
                 android:layout_width="300px"
                 android:layout_height="200px"
                 android:layout_marginTop="10dp"
@@ -204,6 +206,7 @@
             android:layout_margin="20dp"
             android:background="@drawable/me_ok_selector"
             android:gravity="center"
+            android:onClick="finishBtn"
             android:text="下一步"
             android:textColor="@color/txt_btn_selector" />
     </com.zhy.autolayout.AutoLinearLayout >

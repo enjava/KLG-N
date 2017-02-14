@@ -4,8 +4,14 @@ public class ConstantsURL {
 	/**
 	 * 基础URL
 	 */
+	public static final String USER_BASEA_URl ="http://wpt.zmdb8.com/kuma/api/bankUser/";
+	/**
+	 * 基础URL
+	 */
+	public static final String USER_BASEB_URl ="http://wpt.zmdb8.com/kuma/api/";/**
+	 * 基础URL
+	 */
 	public static final String USER_BASE_URl ="http://wpt.zmdb8.com/kuma/api/user/";
-
 	/**
 	 *1 用户注册接口
 	 */
@@ -107,4 +113,20 @@ public class ConstantsURL {
 	 *26 获取版本号
 	 */
 	public static final String USER_VERSION_URL =USER_BASE_URl+"getNewVarsion";
+	/**
+	 *27 获取我的推荐列表
+	 */
+	public static final String USER_MYRECOMMENDLIST_URL =USER_BASE_URl+"myRecommendList";
+
+	/**
+	 *28 获取我的推荐列表
+	 */
+	public static final String USER_BINDBANK_URL =USER_BASEA_URl+"bindBank";
+
+
+	/**
+	 *29 获取我的推荐列表
+	 */
+	public static final String USER_BANKLIST_URL =USER_BASEB_URl+"bank/bankList" ;
+
 }

@@ -109,6 +109,7 @@
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:id="@+id/cz_layout"
             android:layout_weight="1">
 
             <TextView
@@ -127,6 +128,7 @@
             android:background="@color/colorLineGary" />
 
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/cz_hg"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -147,6 +149,7 @@
             android:background="@color/colorLineGary" />
 
         <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/cz_zz"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">

@@ -95,7 +95,7 @@
                 android:drawableLeft="@drawable/setting_three"
                 android:drawablePadding="20px"
                 android:gravity="center_vertical"
-                android:text="关于辉腾" />
+                android:text="关于滕晖" />
 
             <ImageView
                 android:layout_width="wrap_content"

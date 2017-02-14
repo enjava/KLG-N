@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
@@ -26,6 +27,24 @@ public class WDKBActivity extends BaseActivity implements BlackTitleBar.ClickCal
     public void initDate() {
         wdkb_titleBar.setTitle("我的酷币");
         wdkb_titleBar.setClickCallback(this);
+        $(R.id.cz_layout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(CZActivity.class);
+            }
+        });
+        $(R.id.cz_hg).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(HGActivity.class);
+            }
+        });
+        $(R.id.cz_zz).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity(ZZActivity.class);
+            }
+        });
     }
 
     @Override

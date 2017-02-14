@@ -33,9 +33,10 @@ import java.util.Map;
  */
 public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
     private static final int LOGIN_SUCCESS = 10;//登录成功
+    private static final int LOGIN_NOFINISH = 678;//未入住
     private static final int LOGIN_ERROR = 11;//账号密码错误
     private static final int LOGIN_BAN = 12;//禁止登录
-    private static final int LOGIN_NOUSER = 13;//禁止登录
+    private static final int LOGIN_NOUSER = 13;//未注册
     private BlackTitleBar mTitleBar;
     private TextView login_forgetPassword, login_register, login_ok;
     private Spinner spinner;
@@ -71,8 +72,8 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
 
         //数据
         data_list = new ArrayList<>();
-        data_list.add("酷友");
-        data_list.add("酷么合伙人");
+        data_list.add("会员");
+        data_list.add("商户");
 
         //适配器
         arr_adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, data_list);
@@ -146,12 +147,16 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                 } else if (postJson.indexOf("登录成功") != -1) {
                     saveCookie();
                     Gson gson = new Gson();
-                    //String postUser = HttpUtil.post(ConstantsURL.USER_MYUSERINFO_URL, null, mCookie);
                     if (ispinner==1)  {
                         Store store=gson.fromJson(postJson,Store.class);
                         mApp.setUser(null);
                         mApp.setStore(store);
 
+                        if (TextUtils.isEmpty(store.data.realName)) {
+                            msg.what = LOGIN_NOFINISH;
+                            mHandler.sendMessage(msg);
+                            return;
+                        }
                     }else {
                         User person = gson.fromJson(postJson, User.class);
                         mApp.setStore(null);
@@ -182,8 +187,9 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                 case SEND_NET_ERROR://网络异常
                     showToast("网络异常");
                     break;
-                case LOGIN_SUCCESS:
-                    startLogin();
+                case LOGIN_NOFINISH:
+                    openActivity(BusCheckInActivity.class);
+                    finish();
                     break;
                 case LOGIN_ERROR:
                     CommonUtil.showInfoDialog(LoginActivity.this,"账户密码错误");
@@ -193,6 +199,9 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                 break;
                 case LOGIN_NOUSER:
                     CommonUtil.showInfoDialog(LoginActivity.this,"用户不存在,请先注册");
+                    break;
+                case LOGIN_SUCCESS:
+                    startLogin();
                     break;
                 default:
                     break;
