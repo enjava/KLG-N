@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -44,8 +45,10 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     private Button qydp_mm;
     private EditText qydp_et_name,qydp_et_phone,qydp_address,qrdp_hangye,qrdp_yingyeTime,qrdp_dpjs;
 
+    protected static Activity instance = null;
     @Override
     public int setLayout() {
+        instance=this;
         storeConfig=new StoreConfig();
         storeConfig.setWZ(false);
         storeConfig.setHandID(false);
@@ -260,4 +263,5 @@ public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
             }
         }
     };
+
 }

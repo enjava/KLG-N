@@ -2,6 +2,7 @@ package com.miyin.klg.activity;
 
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -357,9 +358,15 @@ public class QYZZActivity extends BaseActivity implements RedTitleBar.ClickCallb
                     isupload = false;
                     break;
                 case HttpUtil.SUCEESS:
-                    showToast("提交成功,等待审核通过");
-                    openActivity(HomeActivity.class);
-                    finish();
+
+                    CommonUtil.showInfoDialog(QYZZActivity.this, "提交成功,等待审核通过", "提示", "确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openActivity(HomeActivity.class);
+                            finish();
+                        }
+
+                    });
                     break;
                 case HttpUtil.ERROR:
                     showToast("提交失败");

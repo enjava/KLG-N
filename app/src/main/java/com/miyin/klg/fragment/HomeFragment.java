@@ -2,6 +2,7 @@ package com.miyin.klg.fragment;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -119,7 +120,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     protected void onUserVisible() {
-
+        Log.i("ee","aa");
     }
 
     @Override

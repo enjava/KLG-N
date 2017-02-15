@@ -9,6 +9,7 @@ public class User {
     public int status;
     public DataBean data;
     public String msg;
+    private  boolean isMyuserinfo=false;
 
     public static class DataBean {
         /**
@@ -88,4 +89,15 @@ public class User {
      */
 
 
+    public User() {
+        this.isMyuserinfo = false;
+    }
+
+    public boolean isMyuserinfo() {
+        return isMyuserinfo;
+    }
+
+    public void setMyuserinfo(boolean myuserinfo) {
+        isMyuserinfo = myuserinfo;
+    }
 }

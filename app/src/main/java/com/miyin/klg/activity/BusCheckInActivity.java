@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -30,11 +31,8 @@ public class BusCheckInActivity extends BaseActivity implements RedTitleBar.Clic
     private List<String> mDatas = Arrays.asList("个人", "企业");
     private List<Fragment> list = new ArrayList<>();
     private RedTitleBar titleBar;
-    private int mCurrentPosition = 0;
-
     @Override
     public int setLayout() {
-
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
 //            setTranslucentStatus(true);
 //        }
@@ -106,6 +104,11 @@ public class BusCheckInActivity extends BaseActivity implements RedTitleBar.Clic
     @Override
     public void onRightClick() {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitBy2click();
     }
 
     public void onClick(View view) {

@@ -1,5 +1,6 @@
 package com.miyin.klg.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.miyin.klg.fragment.GMZDFragment;
 import com.miyin.klg.fragment.HomeFragment;
 import com.miyin.klg.fragment.SJGLFragment;
 import com.miyin.klg.fragment.XFDJFragment;
+import com.miyin.klg.util.CacheActivity;
 import com.miyin.klg.util.StatusBarUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -23,13 +25,14 @@ import com.zhy.autolayout.AutoRelativeLayout;
 public class HomeActivity extends BaseActivity {
     private MainNavigateTabBar mainNavigateTabBar;
     private AutoRelativeLayout home_sysLayout;
-
+    protected static Activity instance = null;
     @Override
     public int setLayout() {
+        instance=this;
         StatusBarUtil.transparencyBar(this);
         StatusBarUtil.StatusBarLightMode(this);
-
         return R.layout.activity_home;
+
     }
 
     @Override
@@ -42,7 +45,6 @@ public class HomeActivity extends BaseActivity {
     public void imageViewOnClick(View v) {
         switch (v.getId()) {
             case R.id.iv_login:
-
                 setting();
                 break;
             case R.id.iv_message:
@@ -93,5 +95,17 @@ public class HomeActivity extends BaseActivity {
                 openActivity(SYSActivity.class);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        CacheActivity.finishOtherActivity(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        exitBy2click();
     }
 }

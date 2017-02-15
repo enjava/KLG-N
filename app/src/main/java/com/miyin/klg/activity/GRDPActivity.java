@@ -44,7 +44,6 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
     TextView address;
     Button grdp_wangzhanjietu;
     private EditText gedp_et_name,gedp_et_phone,grdp_address,grdp_hangye,grdp_yingyeTime,grdp_dpjs;
-
     @Override
     public int setLayout() {
         storeConfig=new StoreConfig();
@@ -88,6 +87,7 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
 
     }
     private  StoreConfig storeConfig;
+
     public void nextBtn(View view) {
 
        String dpName= gedp_et_name.getText().toString();
@@ -256,4 +256,7 @@ public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallb
             }
         }
     };
+
+
+
 }

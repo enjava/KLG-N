@@ -14,9 +14,9 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
+import com.miyin.klg.util.CacheActivity;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
@@ -31,13 +31,12 @@ import java.util.Map;
 /**
  * 登录界面
  */
-public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
     private static final int LOGIN_SUCCESS = 10;//登录成功
     private static final int LOGIN_NOFINISH = 678;//未入住
     private static final int LOGIN_ERROR = 11;//账号密码错误
     private static final int LOGIN_BAN = 12;//禁止登录
     private static final int LOGIN_NOUSER = 13;//未注册
-    private BlackTitleBar mTitleBar;
     private TextView login_forgetPassword, login_register, login_ok;
     private Spinner spinner;
     private List<String> data_list;
@@ -83,14 +82,6 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
         spinner.setAdapter(arr_adapter);
     }
 
-    @Override
-    public void onBackClick() {
-        finish();
-    }
-
-    @Override
-    public void onRightClick() {
-    }
 
     @Override
     public void onClick(View v) {
@@ -151,7 +142,6 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
                         Store store=gson.fromJson(postJson,Store.class);
                         mApp.setUser(null);
                         mApp.setStore(store);
-
                         if (TextUtils.isEmpty(store.data.realName)) {
                             msg.what = LOGIN_NOFINISH;
                             mHandler.sendMessage(msg);
@@ -212,8 +202,7 @@ public class LoginActivity extends BaseActivity implements BlackTitleBar.ClickCa
     {
         Bundle bundle = new Bundle();
         bundle.putInt("type",ispinner==0?1:-1);
+        CacheActivity.finishAllActivity();
         openActivity(HomeActivity.class, bundle);
-        finish();
-
     }
 }

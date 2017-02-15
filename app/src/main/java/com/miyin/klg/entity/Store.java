@@ -9,6 +9,7 @@ public class Store {
     public int status;
     public DataBean data;
     public String msg;
+    private  boolean isMyuserinfo=false;
 /*
 
 { "status": 0,//请求状态。0：成功。1：失败。2：未登录 "data": {//用户信息 "userId": 1,//用户id "userCode": "Szf2zItc",//用户ID，页面显示用的
@@ -26,6 +27,11 @@ public class Store {
  "busSellerUserCode": null,//所属业务商ID "agentName": null,//所属管理中心名称 "agentUserCode": null,//所属管理中心ID "statusStr": null//status对应的文字 },
  "msg": "登录成功" }
  */
+
+    public Store() {
+        this.isMyuserinfo = false;
+    }
+
     public static class DataBean {
         /**
          * userId : 1
@@ -126,11 +132,19 @@ public class Store {
         public String updateTime;
         public String list;
         public String busUserName;
-        public int busUserCode;
+        public String busUserCode;
         public String busSellerName;
         public String busSellerUserCode;
         public String agentName;
         public String agentUserCode;
         public String statusStr;
+    }
+
+    public boolean isMyuserinfo() {
+        return isMyuserinfo;
+    }
+
+    public void setMyuserinfo(boolean myuserinfo) {
+        isMyuserinfo = myuserinfo;
     }
 }

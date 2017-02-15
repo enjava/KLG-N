@@ -69,8 +69,7 @@ public class SettingActivity extends BaseActivity implements BlackTitleBar.Click
                 openActivity(MessageActivity.class);
                 break;
             case R.id.setting_exitTv:
-                mApp.setStore(null);
-                mApp.setUser(null);
+                mApp.setNoUserAndStore();
                 openActivity(LoginActivity.class);
                 break;
         }

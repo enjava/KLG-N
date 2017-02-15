@@ -152,7 +152,40 @@
                         android:id="@+id/grzl_zsxm"
                         android:textColor="@color/colorTextGary" />
                 </com.zhy.autolayout.AutoRelativeLayout>
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/grzl_IDcardLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120px"
+                    android:layout_marginLeft="40px"
+                    android:background="@drawable/background_line_bottom"
+                    >
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="身份证号"
+                        android:textColor="@color/colorTextGary" />
+
+                    <ImageView
+                        android:id="@+id/imageView_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20px"
+                        android:background="@drawable/goin" />
+
+                    <TextView
+                        android:id="@+id/grzl_IDcardIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20px"
+                        android:layout_toLeftOf="@id/imageView_id"
+                        android:text="00000000000000000000000"
+                        android:textColor="@color/colorTextGary" />
+                </com.zhy.autolayout.AutoRelativeLayout>
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/grzl_addressLayout"
                     android:layout_width="match_parent"
@@ -186,23 +219,22 @@
                         android:text="浙江省 杭州市"
                         android:textColor="@color/colorTextGary" />
                 </com.zhy.autolayout.AutoRelativeLayout>
-
                 <com.zhy.autolayout.AutoRelativeLayout
-                    android:id="@+id/grzl_IDcardLayout"
+                    android:id="@+id/grzl_areaLayout"
                     android:layout_width="match_parent"
                     android:layout_height="120px"
                     android:layout_marginLeft="40px"
-                    android:background="@color/colorWhite">
+                    android:background="@drawable/background_line_bottom">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="身份证号"
+                        android:text="详细地址"
                         android:textColor="@color/colorTextGary" />
 
                     <ImageView
-                        android:id="@+id/imageView_id"
+                        android:id="@+id/grzl_userNeIv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -211,15 +243,16 @@
                         android:background="@drawable/goin" />
 
                     <TextView
-                        android:id="@+id/grzl_IDcardIv"
+                        android:id="@+id/grzl_addressxx"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginRight="20px"
-                        android:layout_toLeftOf="@id/imageView_id"
-                        android:text="00000000000000000000000"
+                        android:layout_toLeftOf="@id/grzl_userNeIv"
+                        android:text="00000"
                         android:textColor="@color/colorTextGary" />
                 </com.zhy.autolayout.AutoRelativeLayout>
+
             </com.zhy.autolayout.AutoLinearLayout>
 
             <com.zhy.autolayout.AutoLinearLayout

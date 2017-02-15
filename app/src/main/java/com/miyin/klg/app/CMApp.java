@@ -10,6 +10,7 @@ import com.miyin.klg.util.HttpUtil.HttpCookie;
 
 /**
  * Created by en on 2016/12/29.
+ * 应用App
  */
 
 public class CMApp extends Application {
@@ -24,8 +25,8 @@ public class CMApp extends Application {
       cookie=new HttpCookie();
    }
 
-   public static void setCookie(HttpCookie cookie) {
-      CMApp.cookie = cookie;
+   public void setCookie(HttpCookie cookie) {
+      this.cookie = cookie;
       Log.i(tag,CMApp.cookie.toString());
    }
 
@@ -43,5 +44,10 @@ public class CMApp extends Application {
 
    public void setStore(Store store) {
       this.store = store;
+   }
+
+   public void setNoUserAndStore(){
+      user=null;
+      store=null;
    }
 }

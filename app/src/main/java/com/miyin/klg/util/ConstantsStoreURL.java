@@ -57,4 +57,9 @@ public class ConstantsStoreURL {
      *11 商家入驻，即修改商家个人信息 licenceImg	file
      */
     public static final String STORE_MODIFYSTOREINFO_URL = STORE_BASEA_URL+"modifyStoreInfo";
+
+    /**
+     *12 获取个人信息 licenceImg	file
+     */
+    public static final String STORE_MYUSERINFO_URL = STORE_BASE_URL+"bindBank"; ;
 }
