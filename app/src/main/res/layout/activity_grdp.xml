@@ -180,6 +180,7 @@
             android:layout_marginLeft="10dp"
             android:text="营业时间:"
             android:textSize="12dp" />
+
         <EditText
             android:id="@+id/grdp_yingyeTime"
             android:layout_width="match_parent"

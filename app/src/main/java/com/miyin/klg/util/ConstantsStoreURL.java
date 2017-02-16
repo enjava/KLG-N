@@ -59,7 +59,11 @@ public class ConstantsStoreURL {
     public static final String STORE_MODIFYSTOREINFO_URL = STORE_BASEA_URL+"modifyStoreInfo";
 
     /**
-     *12 获取个人信息 licenceImg	file
+     *12 获取个人信息 licenceImg	file addEntryOrder
      */
-    public static final String STORE_MYUSERINFO_URL = STORE_BASE_URL+"bindBank"; ;
+    public static final String STORE_MYUSERINFO_URL = STORE_BASE_URL+"storeInfo";
+    /**
+     *13 实体店消费登记
+     */
+    public static final String STORE_ADDENTRYORDER_URL = STORE_BASE_URL+"addEntryOrder";
 }

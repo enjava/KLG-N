@@ -277,14 +277,16 @@ public class MainNavigateTabBar extends LinearLayout implements View.OnClickList
             return;
         }
         FragmentTransaction transaction = mFragmentActivity.getSupportFragmentManager().beginTransaction();
-
+        boolean bool = false;
         for (ViewHolder holder : mViewHolderList) {
             Fragment fragment = mFragmentActivity.getSupportFragmentManager().findFragmentByTag(holder.tag);
             if (fragment != null && !fragment.isHidden()) {
                 transaction.hide(fragment);
+                bool = true;
             }
         }
-        transaction.commit();
+        if (bool)
+            transaction.commit();
     }
 
     public void setSelectedTabTextColor(ColorStateList selectedTextColor) {

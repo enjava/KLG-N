@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.miyin.klg.app.CMApp;
 
@@ -65,6 +66,9 @@ public abstract class BaseFragment extends Fragment {
     //初始化数据和事件
     protected abstract void initViewsAndEvents(View view);
 
+    protected void showToastFragment(String content){
+        Toast.makeText(mActivity, content, Toast.LENGTH_SHORT).show();
+    }
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

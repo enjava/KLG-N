@@ -27,11 +27,15 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.miyin.klg.R;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -43,6 +47,11 @@ import java.util.regex.Pattern;
 
 public class CommonUtil {
 
+
+    public static double formatDouble(double d) {
+        BigDecimal bg = new BigDecimal(d).setScale(2, RoundingMode.UP);
+        return bg.doubleValue();
+    }
     public static File getImageFile(Context context, Uri uri) {
         String[] proj = {MediaStore.Images.Media.DATA};
         Cursor actualimagecursor = context.getContentResolver().query(uri, proj, null, null, null);
@@ -122,6 +131,7 @@ public class CommonUtil {
         AlertDialog.Builder localBuilder = new AlertDialog.Builder(context);
         localBuilder.setTitle(titleStr);
         localBuilder.setMessage(message);
+        localBuilder.setIcon(R.mipmap.ico);
         if (onClickListener == null)
             onClickListener = new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {

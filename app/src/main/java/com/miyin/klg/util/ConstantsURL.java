@@ -129,4 +129,9 @@ public class ConstantsURL {
 	 */
 	public static final String USER_BANKLIST_URL =USER_BASEB_URl+"bank/bankList" ;
 
+	/**
+	 *30 获取我的推荐列表
+	 */
+	public static final String USER_SELECTUSERBYMOBILE_URL =USER_BASE_URl+"selectUserByMobile" ;
+
 }

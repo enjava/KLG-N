@@ -18,9 +18,11 @@ import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.CacheActivity;
 import com.miyin.klg.util.CommonUtil;
+import com.miyin.klg.util.Constants;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.util.SpUtil;
 import com.miyin.klg.util.StatusBarUtil;
 
 import java.util.ArrayList;
@@ -80,6 +82,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         //加载适配器
         spinner.setAdapter(arr_adapter);
+        String pass= SpUtil.getString(this, Constants.COPY_USERCODE,"");
+        String user= SpUtil.getString(this, Constants.COPY_PASSWORD,"");
+        if (!TextUtils.isEmpty(user))
+            etUserName.setText(user);
+        if (!TextUtils.isEmpty(pass))
+            etPassword.setText(pass);
+
     }
 
 
@@ -118,7 +127,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
 
-    private void postLogin(String username, String password) {
+    private void postLogin(final String username, final String password) {
         final Map<String, String> request = new HashMap<>();
         request.put("mobile", username);
         request.put("password", password);
@@ -136,6 +145,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 if (TextUtils.isEmpty(postJson)) {
                     msg.what = SEND_NET_ERROR;
                 } else if (postJson.indexOf("登录成功") != -1) {
+                    SpUtil.putString(LoginActivity.this,Constants.COPY_PASSWORD,username);
+                    SpUtil.putString(LoginActivity.this,Constants.COPY_USERCODE,password);
                     saveCookie();
                     Gson gson = new Gson();
                     if (ispinner==1)  {
