@@ -17,9 +17,9 @@
     <com.miyin.klg.customview.ViewPagerIndicator
         android:id="@+id/ddgl_ViewPagerIndicator"
         android:layout_width="match_parent"
-        android:layout_height="60px"
+        android:layout_height="70px"
         android:background="@color/colorWhite"
-        app:item_count="4"></com.miyin.klg.customview.ViewPagerIndicator>
+        app:item_count="3"></com.miyin.klg.customview.ViewPagerIndicator>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/ddgl_viewpage"

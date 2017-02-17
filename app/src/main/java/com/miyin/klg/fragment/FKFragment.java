@@ -1,6 +1,7 @@
 package com.miyin.klg.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.miyin.klg.R;
@@ -22,32 +23,32 @@ public class FKFragment extends BaseFragment {
 
     @Override
     protected int getContentViewLayoutID() {
+        Log.i("FKFragment","getContentViewLayoutID");
         return R.layout.fragment_fk;
     }
 
     @Override
     protected void initViewsAndEvents(View view) {
-
+        Log.i("FKFragment","initViewsAndEvents");
     }
-
     @Override
     protected void onFirstUserVisible() {
-
+        Log.i("FKFragment","onFirstUserVisible");
     }
 
     @Override
     protected void onUserVisible() {
-
+        Log.i("FKFragment","onUserVisible");
     }
 
     @Override
     protected void onUserInvisible() {
-
+        Log.i("FKFragment","onUserInvisible");
     }
 
     @Override
     protected void DetoryViewAndThing() {
-
+        Log.i("FKFragment","DetoryViewAndThing");
     }
 
 }

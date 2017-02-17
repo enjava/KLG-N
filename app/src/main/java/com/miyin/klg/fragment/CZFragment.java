@@ -1,6 +1,7 @@
 package com.miyin.klg.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.miyin.klg.R;
@@ -8,15 +9,15 @@ import com.miyin.klg.activity.CZActivity;
 import com.miyin.klg.activity.HGActivity;
 import com.miyin.klg.activity.ZZActivity;
 import com.miyin.klg.base.BaseFragment;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedTitleBar;
 
 /**
  * 充值 fragment.
  */
-public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallback {
+public class CZFragment extends BaseFragment implements RedTitleBar.ClickCallback {
 
     private static final String ARG_PARAM1 = "param1";
-    //private BlackTitleBar wdkb_titleBar;
+    private RedTitleBar titleBar;
 
     public static CZFragment newInstance(String param1) {
         CZFragment fragment = new CZFragment();
@@ -28,14 +29,15 @@ public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallb
 
     @Override
     protected int getContentViewLayoutID() {
+        Log.i("CZFragment","getContentViewLayoutID");
         return R.layout.fragment_cz;
     }
 
     @Override
     protected void initViewsAndEvents(View view) {
-        //wdkb_titleBar = $(wdkb_titleBar);
-        //wdkb_titleBar.setTitle("我的酷币");
-       // wdkb_titleBar.setClickCallback(this);
+        titleBar = $(R.id.tab_title);
+        titleBar.setTitle("我的酷币");
+        titleBar.setClickCallback(this);
         $(R.id.cz_layout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,26 +56,27 @@ public class CZFragment extends BaseFragment implements BlackTitleBar.ClickCallb
                 openActivity(ZZActivity.class);
             }
         });
+        Log.i("CZFragment","initViewsAndEvents");
     }
 
     @Override
     protected void onFirstUserVisible() {
-
+        Log.i("CZFragment","onFirstUserVisible");
     }
 
     @Override
     protected void onUserVisible() {
-
+        Log.i("CZFragment","onUserVisible");
     }
 
     @Override
     protected void onUserInvisible() {
-
+        Log.i("CZFragment","onUserInvisible");
     }
 
     @Override
     protected void DetoryViewAndThing() {
-
+        Log.i("CZFragment","DetoryViewAndThing");
     }
 
     @Override

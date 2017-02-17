@@ -1,8 +1,11 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.miyin.klg.fragment.CZFragment">
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:clipToPadding="true"
+             android:fitsSystemWindows="true"
+             tools:context="com.miyin.klg.fragment.CZFragment">
+
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -10,15 +13,10 @@
         android:background="@color/colorBackgroundGary"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/wdkb_titleBar"
+        <com.miyin.klg.view.RedTitleBar
+            android:id="@+id/tab_title"
             android:layout_width="match_parent"
-            android:layout_height="96px"
-            android:textSize="42px"
-            android:gravity="center"
-            android:text="充值">
-
-        </TextView>
+            android:layout_height="wrap_content"/>
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
@@ -46,7 +44,7 @@
                         android:layout_centerHorizontal="true"
                         android:text="余额总币数"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/text_12sp" />
+                        android:textSize="@dimen/text_12sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -55,7 +53,7 @@
                         android:layout_centerHorizontal="true"
                         android:text="0.00"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/text_18sp" />
+                        android:textSize="@dimen/text_18sp"/>
                 </com.zhy.autolayout.AutoRelativeLayout>
 
                 <com.zhy.autolayout.AutoRelativeLayout
@@ -71,7 +69,7 @@
                         android:layout_centerHorizontal="true"
                         android:text="最近7天获得酷币(个)"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/text_12sp" />
+                        android:textSize="@dimen/text_12sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -80,7 +78,7 @@
                         android:layout_centerHorizontal="true"
                         android:text="0.00"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/text_18sp" />
+                        android:textSize="@dimen/text_18sp"/>
                 </com.zhy.autolayout.AutoRelativeLayout>
             </com.zhy.autolayout.AutoLinearLayout>
 
@@ -93,7 +91,7 @@
                 android:layout_marginBottom="20px"
                 android:text="暂无收益"
                 android:textColor="@color/colorWhite"
-                android:textSize="80px" />
+                android:textSize="80px"/>
 
             <TextView
                 android:id="@+id/wdkb_symxHint"
@@ -104,7 +102,7 @@
                 android:layout_marginBottom="10px"
                 android:text="今日收益"
                 android:textColor="@color/colorWhite"
-                android:textSize="@dimen/text_14sp" />
+                android:textSize="@dimen/text_14sp"/>
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
@@ -125,13 +123,13 @@
                     android:drawablePadding="10px"
                     android:drawableTop="@drawable/wokbsss"
                     android:gravity="center"
-                    android:text="充值" />
+                    android:text="充值"/>
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <View
                 android:layout_width="1px"
                 android:layout_height="match_parent"
-                android:background="@color/colorLineGary" />
+                android:background="@color/colorLineGary"/>
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/cz_hg"
@@ -146,13 +144,13 @@
                     android:drawablePadding="10px"
                     android:drawableTop="@drawable/wdkbs"
                     android:gravity="center"
-                    android:text="回购" />
+                    android:text="回购"/>
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <View
                 android:layout_width="1px"
                 android:layout_height="match_parent"
-                android:background="@color/colorLineGary" />
+                android:background="@color/colorLineGary"/>
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/cz_zz"
@@ -167,7 +165,7 @@
                     android:drawablePadding="10px"
                     android:drawableTop="@drawable/wdkbss"
                     android:gravity="center"
-                    android:text="转赠" />
+                    android:text="转赠"/>
             </com.zhy.autolayout.AutoRelativeLayout>
 
 

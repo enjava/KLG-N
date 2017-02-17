@@ -6,10 +6,16 @@ package com.miyin.klg.entity;
 
 public class Store {
 
-    public int status;
+
+    public  boolean isMyuserinfo=false;
+    /**
+     * data : {"address":"eerggvvmmm","agentId":2,"agentName":"","agentUserCode":"","area":"余杭区","busSellerName":"","busSellerUserCode":"","busUserCode":"","busUserName":"","business":"","businessId":3,"businessType1":"","businessType2":"2588","cardPic":"store/cardPic/cbd1e385-9885-43bb-ad78-9a7f3bebcef4.png","city":"杭州市","companyName":"EmmyNomutual","corporationPic":"","createTime":"","email":"","gender":"男","headImg":"images/advar.png","isLogin":1,"latitude":"","licenceImg":"store/licenceImg/d0df943f-3ffb-4f22-ab51-94acae8bde47.png","licenceNum":"91330110MA27XB9Q7U","list":[],"loginIp":"122.233.224.119","loginTime":"2017-02-16 15:27:05","longitude":"-1","mobile":"17051006723","password":"b8616bdfc95284f9573beffc886b61a4","phone":"17051006723","pwdPay":"415e2498005097c512d057fdd354c61a","qrCode":"QRCode/19de3666-2eb3-4ae2-97f0-f614943418b2.png","realName":"张洪恩","recommendPic":"","salt":"gMqrHt","salt1":"QlC08Z","sellerId":2,"sheng":"浙江省","shopHours":"2586","status":2,"statusStr":"待完善","storeCardPic":"store/storeCardPic/be8c42ba-ecf8-4838-a6fb-6597208f0cf9.png","storeInfo":"rrrfcccvghh","storeName":"HHNNN","storePaperPic":"store/storePaperPic/236bf79b-e7d3-4c33-bfa9-3f225dca38c6.png","storePhone":"17051006723","taxType":"","taxpayerNum":"","terminalNum":0,"times":9,"type":1,"updateTime":"2017-02-16 15:27:05","userCard":"412324198202035036","userCode":"SRReDn2M","userId":5}
+     * msg : 操作成功
+     * status : 0
+     */
+
     public DataBean data;
     public String msg;
-    private  boolean isMyuserinfo=false;
 /*
 
 { "status": 0,//请求状态。0：成功。1：失败。2：未登录 "data": {//用户信息 "userId": 1,//用户id "userCode": "Szf2zItc",//用户ID，页面显示用的
@@ -28,117 +34,6 @@ public class Store {
  "msg": "登录成功" }
  */
 
-    public Store() {
-        this.isMyuserinfo = false;
-    }
-
-    public static class DataBean {
-        /**
-         * userId : 1
-         * userCode : Szf2zItc
-         * password : aa
-         * salt : aa
-         * pwdPay : bb
-         * salt1 : cc
-         * mobile : 17096177662
-         * headImg : http://wpt.zmdb8.com/kuma/images/advar.png
-         * realName : 汤志光
-         * userCard : 37112119910809003X
-         * cardPic : dd
-         * storeCardPic : ee
-         * storePaperPic : ff
-         * gender : 男
-         * sheng : ff
-         * city : ff
-         * area : ff
-         * businessId : 40
-         * sellerId : 1
-         * agentId : 1
-         * type : 0
-         * email : ff
-         * status : 2
-         * companyName : 新东方
-         * storeName : 挖掘机
-         * address : ff
-         * business : ff
-         * businessType1 : ff
-         * businessType2 : ff
-         * phone : ff
-         * licenceImg : ff
-         * corporationPic : ff
-         * recommendPic : ff
-         * taxpayerNum : ff
-         * licenceNum : ff
-         * taxType : ff
-         * terminalNum : 4
-         * qrCode : http://wpt.zmdb8.com/kuma/QRCode/d2720d5f-0909-4fd9-805d-9d2535f86907.png
-         * loginTime : 2017-01-14 09:45:25
-         * loginIp : 0:0:0:0:0:0:0:1
-         * isLogin : 1
-         * createTime : ff
-         * updateTime : 2017-01-14 09:42:01
-         * list : ff
-         * busUserName : ff
-         * busUserCode : 2
-         * busSellerName : ff
-         * busSellerUserCode : ff
-         * agentName : ff
-         * agentUserCode : ff
-         * statusStr : ff
-         */
-
-        public int userId;
-        public String userCode;
-        public String password;
-        public String salt;
-        public String pwdPay;
-        public String salt1;
-        public String mobile;
-        public String headImg;
-        public String realName;
-        public String userCard;
-        public String cardPic;
-        public String storeCardPic;
-        public String storePaperPic;
-        public String gender;
-        public String sheng;
-        public String city;
-        public String area;
-        public int businessId;
-        public int sellerId;
-        public int agentId;
-        public int type;
-        public String email;
-        public int status;
-        public String companyName;
-        public String storeName;
-        public String address;
-        public String business;
-        public String businessType1;
-        public String businessType2;
-        public String phone;
-        public String licenceImg;
-        public String corporationPic;
-        public String recommendPic;
-        public String taxpayerNum;
-        public String licenceNum;
-        public String taxType;
-        public int terminalNum;
-        public String qrCode;
-        public String loginTime;
-        public String loginIp;
-        public int isLogin;
-        public String createTime;
-        public String updateTime;
-        public String list;
-        public String busUserName;
-        public String busUserCode;
-        public String busSellerName;
-        public String busSellerUserCode;
-        public String agentName;
-        public String agentUserCode;
-        public String statusStr;
-    }
 
     public boolean isMyuserinfo() {
         return isMyuserinfo;
@@ -146,5 +41,87 @@ public class Store {
 
     public void setMyuserinfo(boolean myuserinfo) {
         isMyuserinfo = myuserinfo;
+    }
+
+   
+    public static class DataBean {
+        /**
+         * address : eerggvvmmm
+         * agentId : 2
+         * agentName :
+         * agentUserCode :
+         * area : 余杭区
+         * busSellerName :
+         * busSellerUserCode :
+         * busUserCode :
+         * busUserName :
+         * business :
+         * businessId : 3
+         * businessType1 :
+         * businessType2 : 2588
+         * cardPic : store/cardPic/cbd1e385-9885-43bb-ad78-9a7f3bebcef4.png
+         * city : 杭州市
+         * companyName : EmmyNomutual
+         * corporationPic :
+         * createTime :
+         * email :
+         * gender : 男
+         * headImg : images/advar.png
+         * isLogin : 1
+         * latitude :
+         * licenceImg : store/licenceImg/d0df943f-3ffb-4f22-ab51-94acae8bde47.png
+         * licenceNum : 91330110MA27XB9Q7U
+         * list : []
+         * loginIp : 122.233.224.119
+         * loginTime : 2017-02-16 15:27:05
+         * longitude : -1
+         * mobile : 17051006723
+         * password : b8616bdfc95284f9573beffc886b61a4
+         * phone : 17051006723
+         * pwdPay : 415e2498005097c512d057fdd354c61a
+         * qrCode : QRCode/19de3666-2eb3-4ae2-97f0-f614943418b2.png
+         * realName : 张洪恩
+         * recommendPic :
+         * salt : gMqrHt
+         * salt1 : QlC08Z
+         * sellerId : 2
+         * sheng : 浙江省
+         * shopHours : 2586
+         * status : 2
+         * statusStr : 待完善
+         * storeCardPic : store/storeCardPic/be8c42ba-ecf8-4838-a6fb-6597208f0cf9.png
+         * storeInfo : rrrfcccvghh
+         * storeName : HHNNN
+         * storePaperPic : store/storePaperPic/236bf79b-e7d3-4c33-bfa9-3f225dca38c6.png
+         * storePhone : 17051006723
+         * taxType :
+         * taxpayerNum :
+         * terminalNum : 0
+         * times : 9
+         * type : 1
+         * updateTime : 2017-02-16 15:27:05
+         * userCard : 412324198202035036
+         * userCode : SRReDn2M
+         * userId : 5
+         */
+
+        public String address;
+
+        public String area;
+
+        public String busUserCode;
+        public String busUserName;
+
+        public String city;
+
+        public String realName;
+
+        public String sheng;
+
+        public int type;
+        public String userCard;
+        public String userCode;
+        public int userId;
+
     }
 }

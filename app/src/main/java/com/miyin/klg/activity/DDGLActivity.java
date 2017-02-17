@@ -21,7 +21,7 @@ import java.util.List;
 public class DDGLActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
-    private List<String> mDatas = Arrays.asList("待提交", "待结算", "已结算", "已撤销");
+    private List<String> mDatas = Arrays.asList("未付款", "已付款", "已撤销");
     private List<Fragment> list = new ArrayList<>();
     private BlackTitleBar blackTitleBar;
 

@@ -6,73 +6,25 @@ package com.miyin.klg.entity;
 
 public class User {
 
-    public int status;
     public DataBean data;
     public String msg;
     private  boolean isMyuserinfo=false;
 
     public static class DataBean {
-        /**
-         * userId : 1
-         * userCode : UCiWU8nM
-         * username : aaa
-         * password : bbb
-         * salt : tt
-         * pwdPay : gg
-         * salt1 : ee
-         * mobile : 17051006723
-         * headImg : http://wpt.zmdb8.com/kuma/images/advar.png
-         * realName : ccc
-         * cardNum : aaa
-         * sheng : sss
-         * city : ccc
-         * area : bbb
-         * address : 方法
-         * recommend : 2
-         * gender : 男
-         * email : 驰骋
-         * qrCode : http://wpt.zmdb8.com/kuma/QRCode/498f70e4-fddd-455c-bb67-833f101dd927.png
-         * loginTime : 2017-02-08 17:06:39
-         * loginIp : 122.233.230.28
-         * isLogin : 1
-         * times : 0
-         * status : 2
-         * createTime : 2017-02-08 12:01:14
-         * updateTime : 2017-02-08 17:06:39
-         * recommendName : 啊啊
-         * recommendCode : 少室山
-         * statusStr : 更改
-         */
 
         public int userId;
         public String userCode;
         public String username;
-        public String password;
-        public String salt;
-        public String pwdPay;
-        public String salt1;
-        public String mobile;
-        public String headImg;
+
         public String realName;
         public String cardNum;
         public String sheng;
         public String city;
         public String area;
         public String address;
-        public int recommend;
-        public String gender;
-        public String email;
-        public String qrCode;
-        public String loginTime;
-        public String loginIp;
-        public int isLogin;
-        public int times;
-        public int status;
-        public String createTime;
-        public String updateTime;
+
         public String recommendName;
         public String recommendCode;
-        public String statusStr;
 
     }
 

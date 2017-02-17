@@ -89,14 +89,15 @@ public abstract class BaseFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         Log.d(TAG, "setUserVisibleHint: " + isVisibleToUser);
-        if (isVisibleToUser) {
+        if (isVisibleToUser)
+        {//可见时执行的操作
             if (isFirstVisible) {
                 isFirstVisible = false;
                 initPrepare();
             } else {
                 onUserVisible();
             }
-        } else {
+        } else {//不可见时执行的操作
             if (isFirstInvisible) {
                 isFirstInvisible = false;
                 onFirstUserInvisible();
@@ -121,6 +122,7 @@ public abstract class BaseFragment extends Fragment {
         super.onDestroy();
     }
 
+    //消亡的事件
     protected abstract void DetoryViewAndThing();
 
 

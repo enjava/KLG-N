@@ -63,6 +63,7 @@
         <activity android:name=".activity.GRZZActivity"/>
         <activity android:name=".activity.QYDPActivity"/>
         <activity android:name=".activity.QYZZActivity"/>
+        <activity android:name=".activity.HomeActivity"/>
         <activity android:name=".activity.AddBankCardActivity"/>
         <activity android:name=".activity.SelectBankDialog"
                   android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth"/>
@@ -71,7 +72,7 @@
             android:name=".cascade.activity.AreaSelectActivity"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar.MinWidth" >
         </activity>
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".activity.SplashActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

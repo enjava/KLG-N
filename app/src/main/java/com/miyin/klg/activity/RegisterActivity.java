@@ -52,6 +52,7 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
     private static final int SEND_NET_ERROR = 104;//网络异常
     private static final int SEND_CODE_SUCCESS = 110;//发送验证码
     private static final int SEND_CODE_FAIL = 111;//发送失败
+    private static final int SEND_NOCODE_FAIL = 112;//推荐人的用户ID不存在
     private static final String tag = mContext.getClass().getSimpleName();
 
     //region mHandler
@@ -85,6 +86,9 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
                     break;
                 case REGISTER_MOBILE_EXIST://手机号码已经存在
                     showToast("手机号码已经存在");
+                    break;
+                case SEND_NOCODE_FAIL://手机号码已经存在
+                    showToast("推荐人的ID不存在");
                     break;
                 case REGISTER_MOBILE_FAIL://手机号码已经存在
                     showToast("注册失败");
@@ -146,6 +150,7 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
     private void registerUser() {
         password=mEtPass.getText().toString();
         String code=mEtPhoneCode.getText().toString();
+
         if (TextUtils.isEmpty(phoneCode)) {
             showToast("验证码输入不正确");
         }else if (TextUtils.isEmpty(password)){
@@ -163,8 +168,13 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
             request.put("mobile",mobile);
             request.put("password",password);
             request.put("password1",password);
-            if (!TextUtils.isEmpty(userCode))
-                request.put("userCode",userCode);
+            if (!TextUtils.isEmpty(userCode)) {
+                if(userCode.length()<5) {
+                    showToast("推荐人的ID不存在");
+                    return;
+                }
+                request.put("userCode", userCode);
+            }
             new Thread(){
                 @Override
                 public void run() {
@@ -177,6 +187,8 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
                        msg.what=REGISTER_SUCCESS;
                    }else if (json.indexOf("该手机号已存在")!=-1){
                        msg.what=REGISTER_MOBILE_EXIST;
+                   }else if (json.indexOf("推荐人的用户ID不存在")!=-1){
+                       msg.what=REGISTER_MOBILE_EXIST;
                    }
                    else{
                        msg.what=REGISTER_MOBILE_FAIL;
@@ -184,7 +196,7 @@ public class RegisterActivity extends BaseActivity implements BlackTitleBar.Clic
                     mHandler.sendMessage(msg);
                 }
             }.start();
-        }
+         }
 
     }
   @Override

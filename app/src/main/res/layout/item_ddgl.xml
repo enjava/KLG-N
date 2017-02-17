@@ -42,7 +42,7 @@
         android:background="@color/colorBackgroundGary">
 
         <com.miyin.klg.customview.CircleImageview
-            android:id="@+id/item_ddglIv"
+            android:id="@+id/tcc"
             android:layout_width="80px"
             android:layout_height="80px"
             android:layout_centerVertical="true"
@@ -54,14 +54,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20px"
-            android:layout_toRightOf="@id/item_ddglIv"
+            android:layout_toRightOf="@id/tcc"
             android:text="测试" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/item_ddglTitle"
-            android:layout_toRightOf="@id/item_ddglIv"
+            android:layout_toRightOf="@id/tcc"
             android:text="ID 0000000"
             android:textColor="@color/colorTextGary"
             android:textSize="@dimen/text_12sp" />
@@ -104,6 +104,7 @@
             android:textColor="@color/colorWhite" />
 
         <TextView
+            android:id="@+id/ddgl_look"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
