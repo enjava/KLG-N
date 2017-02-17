@@ -21,6 +21,7 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by en on 2016/12/8.
@@ -49,37 +50,29 @@ public class HttpUtil {
         return post(url, requestParams, null);
     }
 
-    public static String post(String url,String[] keys, String[] values) {
-        if (keys==null||keys.length!=values.length)
+    public static String post(String url, String[] keys, String[] values) {
+        if (keys == null || keys.length != values.length)
             return "";
-        Map<String, String> requestParams=new HashMap<>();
+        Map<String, String> requestParams = new HashMap<>();
 
-        for (int i=0 ;i<keys.length;i++) {
-            requestParams.put(keys[i],values[i]);
+        for (int i = 0; i < keys.length; i++) {
+            requestParams.put(keys[i], values[i]);
         }
 
         return post(url, requestParams, null);
     }
 
-    public static String post(String url,String[] keys, String[] values,HttpCookie cookie) {
-        if (keys==null||keys.length!=values.length)
+    public static String post(String url, String[] keys, String[] values, HttpCookie cookie) {
+        if (keys == null || keys.length != values.length)
             return "";
-        Map<String, String> requestParams=new HashMap<>();
+        Map<String, String> requestParams = new HashMap<>();
 
-        for (int i=0 ;i<keys.length;i++) {
-            requestParams.put(keys[i],values[i]);
+        for (int i = 0; i < keys.length; i++) {
+            requestParams.put(keys[i], values[i]);
         }
 
         return post(url, requestParams, cookie);
     }
-
-    /**
-     * @param url
-     * @return
-     */
-//    public static String post(String url) {
-//        return post(url, null, null);
-//    }
 
     /**
      * @param url
@@ -247,22 +240,23 @@ public class HttpUtil {
         return responseResult.toString().replace("/n", "").trim();
     }
 
-    public static String uploadFormFile(String urlStr, String key,String path,HttpCookie cookie){
-        Map<String,String> map=new HashMap<>();
-        map.put(key,path);
-       return uploadFormFile(urlStr,map,cookie);
+    public static String uploadFormFile(String urlStr, String key, String path, HttpCookie cookie) {
+        Map<String, String> map = new HashMap<>();
+        map.put(key, path);
+        return uploadFormFile(urlStr, map, cookie);
     }
 
     /**
      * 上传图片form
-     * @param urlStr 地址
+     *
+     * @param urlStr  地址
      * @param fileMap 文件上传map
      * @return
      * @author wall
      * @date 2017-2-14
      */
 
-    public static String uploadFormFile(String urlStr, Map<String, String> fileMap,HttpCookie cookie) {
+    public static String uploadFormFile(String urlStr, Map<String, String> fileMap, HttpCookie cookie) {
 
         if (cookie == null) {
             cookie = new HttpCookie();
@@ -319,7 +313,7 @@ public class HttpUtil {
                     in.close();
                 }
             }
-            byte[] endData = ( "\r\n--" + finalSplit + "--\r\n").getBytes();
+            byte[] endData = ("\r\n--" + finalSplit + "--\r\n").getBytes();
             out.write(endData);
             out.flush();
             out.close();
@@ -345,14 +339,16 @@ public class HttpUtil {
         return result;
     }
 
-    public static String uploadFormFile(String urlStr, String key, String fileName,InputStream  inputStream, HttpCookie cookie){
-        Map<String ,String> map=new HashMap<>();
-        map.put(key,fileName);
-        InputStream []inputStreams=new InputStream[] {inputStream};
-        return uploadFormFile(urlStr,map,inputStreams,cookie);
-    };
+    public static String uploadFormFile(String urlStr, String key, String fileName, InputStream inputStream, HttpCookie cookie) {
+        Map<String, String> map = new HashMap<>();
+        map.put(key, fileName);
+        InputStream[] inputStreams = new InputStream[]{inputStream};
+        return uploadFormFile(urlStr, map, inputStreams, cookie);
+    }
 
-    public static String uploadFormFile(String urlStr, Map<String, String> fileMap, InputStream [] inputStream, HttpCookie cookie) {
+    ;
+
+    public static String uploadFormFile(String urlStr, Map<String, String> fileMap, InputStream[] inputStream, HttpCookie cookie) {
 
         if (cookie == null) {
             cookie = new HttpCookie();
@@ -382,7 +378,7 @@ public class HttpUtil {
             // 上传文件
             if (fileMap != null) {
                 Iterator<Map.Entry<String, String>> iter = fileMap.entrySet().iterator();
-                int i=0;
+                int i = 0;
                 while (iter.hasNext()) {
                     Map.Entry<String, String> entry = iter.next();
                     String inputName = (String) entry.getKey();
@@ -411,7 +407,7 @@ public class HttpUtil {
                     in.close();
                 }
             }
-            byte[] endData = ( "\r\n--" + finalSplit + "--\r\n").getBytes();
+            byte[] endData = ("\r\n--" + finalSplit + "--\r\n").getBytes();
             out.write(endData);
             out.flush();
             out.close();
@@ -531,5 +527,19 @@ public class HttpUtil {
             return cookie.hashCode();
         }
     }
+
+
+    public interface ConnectionPram {
+
+    }
+
+    public static class Pragram {
+        public static Map<String, String> map = new ConcurrentHashMap();
+
+        protected void put(String key,String value){
+            map.put(key,value);
+        }
+    }
+
 
 }

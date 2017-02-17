@@ -5,6 +5,8 @@ package com.miyin.klg.util;
  */
 
 public class ConstantsStoreURL {
+
+
     public static final String STORE_BASE_URL ="http://wpt.zmdb8.com/kuma/api/store/";
     public static final String STORE_BASEA_URL ="http://wpt.zmdb8.com/kuma/store/";
     /**

@@ -26,18 +26,18 @@
 #忽略警告 也可以用-ignorewarnings
 -ignorewarning
 #保持哪些类不被混淆
--keep public class * extends android.app.Activity
--keep public class * extends android.support.v7.app.AppCompatActivity
--keep public class * extends android.support.v4.app.Fragment
--keep public class * extends android.app.Application
--keep public class * extends android.app.Service
--keep public class * extends android.content.BroadcastReceiver
--keep public class * extends android.content.ContentProvider
--keep public class * extends android.app.backup.BackupAgentHelper
--keep public class * extends android.preference.Preference
--keep public class * extends android.support.** #如果有引用v4或者v7包，需添加
--keepattributes Signature        #不混淆泛型
--keepnames class * implements java.io.Serializable #不混淆Serializable
+#-keep public class * extends android.app.Activity
+#-keep public class * extends android.support.v7.app.AppCompatActivity
+#-keep public class * extends android.support.v4.app.Fragment
+#-keep public class * extends android.app.Application
+#-keep public class * extends android.app.Service
+#-keep public class * extends android.content.BroadcastReceiver
+#-keep public class * extends android.content.ContentProvider
+#-keep public class * extends android.app.backup.BackupAgentHelper
+#-keep public class * extends android.preference.Preference
+#-keep public class * extends android.support.** #如果有引用v4或者v7包，需添加
+#-keepattributes Signature        #不混淆泛型
+#-keepnames class * implements java.io.Serializable #不混淆Serializable
 #不混淆第三方jar包中的类
 -keep class android.support.** {*;}
 -keep class com.zhy.** {*;}
@@ -65,9 +65,3 @@ public static ** valueOf(Java.lang.String);
 -keep class * implements android.os.Parcelable {  # 保持 Parcelable 不被混淆
 public static final android.os.Parcelable$Creator *;
 }
-
-#生成日志数据，gradle build时在本项目根目录输出
--dump class_files.txt            #apk包内所有class的内部结构
--printseeds seeds.txt            #未混淆的类和成员
--printusage unused.txt           #打印未被使用的代码
--printmapping mapping.txt        #混淆前后的映射
