@@ -28,7 +28,7 @@ import com.miyin.klg.entity.StoreConfig;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.HttpUtil;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.io.FileNotFoundException;
@@ -39,8 +39,8 @@ import java.io.InputStream;
  * 企业店铺信息
  */
 
-public class QYDPActivity extends BaseActivity implements RedTitleBar.ClickCallback ,View.OnClickListener {
-    private RedTitleBar titleBar;
+public class QYDPActivity extends BaseActivity implements RedQRTitleBar.ClickCallback ,View.OnClickListener {
+    private RedQRTitleBar titleBar;
     private AutoRelativeLayout selectarea;
     private Button qydp_mm;
     private EditText qydp_et_name,qydp_et_phone,qydp_address,qrdp_hangye,qrdp_yingyeTime,qrdp_dpjs;

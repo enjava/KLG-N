@@ -7,14 +7,14 @@ import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.QRCodeUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 我要推荐
  */
-public class WYTJActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar wytj_titleBar;
+public class WYTJActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar wytj_titleBar;
     private ImageView mImageViewTuiJian;
     private TextView wytj_tv_name,wytj_tv_name2;
     @Override

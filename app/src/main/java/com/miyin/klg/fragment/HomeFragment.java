@@ -22,7 +22,6 @@ import com.miyin.klg.customview.CircleMenu;
 import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.CommonUtil;
-import com.miyin.klg.util.StatusBarUtil;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
@@ -56,8 +55,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     @Override
     protected int getContentViewLayoutID() {
         Log.i("HomeFragment","getContentViewLayoutID");
-        StatusBarUtil.transparencyBar(mActivity);
-        StatusBarUtil.StatusBarLightMode(mActivity);
+
         return R.layout.fragment_home;
     }
 

@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.miyin.klg.R;
 import com.miyin.klg.adapter.STSJAdapter;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 
 import java.util.Arrays;
@@ -16,8 +16,8 @@ import java.util.List;
 /**
  * 实体商家
  */
-public class STSJActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar stsj_TitleBar;
+public class STSJActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar stsj_TitleBar;
     private RecyclerView stsj_RecyclerView;
     private CommonAdapter adapter = null;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");

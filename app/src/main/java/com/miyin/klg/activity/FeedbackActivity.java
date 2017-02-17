@@ -9,16 +9,16 @@ import android.widget.EditText;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 意见反馈
  */
-public class FeedbackActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar feedback_titleBar;
+public class FeedbackActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar feedback_titleBar;
     private EditText fee_lxfs, fee_idea;
 
     @Override

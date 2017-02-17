@@ -12,11 +12,11 @@ import android.widget.EditText;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.CountDownTimer;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,9 +29,9 @@ import static com.miyin.klg.util.HttpUtil.post;
 /**
  * 修改密码
  */
-public class UpdatePasswordActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
+public class UpdatePasswordActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
 
-    private BlackTitleBar mTitleBar;
+    private RedQRTitleBar mTitleBar;
     private Button mCodeBtn;
 
     private String phoneCode;//手机验证码

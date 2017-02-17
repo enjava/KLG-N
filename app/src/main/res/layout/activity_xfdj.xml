@@ -6,12 +6,12 @@
     android:background="@color/colorBackgroundGary"
     android:orientation="vertical">
 
-    <com.miyin.klg.customview.BlackTitleBar
+    <com.miyin.klg.view.RedQRTitleBar
         android:id="@+id/xfdj_TitleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.miyin.klg.customview.BlackTitleBar>
+    </com.miyin.klg.view.RedQRTitleBar>
 
     <EditText
         android:id="@+id/dj_phone"

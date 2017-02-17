@@ -26,12 +26,12 @@
         android:layout_above="@id/ddgldetails_bottomBtn"
         android:orientation="vertical">
 
-        <com.miyin.klg.customview.BlackTitleBar
+        <com.miyin.klg.view.RedQRTitleBar
             android:id="@+id/ddgldetails_TitleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </com.miyin.klg.customview.BlackTitleBar>
+        </com.miyin.klg.view.RedQRTitleBar>
 
         <TextView
             android:layout_width="match_parent"

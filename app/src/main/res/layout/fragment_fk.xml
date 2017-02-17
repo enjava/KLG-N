@@ -6,12 +6,19 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <com.miyin.klg.view.RedQRTitleBar
+        android:id="@+id/tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_margin="20px"
-
         android:layout_height="match_parent">
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -25,7 +32,7 @@
                 android:layout_height="96px"
                 android:textSize="42px"
                 android:gravity="center"
-                android:text="付款">
+                android:text="我的付款二维码">
 
             </TextView>
             <TextView
@@ -72,5 +79,5 @@
             android:layout_marginTop="200px"
             android:background="@drawable/wytjcode" />
     </com.zhy.autolayout.AutoRelativeLayout>
-
+</LinearLayout>
 </FrameLayout>

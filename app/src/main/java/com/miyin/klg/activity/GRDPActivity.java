@@ -27,7 +27,7 @@ import com.miyin.klg.entity.StoreConfig;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.HttpUtil;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.io.FileNotFoundException;
@@ -38,8 +38,8 @@ import java.io.InputStream;
  * 个人店铺信息
  */
 
-public class GRDPActivity extends BaseActivity implements RedTitleBar.ClickCallback, View.OnClickListener {
-    private RedTitleBar titleBar;
+public class GRDPActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar titleBar;
     AutoRelativeLayout selectarea;
     TextView address;
     Button grdp_wangzhanjietu;

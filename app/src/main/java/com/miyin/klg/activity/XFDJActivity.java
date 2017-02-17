@@ -11,18 +11,18 @@ import android.widget.EditText;
 import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.UserMobile;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 消费登记
  */
-public class XFDJActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar blackTitleBar;
+public class XFDJActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar blackTitleBar;
 
     private EditText dj_phone, dj_money, dj_userName, dj_beizhu;
     private Button dj_commit;
@@ -49,7 +49,6 @@ public class XFDJActivity extends BaseActivity implements BlackTitleBar.ClickCal
         blackTitleBar = $(R.id.xfdj_TitleBar);
         blackTitleBar.setClickCallback(this);
         blackTitleBar.setTitle("消费登记");
-
         dj_phone = $(R.id.dj_phone);
         dj_money = $(R.id.dj_money);
         dj_userName = $(R.id.dj_userName);

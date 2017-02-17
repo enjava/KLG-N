@@ -5,13 +5,13 @@ import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 我的酷币
  */
-public class WDKBActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar wdkb_titleBar;
+public class WDKBActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar wdkb_titleBar;
 
     @Override
     public int setLayout() {

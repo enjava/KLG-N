@@ -4,13 +4,13 @@ import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 账户充值
  */
-public class CZActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar cz_TitleBar;
+public class CZActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar cz_TitleBar;
 
     @Override
     public int setLayout() {

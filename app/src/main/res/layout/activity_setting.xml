@@ -22,12 +22,12 @@
         android:layout_above="@id/setting_exitTv"
         android:orientation="vertical">
 
-        <com.miyin.klg.customview.BlackTitleBar
+        <com.miyin.klg.view.RedQRTitleBar
             android:id="@+id/setting_titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </com.miyin.klg.customview.BlackTitleBar>
+        </com.miyin.klg.view.RedQRTitleBar>
 
         <com.zhy.autolayout.AutoRelativeLayout
             android:id="@+id/setting_zhsz"

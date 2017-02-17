@@ -13,12 +13,12 @@
         android:layout_above="@id/kmkj_logo"
         android:orientation="vertical">
 
-        <com.miyin.klg.customview.BlackTitleBar
+        <com.miyin.klg.view.RedQRTitleBar
             android:id="@+id/message_titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        </com.miyin.klg.customview.BlackTitleBar>
+        </com.miyin.klg.view.RedQRTitleBar>
 
         <View
             android:layout_width="match_parent"

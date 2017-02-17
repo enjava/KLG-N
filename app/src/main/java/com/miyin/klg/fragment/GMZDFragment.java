@@ -6,7 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.miyin.klg.R;
+import com.miyin.klg.activity.HomeActivity;
 import com.miyin.klg.base.BaseFragment;
+import com.miyin.klg.util.StatusBarUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -14,12 +17,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 付款 fragment.
+ * 购买终端
  */
-public class GMZDFragment extends BaseFragment {
+public class GMZDFragment extends BaseFragment implements RedQRTitleBar.ClickCallback{
     private static final String ARG_PARAM1 = "param1";
     private RecyclerView fj_RecyclerView;
     private CommonAdapter adapter = null;
+    private RedQRTitleBar titleBar;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");
 
     public static FJFragment newInstance(String param1, String param2) {
@@ -37,6 +41,9 @@ public class GMZDFragment extends BaseFragment {
 
     @Override
     protected void initViewsAndEvents(View view) {
+        titleBar = $(R.id.tab_title);
+        titleBar.setTitle("购买终端");
+        titleBar.setClickCallback(this);
         fj_RecyclerView = $(R.id.fj_RecyclerView);
         fj_RecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new CommonAdapter<String>(getActivity(), R.layout.item_znsmzd, list) {
@@ -67,6 +74,16 @@ public class GMZDFragment extends BaseFragment {
 
     @Override
     protected void DetoryViewAndThing() {
+
+    }
+    @Override
+    public void onBackClick() {
+        StatusBarUtil.StatusBarLightMode(mActivity);
+        ((HomeActivity)mActivity).getMainNavigateTabBar().setCurrentSelectedTab(0);
+    }
+
+    @Override
+    public void onRightClick() {
 
     }
 }

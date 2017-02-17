@@ -1,6 +1,7 @@
 package com.miyin.klg.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.miyin.klg.R;
@@ -25,10 +26,9 @@ public class HomeActivity extends BaseActivity {
     private AutoRelativeLayout home_sysLayout;
     @Override
     public int setLayout() {
-        StatusBarUtil.transparencyBar(this);
-        StatusBarUtil.StatusBarLightMode(this);
-        return R.layout.activity_home;
 
+        iStatusBarUtil= StatusBarUtil.StatusBarLightMode(this);
+        return R.layout.activity_home;
     }
 
     @Override
@@ -60,6 +60,12 @@ public class HomeActivity extends BaseActivity {
             openActivity(SettingActivity.class);
     }
 
+    private Integer iTabSelect=0;
+
+    public MainNavigateTabBar getMainNavigateTabBar() {
+        return mainNavigateTabBar;
+    }
+    int iStatusBarUtil;
     @Override
     public void initDate() {
         mainNavigateTabBar.setDefaultLayout(R.layout.comui_tab_view);
@@ -97,7 +103,23 @@ public class HomeActivity extends BaseActivity {
                 openActivity(SYSActivity.class);
             }
         });
+
+        mainNavigateTabBar.setTabSelectListener(new MainNavigateTabBar.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(MainNavigateTabBar.ViewHolder holder) {
+                iTabSelect=holder.tabIndex;
+                Log.i("setTabSelectListener","iTabSelect"+iTabSelect);
+                if (iTabSelect!=0)
+                    StatusBarUtil.StatusBarDarkMode(HomeActivity.this,iStatusBarUtil);
+
+                else {
+                    StatusBarUtil.StatusBarLightMode(HomeActivity.this);
+                }
+            }
+        });
     }
+
+
 
     @Override
     protected void onResume() {
@@ -108,6 +130,12 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        exitBy2click();
+        if (iTabSelect!=0) {
+            StatusBarUtil.StatusBarLightMode(this);
+            mainNavigateTabBar.setCurrentSelectedTab(0);
+            iTabSelect=0;
+        }
+        else
+            exitBy2click();
     }
 }

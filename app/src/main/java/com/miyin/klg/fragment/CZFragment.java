@@ -7,18 +7,19 @@ import android.view.View;
 import com.miyin.klg.R;
 import com.miyin.klg.activity.CZActivity;
 import com.miyin.klg.activity.HGActivity;
+import com.miyin.klg.activity.HomeActivity;
 import com.miyin.klg.activity.ZZActivity;
 import com.miyin.klg.base.BaseFragment;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.util.StatusBarUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 充值 fragment.
  */
-public class CZFragment extends BaseFragment implements RedTitleBar.ClickCallback {
+public class CZFragment extends BaseFragment implements RedQRTitleBar.ClickCallback {
 
     private static final String ARG_PARAM1 = "param1";
-    private RedTitleBar titleBar;
-
+    private RedQRTitleBar titleBar;
     public static CZFragment newInstance(String param1) {
         CZFragment fragment = new CZFragment();
         Bundle args = new Bundle();
@@ -81,7 +82,8 @@ public class CZFragment extends BaseFragment implements RedTitleBar.ClickCallbac
 
     @Override
     public void onBackClick() {
-
+        StatusBarUtil.StatusBarLightMode(mActivity);
+      ((HomeActivity)mActivity).getMainNavigateTabBar().setCurrentSelectedTab(0);
     }
 
     @Override

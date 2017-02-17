@@ -27,7 +27,7 @@ import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.IdcardValidator;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -37,8 +37,8 @@ import java.io.InputStream;
  * 个人资质信息
  */
 
-public class GRZZActivity extends BaseActivity implements RedTitleBar.ClickCallback, View.OnClickListener {
-    private RedTitleBar titleBar;
+public class GRZZActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar titleBar;
     private Button grzz_chengnuo, grzz_handIDCard;
     EditText gedp_et_name, gedp_et_idNum, gedp_phone;
     @Override

@@ -4,14 +4,14 @@ import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * Created by en on 2017/2/9.
  */
 
-public class MessageActivity extends BaseActivity implements BlackTitleBar.ClickCallback{
-    private BlackTitleBar mBlackTitleBar;
+public class MessageActivity extends BaseActivity implements RedQRTitleBar.ClickCallback{
+    private RedQRTitleBar mBlackTitleBar;
     @Override
     public int setLayout() {
         return R.layout.activity_message;

@@ -10,19 +10,21 @@ import android.widget.EditText;
 
 import com.google.gson.Gson;
 import com.miyin.klg.R;
+import com.miyin.klg.activity.HomeActivity;
 import com.miyin.klg.base.BaseFragment;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.UserMobile;
 import com.miyin.klg.util.CommonUtil;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.util.StatusBarUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 消费登记fragment.
  */
-public class XFDJFragment extends BaseFragment implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar blackTitleBar;
+public class XFDJFragment extends BaseFragment implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar blackTitleBar;
 
     private EditText dj_phone, dj_money, dj_userName, dj_beizhu;
     private Button dj_commit;
@@ -211,10 +213,10 @@ public class XFDJFragment extends BaseFragment implements BlackTitleBar.ClickCal
 
     }
 
-
     @Override
     public void onBackClick() {
-
+        StatusBarUtil.StatusBarLightMode(mActivity);
+        ((HomeActivity)mActivity).getMainNavigateTabBar().setCurrentSelectedTab(0);
     }
 
     @Override

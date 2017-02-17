@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
@@ -18,8 +18,8 @@ import java.util.List;
 /**
  * 店铺详情
  */
-public class ShopDetailsActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar shop_details_TitleBar;
+public class ShopDetailsActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar shop_details_TitleBar;
     private RecyclerView shop_detailsRecyclerView;
     private CommonAdapter adapter = null;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");

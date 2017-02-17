@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 
@@ -16,8 +16,8 @@ import java.util.List;
 /**
  * 商品管理
  */
-public class SPGLActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar spgl_TitleBar;
+public class SPGLActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar spgl_TitleBar;
     private RecyclerView spgl_RecyclerView;
     private CommonAdapter adapter = null;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");

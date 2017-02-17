@@ -1,6 +1,5 @@
 package com.miyin.klg.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,11 +12,10 @@ import android.widget.Toast;
 import com.miyin.klg.app.CMApp;
 import com.miyin.klg.util.CacheActivity;
 import com.miyin.klg.util.HttpUtil.HttpCookie;
+import com.miyin.klg.util.StatusBarUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static com.miyin.klg.base.RedBaseActivity.mContext;
 
 /**
  * @Title: BaseActivity.java
@@ -33,7 +31,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mApp= ((CMApp)getApplication());
         mCookie=mApp.cookie;
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
+        StatusBarUtil.transparencyBar(this);
         setContentView(setLayout());
 
         initView(savedInstanceState);

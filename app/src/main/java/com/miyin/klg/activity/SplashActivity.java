@@ -29,7 +29,6 @@ import com.miyin.klg.util.Constants;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.SpUtil;
-import com.miyin.klg.util.StatusBarUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,8 +64,7 @@ public class SplashActivity extends BaseActivity {
     private String versionDes;
     @Override
     public int setLayout() {
-        StatusBarUtil.transparencyBar(this);
-        StatusBarUtil.StatusBarLightMode(this);
+
         return R.layout.activity_splash;
     }
 

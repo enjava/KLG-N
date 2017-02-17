@@ -9,16 +9,16 @@ import android.widget.EditText;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 二级密码
  */
-public class TwoPasswordActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar mTitleBar;
+public class TwoPasswordActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar mTitleBar;
     private EditText two_et_oldpass;//旧密码
     private EditText two_et_newpass;//新密码
     private EditText two_newpassconfirm;//确认密码

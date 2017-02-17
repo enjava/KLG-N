@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.miyin.klg.R;
 import com.miyin.klg.adapter.YYEAdapter;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +15,8 @@ import java.util.List;
 /**
  * 营业额记录
  */
-public class YYEJLActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar xyejl_TitleBar;
+public class YYEJLActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar xyejl_TitleBar;
     private RecyclerView xyejl_RecyclerView;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");
 

@@ -4,14 +4,15 @@ import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
+
 /*
 *找回二级密码
 *
 *
  */
-public class ForgetTwoPasswordActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar mTitleBar;
+public class ForgetTwoPasswordActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar mTitleBar;
 
     @Override
     public int setLayout() {

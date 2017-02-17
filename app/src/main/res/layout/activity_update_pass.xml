@@ -6,12 +6,12 @@
     android:background="#f0eff5"
     android:orientation="vertical">
 
-    <com.miyin.klg.customview.BlackTitleBar
+    <com.miyin.klg.view.RedQRTitleBar
         android:id="@+id/up_titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.miyin.klg.customview.BlackTitleBar>
+    </com.miyin.klg.view.RedQRTitleBar>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"

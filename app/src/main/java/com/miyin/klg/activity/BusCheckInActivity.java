@@ -1,7 +1,6 @@
 package com.miyin.klg.activity;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -15,7 +14,7 @@ import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.ViewPagerIndicator;
 import com.miyin.klg.fragment.GRFragment;
 import com.miyin.klg.fragment.QYFragment;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,12 +24,12 @@ import java.util.List;
  * Created by en on 2017/2/11.
  * 商家入住
  */
-public class BusCheckInActivity extends BaseActivity implements RedTitleBar.ClickCallback {
+public class BusCheckInActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
     private List<String> mDatas = Arrays.asList("个人", "企业");
     private List<Fragment> list = new ArrayList<>();
-    private RedTitleBar titleBar;
+    private RedQRTitleBar titleBar;
     @Override
     public int setLayout() {
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

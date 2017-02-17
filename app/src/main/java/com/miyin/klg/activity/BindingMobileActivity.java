@@ -4,13 +4,13 @@ import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 更改绑定手机
  */
-public class BindingMobileActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar binding_mobile_titleBar;
+public class BindingMobileActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar binding_mobile_titleBar;
 
     @Override
     public int setLayout() {

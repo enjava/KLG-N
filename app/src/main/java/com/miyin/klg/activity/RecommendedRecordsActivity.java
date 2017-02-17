@@ -13,10 +13,10 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.RecommList;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,8 +27,8 @@ import java.util.List;
  * 推荐记录
  */
 
-public class RecommendedRecordsActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar mTitleBar;
+public class RecommendedRecordsActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar mTitleBar;
     private ListView rrListView;
     List<String> list = Arrays.asList("", "", "", "", "", "", "", "", "", "", "", "", "");
 

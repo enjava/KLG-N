@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.miyin.klg.customview.BlackTitleBar
+    <com.miyin.klg.view.RedQRTitleBar
         android:id="@+id/update_info_titleBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.miyin.klg.customview.BlackTitleBar>
+        android:layout_height="wrap_content"></com.miyin.klg.view.RedQRTitleBar>
 
     <EditText
         android:id="@+id/updateInfo_tv"

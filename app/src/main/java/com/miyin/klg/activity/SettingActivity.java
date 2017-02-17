@@ -5,14 +5,14 @@ import android.view.View;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 设置界面
  */
-public class SettingActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
-    private BlackTitleBar mTitleBar;
+public class SettingActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar mTitleBar;
     private AutoRelativeLayout setting_zhsz, setting_bbxx, setting_gyht, setting_yjfk, setting_xxtx;
 
     @Override

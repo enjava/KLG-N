@@ -7,14 +7,14 @@ import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 账户安全
  */
-public class AccountSecurityActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
-    private BlackTitleBar account_security_titleBar;
+public class AccountSecurityActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar account_security_titleBar;
     private AutoRelativeLayout account_security_loginPassword,
             account_security_twoPassword,
             account_security_forgetTwoPassword, account_security_bindingPassword;

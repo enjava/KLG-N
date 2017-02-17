@@ -7,11 +7,11 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.miyin.klg.view.RedTitleBar
+    <com.miyin.klg.view.RedQRTitleBar
         android:id="@+id/buscheckin_TitleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </com.miyin.klg.view.RedTitleBar>
+    </com.miyin.klg.view.RedQRTitleBar>
 
     <com.miyin.klg.view.PercentLinearLayout
         android:layout_width="match_parent"

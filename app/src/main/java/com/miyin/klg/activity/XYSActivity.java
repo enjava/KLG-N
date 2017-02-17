@@ -1,15 +1,15 @@
 package com.miyin.klg.activity;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 
 import com.miyin.klg.R;
 import com.miyin.klg.adapter.FragmentPagerBaseAdapter;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.customview.ViewPagerIndicator;
 import com.miyin.klg.fragment.XYSFragment;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,12 +18,12 @@ import java.util.List;
 /**
  * 心愿指数
  */
-public class XYSActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
+public class XYSActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
     private List<String> mDatas = Arrays.asList("24系心愿盒子记录", "12系心愿盒子记录");
     private List<Fragment> list = new ArrayList<>();
-    private BlackTitleBar blackTitleBar;
+    private RedQRTitleBar blackTitleBar;
 
     @Override
     public int setLayout() {

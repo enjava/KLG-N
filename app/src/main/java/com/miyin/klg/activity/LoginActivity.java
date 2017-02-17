@@ -23,7 +23,6 @@ import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.SpUtil;
-import com.miyin.klg.util.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,8 +49,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     public int setLayout() {
-        StatusBarUtil.transparencyBar(this);
-        StatusBarUtil.StatusBarLightMode(this);
         return R.layout.activity_main;
     }
 

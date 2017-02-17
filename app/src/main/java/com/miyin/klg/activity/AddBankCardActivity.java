@@ -13,12 +13,12 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.BankList;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.SerializableMap;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import static com.miyin.klg.util.HttpUtil.SUCEESS;
 
@@ -27,8 +27,8 @@ import static com.miyin.klg.util.HttpUtil.SUCEESS;
  * 绑定银行卡
  */
 
-public class AddBankCardActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
-    BlackTitleBar titleBar;
+public class AddBankCardActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    RedQRTitleBar titleBar;
     TextView cardRealName, add_yinhang;
     private EditText cardId;
     RelativeLayout selectBank;

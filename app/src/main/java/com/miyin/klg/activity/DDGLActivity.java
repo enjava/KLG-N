@@ -7,9 +7,9 @@ import android.support.v4.view.ViewPager;
 import com.miyin.klg.R;
 import com.miyin.klg.adapter.FragmentPagerBaseAdapter;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.customview.ViewPagerIndicator;
 import com.miyin.klg.fragment.DDGLFragment;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,12 +18,12 @@ import java.util.List;
 /**
  * 订单管理
  */
-public class DDGLActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
+public class DDGLActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
     private List<String> mDatas = Arrays.asList("未付款", "已付款", "已撤销");
     private List<Fragment> list = new ArrayList<>();
-    private BlackTitleBar blackTitleBar;
+    private RedQRTitleBar blackTitleBar;
 
     @Override
     public int setLayout() {

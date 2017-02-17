@@ -13,19 +13,19 @@ import com.google.gson.Gson;
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.cascade.activity.AreaSelectActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 个人资料
  */
-public class GRZLActivity extends BaseActivity implements BlackTitleBar.ClickCallback, View.OnClickListener {
-    private BlackTitleBar mBlackTitleBar;
+public class GRZLActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar mBlackTitleBar;
     private TextView grzl_gotoSetting, grzl_userID, grzl_userName, grzl_zsxm, grzl_szd, grzl_IDcardIv, grzl_tjrName, grzl_tjrID, grzl_addressxx;
     private AutoRelativeLayout grzl_userNameLayout, grzl_tureNameLayout, grzl_addressLayout, grzl_IDcardLayout, grzl_areaLayout;
     private ImageView imageView_id, grzl_trueNameIv;

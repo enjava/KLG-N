@@ -7,12 +7,12 @@
     android:background="#2F3032"
     android:orientation="vertical">
 
-    <com.miyin.klg.customview.BlackTitleBar
+    <com.miyin.klg.view.RedQRTitleBar
         android:id="@+id/wytj_titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.miyin.klg.customview.BlackTitleBar>
+    </com.miyin.klg.view.RedQRTitleBar>
 
     <TextView
         android:id="@+id/wytj_tv_name"

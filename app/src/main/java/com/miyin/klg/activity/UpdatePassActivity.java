@@ -9,18 +9,18 @@ import android.widget.EditText;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
+import com.miyin.klg.view.RedQRTitleBar;
 
 
 /**
  * 修改密码
  */
-public class UpdatePassActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
+public class UpdatePassActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
 
-    private BlackTitleBar mTitleBar;
+    private RedQRTitleBar mTitleBar;
 
 
     private EditText updatepass_et_oldpass;//确认密码

@@ -9,18 +9,18 @@ import android.widget.TextView;
 
 import com.miyin.klg.R;
 import com.miyin.klg.base.BaseActivity;
-import com.miyin.klg.customview.BlackTitleBar;
 import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
 import com.miyin.klg.util.ConstantsURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.IdcardValidator;
+import com.miyin.klg.view.RedQRTitleBar;
 
 /**
  * 修改资料
  */
-public class UpdateInfoActivity extends BaseActivity implements BlackTitleBar.ClickCallback {
-    private BlackTitleBar update_info_titleBar;
+public class UpdateInfoActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
+    private RedQRTitleBar update_info_titleBar;
     private String title;
     private TextView updateInfo_tv;
 

@@ -28,7 +28,7 @@ import com.miyin.klg.util.ConstantsStoreURL;
 import com.miyin.klg.util.HttpUtil;
 import com.miyin.klg.util.IdcardValidator;
 import com.miyin.klg.util.LicenseNumberRegexUtil;
-import com.miyin.klg.view.RedTitleBar;
+import com.miyin.klg.view.RedQRTitleBar;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -38,8 +38,8 @@ import java.io.InputStream;
  * 企业资质信息
  */
 
-public class QYZZActivity extends BaseActivity implements RedTitleBar.ClickCallback, View.OnClickListener {
-    private RedTitleBar titleBar;
+public class QYZZActivity extends BaseActivity implements RedQRTitleBar.ClickCallback, View.OnClickListener {
+    private RedQRTitleBar titleBar;
     private Button qy_chengnuo, qy_handIDCard, qy_yingyezhizhao;
     private EditText qyzz_et_name,qyzz_et_idcard,qyzz_phone,qyzz_zzName,qyzz_zcid;
     @Override
