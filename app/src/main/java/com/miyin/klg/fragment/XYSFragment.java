@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 幸运树 fragment.
+ * 幸运盒 fragment.
  */
 public class XYSFragment extends BaseFragment {
     private static final String ARG_PARAM1 = "param1";

@@ -172,7 +172,12 @@ public class GRZLActivity extends BaseActivity implements RedQRTitleBar.ClickCal
         }
 
         if (!TextUtils.isEmpty(cardNum)) {
+            if (cardNum.length()==18)
             grzl_IDcardIv.setText(cardNum.substring(0, 5) + "***********" + cardNum.substring(16, 18));
+
+          else
+                grzl_IDcardIv.setText(cardNum);
+
             imageView_id.setVisibility(View.INVISIBLE);
         } else {
             grzl_IDcardIv.setText("未设置");

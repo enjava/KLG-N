@@ -89,13 +89,13 @@ public class HomeActivity extends BaseActivity {
         mainNavigateTabBar.addTab(type == 1 ? FKFragment.class : XFDJFragment.class,
                 new MainNavigateTabBar.TabParam(type == 1 ? R.drawable.fk : R.drawable.xfdj,
                         type == 1 ? R.drawable.fk_select : R.drawable.xfdj_select,
-                        type == 1 ? "付款" : "消费登记"));
+                        type == 1 ? "我的" : "消费登记"));
 
         mainNavigateTabBar.addTab(type == 1 ? FJFragment.class : GMZDFragment.class,
                 new MainNavigateTabBar.TabParam(
                         type == 1 ? R.drawable.fj : R.drawable.gmzd,
                         type == 1 ? R.drawable.fj_select : R.drawable.gmzd_select,
-                        type == 1 ? "附近" : "购买终端"));
+                        type == 1 ? "附近" : "周边商户"));
         //扫一扫
         home_sysLayout.setOnClickListener(new View.OnClickListener() {
             @Override

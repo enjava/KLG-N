@@ -15,10 +15,10 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:drawableLeft="@drawable/xys"
-            android:drawablePadding="10px"
+            android:drawablePadding="30px"
             android:gravity="center"
-            android:text="+88"
-            android:textColor="@color/colorGreen" />
+            android:text="-8"
+            android:textColor="@color/viewfinder_mask" />
     </RelativeLayout>
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="测试" />
+        android:text="平台数据" />
 
     <TextView
         android:id="@+id/item_xysTime"

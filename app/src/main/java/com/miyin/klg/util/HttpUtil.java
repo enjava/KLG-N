@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +20,6 @@ import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by en on 2016/12/8.
@@ -240,105 +238,6 @@ public class HttpUtil {
         return responseResult.toString().replace("/n", "").trim();
     }
 
-    public static String uploadFormFile(String urlStr, String key, String path, HttpCookie cookie) {
-        Map<String, String> map = new HashMap<>();
-        map.put(key, path);
-        return uploadFormFile(urlStr, map, cookie);
-    }
-
-    /**
-     * 上传图片form
-     *
-     * @param urlStr  地址
-     * @param fileMap 文件上传map
-     * @return
-     * @author wall
-     * @date 2017-2-14
-     */
-
-    public static String uploadFormFile(String urlStr, Map<String, String> fileMap, HttpCookie cookie) {
-
-        if (cookie == null) {
-            cookie = new HttpCookie();
-        }
-        String result = "";
-        HttpURLConnection conn = null;
-        //分隔符
-        String finalSplit = "---------------------------123821742118716";
-        try {
-            URL url = new URL(urlStr);
-            conn = (HttpURLConnection) url.openConnection();
-            conn.setConnectTimeout(5000);
-            conn.setReadTimeout(30000);
-            conn.setDoOutput(true);
-            conn.setDoInput(true);
-            conn.setUseCaches(false);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Connection", "Keep-Alive");
-            conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.6)");
-            conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + finalSplit);
-            // 发送POST请求必须设置如下两行
-            conn.setDoOutput(true);
-            conn.setDoInput(true);
-            if (!TextUtils.isEmpty(cookie.get()))
-                conn.setRequestProperty("Cookie", cookie.get());
-            OutputStream out = new DataOutputStream(conn.getOutputStream());
-            // 上传文件
-            if (fileMap != null) {
-                Iterator<Map.Entry<String, String>> iter = fileMap.entrySet().iterator();
-                while (iter.hasNext()) {
-                    Map.Entry<String, String> entry = iter.next();
-                    String inputName = (String) entry.getKey();
-                    String inputValue = (String) entry.getValue();
-                    if (inputValue == null) {
-                        continue;
-                    }
-                    File file = new File(inputValue);
-                    String filename = file.getName();
-//                    MagicMatch match = Magic.getMagicMatch(file, false, true);
-//                    String filecontentType = match.getMimeType();
-                    String contentType = inputValue.substring(inputValue.lastIndexOf(".") + 1);
-                    //file.ge
-                    StringBuffer strBuf = new StringBuffer();
-                    strBuf.append("\r\n").append("--").append(finalSplit).append("\r\n");
-                    strBuf.append("Content-Disposition: form-data; name=\"" + inputName + "\"; filename=\"" + filename + "\"\r\n");
-                    strBuf.append("Content-Type:" + contentType + "\r\n\r\n");
-                    out.write(strBuf.toString().getBytes());
-                    DataInputStream in = new DataInputStream(new FileInputStream(file));
-                    int bytes = 0;
-                    byte[] bufferOut = new byte[1024];
-                    while ((bytes = in.read(bufferOut)) != -1) {
-                        out.write(bufferOut, 0, bytes);
-                    }
-                    in.close();
-                }
-            }
-            byte[] endData = ("\r\n--" + finalSplit + "--\r\n").getBytes();
-            out.write(endData);
-            out.flush();
-            out.close();
-            // 读取返回数据
-            StringBuffer strBuf = new StringBuffer();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                strBuf.append(line).append("\n");
-            }
-            result = strBuf.toString();
-            reader.close();
-            reader = null;
-        } catch (Exception e) {
-            System.out.println("上传文件请求失败！" + urlStr);
-            e.printStackTrace();
-        } finally {
-            if (conn != null) {
-                conn.disconnect();
-                conn = null;
-            }
-        }
-        return result;
-    }
-
     public static String uploadFormFile(String urlStr, String key, String fileName, InputStream inputStream, HttpCookie cookie) {
         Map<String, String> map = new HashMap<>();
         map.put(key, fileName);
@@ -381,8 +280,8 @@ public class HttpUtil {
                 int i = 0;
                 while (iter.hasNext()) {
                     Map.Entry<String, String> entry = iter.next();
-                    String inputName = (String) entry.getKey();
-                    String inputValue = (String) entry.getValue();
+                    String inputName = entry.getKey();
+                    String inputValue = entry.getValue();
                     if (inputValue == null) {
                         continue;
                     }
@@ -420,14 +319,12 @@ public class HttpUtil {
             }
             result = strBuf.toString();
             reader.close();
-            reader = null;
         } catch (Exception e) {
             System.out.println("上传文件请求失败！" + urlStr);
             e.printStackTrace();
         } finally {
             if (conn != null) {
                 conn.disconnect();
-                conn = null;
             }
         }
         return result;
@@ -525,19 +422,6 @@ public class HttpUtil {
         @Override
         public int hashCode() {
             return cookie.hashCode();
-        }
-    }
-
-
-    public interface ConnectionPram {
-
-    }
-
-    public static class Pragram {
-        public static Map<String, String> map = new ConcurrentHashMap();
-
-        protected void put(String key,String value){
-            map.put(key,value);
         }
     }
 

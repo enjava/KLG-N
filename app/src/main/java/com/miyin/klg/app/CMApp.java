@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.miyin.klg.entity.Store;
 import com.miyin.klg.entity.User;
+import com.miyin.klg.util.Http;
 import com.miyin.klg.util.HttpUtil.HttpCookie;
 
 
@@ -14,7 +15,8 @@ import com.miyin.klg.util.HttpUtil.HttpCookie;
  */
 
 public class CMApp extends Application {
-   public static HttpCookie cookie;
+   public  HttpCookie cookie;
+   public Http.HttpSession mSession;
    private static final String tag=CMApp.class.getSimpleName();
    public User user;//用户
    public Store store;
@@ -23,11 +25,13 @@ public class CMApp extends Application {
       super.onCreate();
       Log.i(tag,"CMApp初始化onCreate");
       cookie=new HttpCookie();
+      mSession=new Http.HttpSession();
    }
 
    public void setCookie(HttpCookie cookie) {
       this.cookie = cookie;
-      Log.i(tag,CMApp.cookie.toString());
+      if (cookie!=null)
+         mSession.set(cookie.get());
    }
 
    public User getUser() {

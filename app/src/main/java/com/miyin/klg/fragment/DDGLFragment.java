@@ -45,12 +45,12 @@ public class DDGLFragment extends BaseFragment {
             @Override
             protected void convert(ViewHolder holder, final String s, final int position) {
                 Log.e("CommonAdapter", s + "position" + position);
-holder.getConvertView().setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        openActivity(DDGLDetailsActivity.class);
-    }
-});
+                holder.getConvertView().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openActivity(DDGLDetailsActivity.class);
+                    }
+                });
 //                TextView look, cazo;
 //                look = holder.getView(R.id.ddgl_look);
 //                cazo = holder.getView(R.id.item_ddglCZ);
@@ -105,7 +105,6 @@ holder.getConvertView().setOnClickListener(new View.OnClickListener() {
     protected void DetoryViewAndThing() {
 
     }
-
 
 
 }

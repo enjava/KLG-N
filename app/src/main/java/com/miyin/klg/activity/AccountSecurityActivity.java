@@ -47,10 +47,10 @@ public class AccountSecurityActivity extends BaseActivity implements RedQRTitleB
         String userName;
         String userID;
         if (mApp.getStore()!=null){
-            userID=mApp.getStore().data.userId+"";
+            userID=mApp.getStore().data.userCode;
             userName=mApp.getStore().data.realName;
         } else {
-            userID=mApp.getUser().data.userId+"";
+            userID=mApp.getUser().data.userCode;
             userName=mApp.getUser().data.username;
         }
 

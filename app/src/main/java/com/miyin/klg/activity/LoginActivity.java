@@ -70,7 +70,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         //数据
         data_list = new ArrayList<>();
-        data_list.add("会员");
+        data_list.add("酷友");
         data_list.add("商户");
 
         //适配器

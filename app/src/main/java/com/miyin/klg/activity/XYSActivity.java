@@ -16,12 +16,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 心愿指数
+ * 心愿盒
  */
 public class XYSActivity extends BaseActivity implements RedQRTitleBar.ClickCallback {
     private ViewPagerIndicator viewPagerIndicator;
     private ViewPager viewPager;
-    private List<String> mDatas = Arrays.asList("24系心愿盒子记录", "12系心愿盒子记录");
+    private List<String> mDatas = Arrays.asList("心愿盒子记录");
     private List<Fragment> list = new ArrayList<>();
     private RedQRTitleBar blackTitleBar;
 
@@ -40,7 +40,7 @@ public class XYSActivity extends BaseActivity implements RedQRTitleBar.ClickCall
     @Override
     public void initDate() {
         blackTitleBar.setClickCallback(this);
-        blackTitleBar.setTitle("心愿指数");
+        blackTitleBar.setTitle("心愿盒");
         viewPagerIndicator.setTabItemTitles(mDatas);
         for (String title :
                 mDatas) {

@@ -38,7 +38,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     private TextView mTvriqi;//日期
     private CircleImageview mHeadImg;//用户头像
     private AutoRelativeLayout userInfoLayout;
-    private String[] mItemTexts = new String[]{" 我的心愿盒 ", "    我的酷币  ",  "    我要推荐  ", "    消费记录  ", "    平台数据  ", "智能售卖终端", "    实体商家",
+    private String[] mItemTexts = new String[]{" 我的心愿盒 ", "    我的酷币  ",  "    我要推荐  ", "    消费记录  ", "    平台数据", "    在线商城", "    周边商户",
+    };
+    private String[] mItemTextsStroe = new String[]{" 我的心愿盒 ", "    我的酷币  ",  "    订单管理  ", "    消费记录  ", "    平台数据", "    在线商城", "    周边商户",
     };
     private int[] mItemImgs = new int[]{R.mipmap.xyh, R.mipmap.mykubi,
             R.drawable.wydz, R.drawable.xf, R.drawable.ptsj, R.drawable.hg, R.drawable.stsj
@@ -63,6 +65,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     protected void initViewsAndEvents(View view) {
+        if (fragmentApp.getStore()!=null)
+            mItemTexts=mItemTextsStroe;
         Log.i("HomeFragment","initViewsAndEvents");
         circleMenu = $(R.id.circle_menu_items);
         circleMenu.setAngle(180f);

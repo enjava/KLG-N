@@ -3,14 +3,14 @@
     android:id="@+id/titleBar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FF0000"
+    android:background="@color/colorTitleRed"
     android:gravity="center_vertical"
   >
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/tv_red_toolbar"
         android:layout_height="24dp"
-        android:background="#F00"/>
+        android:background="@color/colorTitleRed"/>
     <RelativeLayout
         android:layout_below="@+id/tv_red_toolbar"
         android:layout_width="match_parent"

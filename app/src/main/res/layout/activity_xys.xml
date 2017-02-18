@@ -56,7 +56,7 @@
                     android:layout_above="@id/xys_ProgressBar"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10px"
-                    android:text="+1颗心愿盒子"
+                    android:text="+1心愿盒子"
                     android:textColor="@color/colorWhite" />
             </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -97,7 +97,7 @@
                     android:layout_above="@id/xys_ProgressBar1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="10px"
-                    android:text="-1颗心愿盒子"
+                    android:text="-1心愿盒子"
                     android:textColor="@color/colorWhite" />
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoLinearLayout>
@@ -118,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="96px"
         android:background="@android:color/white"
-        app:item_count="2"></com.miyin.klg.customview.ViewPagerIndicator>
+        app:item_count="1"></com.miyin.klg.customview.ViewPagerIndicator>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/xys_viewpage"

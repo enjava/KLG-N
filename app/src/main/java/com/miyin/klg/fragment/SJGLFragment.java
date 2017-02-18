@@ -6,7 +6,6 @@ import android.view.View;
 import com.miyin.klg.R;
 import com.miyin.klg.activity.DDGLActivity;
 import com.miyin.klg.activity.HomeActivity;
-import com.miyin.klg.activity.SPGLActivity;
 import com.miyin.klg.activity.XFDJActivity;
 import com.miyin.klg.activity.YYEJLActivity;
 import com.miyin.klg.base.BaseFragment;
@@ -43,12 +42,6 @@ public class SJGLFragment extends BaseFragment implements RedQRTitleBar.ClickCal
         titleBar.setTitle("商家管理");
         titleBar.setClickCallback(this);
 
-        $(R.id.sjgl_one).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity(SPGLActivity.class);
-            }
-        });
         $(R.id.sjgl_two).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

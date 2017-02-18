@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 购买终端
+ * 周边商户
  */
 public class GMZDFragment extends BaseFragment implements RedQRTitleBar.ClickCallback{
     private static final String ARG_PARAM1 = "param1";
@@ -42,7 +42,7 @@ public class GMZDFragment extends BaseFragment implements RedQRTitleBar.ClickCal
     @Override
     protected void initViewsAndEvents(View view) {
         titleBar = $(R.id.tab_title);
-        titleBar.setTitle("购买终端");
+        titleBar.setTitle("周边商户");
         titleBar.setClickCallback(this);
         fj_RecyclerView = $(R.id.fj_RecyclerView);
         fj_RecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

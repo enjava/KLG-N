@@ -1,14 +1,10 @@
 package com.miyin.klg.fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.miyin.klg.R;
-import com.miyin.klg.activity.CZActivity;
-import com.miyin.klg.activity.HGActivity;
 import com.miyin.klg.activity.HomeActivity;
-import com.miyin.klg.activity.ZZActivity;
 import com.miyin.klg.base.BaseFragment;
 import com.miyin.klg.util.StatusBarUtil;
 import com.miyin.klg.view.RedQRTitleBar;
@@ -20,6 +16,7 @@ public class CZFragment extends BaseFragment implements RedQRTitleBar.ClickCallb
 
     private static final String ARG_PARAM1 = "param1";
     private RedQRTitleBar titleBar;
+
     public static CZFragment newInstance(String param1) {
         CZFragment fragment = new CZFragment();
         Bundle args = new Bundle();
@@ -30,60 +27,55 @@ public class CZFragment extends BaseFragment implements RedQRTitleBar.ClickCallb
 
     @Override
     protected int getContentViewLayoutID() {
-        Log.i("CZFragment","getContentViewLayoutID");
-        return R.layout.fragment_cz;
+        return R.layout.activity_cz;
     }
 
     @Override
     protected void initViewsAndEvents(View view) {
-        titleBar = $(R.id.tab_title);
-        titleBar.setTitle("我的酷币");
+        titleBar = $(R.id.cz_TitleBar);
+        titleBar.setTitle("充值");
         titleBar.setClickCallback(this);
-        $(R.id.cz_layout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity(CZActivity.class);
-            }
-        });
-        $(R.id.cz_hg).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity(HGActivity.class);
-            }
-        });
-        $(R.id.cz_zz).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity(ZZActivity.class);
-            }
-        });
-        Log.i("CZFragment","initViewsAndEvents");
+//        $(R.id.cz_layout).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openActivity(CZActivity.class);
+//            }
+//        });
+//        $(R.id.cz_hg).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openActivity(HGActivity.class);
+//            }
+//        });
+//        $(R.id.cz_zz).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                openActivity(ZZActivity.class);
+//            }
+//        });
+//
     }
 
     @Override
     protected void onFirstUserVisible() {
-        Log.i("CZFragment","onFirstUserVisible");
     }
 
     @Override
     protected void onUserVisible() {
-        Log.i("CZFragment","onUserVisible");
     }
 
     @Override
     protected void onUserInvisible() {
-        Log.i("CZFragment","onUserInvisible");
     }
 
     @Override
     protected void DetoryViewAndThing() {
-        Log.i("CZFragment","DetoryViewAndThing");
     }
 
     @Override
     public void onBackClick() {
         StatusBarUtil.StatusBarLightMode(mActivity);
-      ((HomeActivity)mActivity).getMainNavigateTabBar().setCurrentSelectedTab(0);
+        ((HomeActivity) mActivity).getMainNavigateTabBar().setCurrentSelectedTab(0);
     }
 
     @Override

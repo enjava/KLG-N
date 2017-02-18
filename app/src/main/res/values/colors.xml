@@ -7,6 +7,7 @@
     <color name="colorLineGary">#C8C8C8</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorRed">#FE4945</color>
+    <color name="colorTitleRed">#FF4745</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGreen">#63C719</color>
     <color name="colorBackgroundGary">#F0EFF5</color>
@@ -14,5 +15,5 @@
     <color name="result_view">#b0000000</color>
     <color name="viewfinder_mask">#60000000</color>
     <color name="possible_result_points">#c0ffff00</color>
-        <color name="province_line_border">#C7C7C7</color>
+    <color name="province_line_border">#C7C7C7</color>
 </resources>
