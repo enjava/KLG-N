@@ -236,20 +236,20 @@ public class Http {
         void onOther(String json);
     }
 
-    public abstract class OnHttpListenerProxy implements OnHttpListener {
+    public static abstract class OnHttpListenerProxy implements OnHttpListener {
         public void onNonConcect() {
             onFail("");
         }
 
-        public void OnOther(String json) {
+        public void onOther(String json) {
             onFail(json);
         }
 
-        public void onLogout(String json) {
-            onFail(json);
+        public void onLogout() {
+            onFail("logout");
         }
 
-        abstract void onFail(String json);
+        public abstract void onFail(String json);
     }
 
 }

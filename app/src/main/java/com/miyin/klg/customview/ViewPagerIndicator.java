@@ -363,7 +363,6 @@ public class ViewPagerIndicator extends LinearLayout {
      */
     @Override
     protected void onFinishInflate() {
-        Log.e("TAG", "onFinishInflate");
         super.onFinishInflate();
 
         int cCount = getChildCount();

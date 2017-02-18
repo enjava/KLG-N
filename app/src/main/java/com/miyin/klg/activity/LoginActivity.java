@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -110,7 +109,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String username = etUserName.getText().toString();
         String password = etPassword.getText().toString();
         ispinner = spinner.getSelectedItemPosition();
-        Log.i(tag, "i:" + ispinner + " username:" + username + " password:" + password);
         if (TextUtils.isEmpty(username))
             showToast("账户不能为空");
         else if (TextUtils.isEmpty(password))
@@ -169,7 +167,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 } else if (postJson.indexOf("用户不存在") != -1) {
                     msg.what = LOGIN_NOUSER;
                 }else {
-                    Log.i(tag, postJson);
                 }
                 mHandler.sendMessage(msg);
 

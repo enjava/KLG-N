@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 
 public class SelectImageActivity extends Activity {
         /** Called when the activity is first created. */
+        private String TAG=getClass().getSimpleName();
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -50,7 +51,6 @@ public class SelectImageActivity extends Activity {
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
-                Log.e("uri", uri.toString());
 
                 String[] proj = { MediaStore.Images.Media.DATA };
                 Cursor actualimagecursor = getContentResolver().query(uri,proj,null,null,null);
@@ -67,7 +67,7 @@ public class SelectImageActivity extends Activity {
                 /* 将Bitmap设定到ImageView */
                     imageView.setImageBitmap(bitmap);
                 } catch (FileNotFoundException e) {
-                    Log.e("Exception", e.getMessage(),e);
+                    Log.e(TAG, e.getMessage(),e);
                 }
             }
             super.onActivityResult(requestCode, resultCode, data);

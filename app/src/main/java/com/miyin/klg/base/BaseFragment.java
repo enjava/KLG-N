@@ -72,12 +72,10 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d(TAG, "onActivityCreated: onActivityCreated");
         initPrepare();
     }
 
     private synchronized void initPrepare() {
-        Log.d(TAG, "initPrepare: " + isPrepared);
         if (isPrepared) {
             onFirstUserVisible();
         } else {
@@ -88,7 +86,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Log.d(TAG, "setUserVisibleHint: " + isVisibleToUser);
         if (isVisibleToUser)
         {//可见时执行的操作
             if (isFirstVisible) {

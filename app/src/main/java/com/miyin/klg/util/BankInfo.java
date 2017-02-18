@@ -1,7 +1,5 @@
 package com.miyin.klg.util;
 
-import android.util.Log;
-
 /**
  * Created by en on 2017/2/13.
  */
@@ -2147,7 +2145,6 @@ public class BankInfo {
         {
             longBin = (longBin*10) + (charBin[i+offset]-48);
         }
-        Log.e("sangfei.code", "bankBin: "+longBin);
 
         int index = binarySearch(bankBin, longBin);
 

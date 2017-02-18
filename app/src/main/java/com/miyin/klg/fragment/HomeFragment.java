@@ -56,7 +56,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
     @Override
     protected int getContentViewLayoutID() {
-        Log.i("HomeFragment","getContentViewLayoutID");
 
         return R.layout.fragment_home;
     }
@@ -67,7 +66,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     protected void initViewsAndEvents(View view) {
         if (fragmentApp.getStore()!=null)
             mItemTexts=mItemTextsStroe;
-        Log.i("HomeFragment","initViewsAndEvents");
         circleMenu = $(R.id.circle_menu_items);
         circleMenu.setAngle(180f);
         userInfoLayout = $(R.id.userInfoLayout);
@@ -118,27 +116,22 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                 mTvusername.setText(store.data.realName);
             }
         }
-        Log.i("HomeFragment","initData");
     }
 
     @Override
     protected void onFirstUserVisible() {
-        Log.i("HomeFragment","onFirstUserVisible");
     }
 
     @Override
     protected void onUserVisible() {
-        Log.i("HomeFragment","onUserVisible");
     }
 
     @Override
     protected void onUserInvisible() {
-        Log.i("HomeFragment","onUserInvisible");
     }
 
     @Override
     protected void DetoryViewAndThing() {
-        Log.i("HomeFragment","DetoryViewAndThing");
     }
 
 

@@ -148,7 +148,6 @@ public class UpdatePasswordActivity extends BaseActivity implements RedQRTitleBa
                     }
                     else {
                         msg.what=UPDATE_FAIL;
-                        Log.i(tag,json);
                     }
                     mHandler.sendMessage(msg);
                 }
@@ -174,7 +173,6 @@ public class UpdatePasswordActivity extends BaseActivity implements RedQRTitleBa
                     msg.what = MOBILE_NOT_EXIST;
                 } else {
                     msg.what=SEND_NET_ERROR;
-                    Log.i(tag, result);
                 }
                 mHandler.sendMessage(msg);
 
@@ -228,17 +226,14 @@ public class UpdatePasswordActivity extends BaseActivity implements RedQRTitleBa
                             job = new JSONObject(postJson);
                             JSONObject data = job.getJSONObject("data");
                             String codeId = data.getString("codeId");
-                            Log.i(tag, "codeId:" + codeId);
                             String code = (String) data.get("code");
                             phoneCode = code;
                             msg.what = SEND_CODE_SUCCESS;
-                            Log.i(tag, "code:" + code);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     } else {
                         msg.what = SEND_CODE_FAIL;
-                        Log.i(tag, postJson);
                     }
                 }
                 mHandler.sendMessage(msg);

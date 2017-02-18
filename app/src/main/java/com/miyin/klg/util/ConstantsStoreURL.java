@@ -68,4 +68,17 @@ public class ConstantsStoreURL {
      *13 实体店消费登记
      */
     public static final String STORE_ADDENTRYORDER_URL = STORE_BASE_URL+"addEntryOrder";
+    /**
+     *14 合伙人查看实体店消费记录表
+     */
+    public static final String STORE_ENTRYORDERLIST_URL = STORE_BASE_URL+"entryOrderList";
+    //	http://wpt.zmdb8.com/kuma/api/store/entryOrderList
+
+    //http://wpt.zmdb8.com/kuma/api/store/
+
+    /**
+     *15 合伙人查看实体店消费记录表
+     */
+    public static final String STORE_ORDERLIST_URL = STORE_BASE_URL+"orderList";
+
 }

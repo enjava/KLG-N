@@ -23,7 +23,6 @@ public class CMApp extends Application {
    @Override
    public void onCreate() {
       super.onCreate();
-      Log.i(tag,"CMApp初始化onCreate");
       cookie=new HttpCookie();
       mSession=new Http.HttpSession();
    }

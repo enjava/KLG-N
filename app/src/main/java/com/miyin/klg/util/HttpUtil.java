@@ -99,7 +99,6 @@ public class HttpUtil {
             }
         }
         if (params.length() > 0) {
-            System.out.println(params);
             params.deleteCharAt(params.length() - 1);
         }
 
@@ -127,10 +126,8 @@ public class HttpUtil {
             // 根据ResponseCode判断连接是否成功
             int responseCode = httpURLConnection.getResponseCode();
             if (responseCode != 200) {
-                System.out.println(" Error===" + responseCode);
                 return responseCode + "";
             } else {
-                System.out.println("Post Success!");
             }
 
             bufferedReader = new BufferedReader(new InputStreamReader(
@@ -140,16 +137,12 @@ public class HttpUtil {
                 responseResult.append("/n").append(line);
             }
             String cookieValue = httpURLConnection.getHeaderField("Set-Cookie");
-            System.out.println("cookie value:" + cookieValue);
             if (!TextUtils.isEmpty(cookieValue)) {
                 String cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
-                System.out.println("cookie:" + cookies);
                 cookie.set(cookies);
             }
 
-            System.out.println(responseResult.toString());
         } catch (Exception e) {
-            System.out.println("send post request error!" + e);
         } finally {
             httpURLConnection.disconnect();
             try {
@@ -199,10 +192,8 @@ public class HttpUtil {
             httpURLConnection.setConnectTimeout(CONNECT_TIMEOUT);//设置超时时间
             int responseCode = httpURLConnection.getResponseCode();
             if (responseCode != 200) {
-                System.out.println(" Error===" + responseCode);
 
             } else {
-                System.out.println("Post Success!");
             }
 
             bufferedReader = new BufferedReader(new InputStreamReader(
@@ -212,10 +203,8 @@ public class HttpUtil {
                 responseResult.append("/n").append(line);
             }
             String cookieValue = httpURLConnection.getHeaderField("Set-Cookie");
-            System.out.println("cookie value:" + cookieValue);
             if (!TextUtils.isEmpty(cookieValue)) {
                 String cookies = cookieValue.substring(0, cookieValue.indexOf(";"));
-                System.out.println("cookie:" + cookies);
                 cookie.set(cookies);
             }
         } catch (IOException e) {
@@ -320,7 +309,6 @@ public class HttpUtil {
             result = strBuf.toString();
             reader.close();
         } catch (Exception e) {
-            System.out.println("上传文件请求失败！" + urlStr);
             e.printStackTrace();
         } finally {
             if (conn != null) {
@@ -358,8 +346,6 @@ public class HttpUtil {
             // 文件名
             String filePathUrl = httpURLConnection.getURL().getFile();
             String fileFullName = filePathUrl.substring(filePathUrl.lastIndexOf(File.separatorChar) + 1);
-
-            System.out.println("file length---->" + fileLength);
 
             URLConnection con = url.openConnection();
 

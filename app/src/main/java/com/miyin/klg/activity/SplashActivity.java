@@ -106,16 +106,15 @@ public class SplashActivity extends BaseActivity {
         animationSet.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
-                Log.i(TAG,"动画开始onAnimationStart");
+               // Log.i(TAG,"动画开始onAnimationStart");
             }
             @Override
             public void onAnimationRepeat(Animation animation) {
-                Log.i(TAG,"动画重置onAnimationRepeat");
+               // Log.i(TAG,"动画重置onAnimationRepeat");
             }
             //动画结束
             @Override
             public void onAnimationEnd(Animation animation) {
-                Log.i(TAG,"动画结束onAnimationEnd");
                 // 获得版本号
                 checkVersion();
             }
@@ -131,20 +130,16 @@ public class SplashActivity extends BaseActivity {
                 case UPDATE_VERSION:
                     // 弹出对话框,提示用户更新
                     showUpdateDialog();
-                    Log.i(TAG, UPDATE_VERSION + "UPDATE_VERSION");
                     break;
 
                 case URL_ERROR:
                     showToast("url异常");
-
-                    // Log.i(TAG, URL_ERROR + "URL_ERROR");
                     enterHome();
 
                     break;
 
                 case IO_ERROR:
                     showToast("读取异常");
-                    // Log.i(TAG, IO_ERROR + "IO_ERROR");
                     enterHome();
 
                     break;
@@ -153,12 +148,11 @@ public class SplashActivity extends BaseActivity {
                     showToast( "JSON解析异常");
 
                     enterHome();
-                    // Log.i(TAG, JSON_ERROR + "JSON_ERROR");
+
                     break;
 
                 case ENTER_HOME:
                     enterHome();
-                    // Log.i(TAG, ENTER_HOME + "ENTER_HOME");
                     break;
 
                 default:
@@ -301,7 +295,6 @@ public class SplashActivity extends BaseActivity {
                 try {
                        String json=  HttpUtil.post(ConstantsURL.USER_VERSION_URL,new String[]{"isAndroid"},new String[]{"1"});
                         if (!TextUtils.isEmpty(json)&&json.indexOf("status")!=-1) {
-                            Log.i(TAG, json);
                             try {
                                 // json解析
                                 JSONObject jsondata = new JSONObject(json);
@@ -310,13 +303,6 @@ public class SplashActivity extends BaseActivity {
                                 versionName = jsonObject.getString("version");
                                 versionDes = jsonObject.getString("versionText");
                                 versionCode = jsonObject.getString("build");
-
-                                Log.i(TAG, "downloadUrl:" + downloadUrl);
-                                Log.i(TAG, "versionCode:" + versionCode);
-                                Log.i(TAG, "versionDes:" + versionDes);
-                                Log.i(TAG, "versionName:" + versionName);
-                                // downloadUrl="http://192.168.1.189/release.apk";
-                                // 比对版本号
                                 if (Integer.parseInt(versionCode) > mLocalVersionCode)
                                     msg.what = UPDATE_VERSION;
                                 else // 版本一致进入页面

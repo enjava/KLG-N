@@ -129,7 +129,6 @@ public class RegisterActivity extends BaseActivity implements RedQRTitleBar.Clic
                     msg.what = MOBILE_NOT_EXIST;
                 } else {
                     msg.what=SEND_NET_ERROR;
-                    Log.i(tag, result);
                 }
                 mHandler.sendMessage(msg);
 
@@ -180,7 +179,6 @@ public class RegisterActivity extends BaseActivity implements RedQRTitleBar.Clic
                 public void run() {
                     super.run();
                    String json=   HttpUtil.post(ConstantsURL.USER_REGISTER_URL,request,mCookie);
-                    Log.i(tag,"mCookie:"+mCookie.toString());
                     saveCookie();
                     Message msg=Message.obtain();
                    if (json.indexOf("注册成功")!=-1) {
@@ -267,12 +265,10 @@ public class RegisterActivity extends BaseActivity implements RedQRTitleBar.Clic
                             job = new JSONObject(postJson);
                             JSONObject data = job.getJSONObject("data");
                             String codeId = data.getString("codeId");
-                            Log.i(tag, "codeId:" + codeId);
                             String code = (String) data.get("code");
                             phoneCode = code;
                             msg.what = SEND_CODE_SUCCESS;
                             mHandler.sendMessage(msg);
-                            Log.i(tag, "code:" + code);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -281,7 +277,6 @@ public class RegisterActivity extends BaseActivity implements RedQRTitleBar.Clic
                         //验证码发送失败
                         msg.what = SEND_CODE_FAIL;
                         mHandler.sendMessage(msg);
-                        Log.i(tag, postJson);
                     }
                 }
 

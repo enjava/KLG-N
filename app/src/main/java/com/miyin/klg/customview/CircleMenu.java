@@ -270,7 +270,6 @@ public class CircleMenu extends ViewGroup {
      * @param view the view to be rotated
      */
     private void rotateViewToCenter(ItemView view) {
-        Log.v(VIEW_LOG_TAG, "rotateViewToCenter");
         if (isRotating) {
             float destAngle = (firstChildPosition.getValue() - view.getAngle());
 
@@ -534,7 +533,6 @@ public class CircleMenu extends ViewGroup {
                         }
 
                         if (onItemClickListener != null) {
-                            Log.d(TAG, "onSingleTapUp: 2");
                             //onItemClickListener.onItemClick(tappedView);
                         }
                     }

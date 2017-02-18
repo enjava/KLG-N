@@ -8,7 +8,9 @@ import com.miyin.klg.R;
 import com.miyin.klg.adapter.FragmentPagerBaseAdapter;
 import com.miyin.klg.base.BaseActivity;
 import com.miyin.klg.customview.ViewPagerIndicator;
-import com.miyin.klg.fragment.DDGLFragment;
+import com.miyin.klg.fragment.DDGLNonPayFragment;
+import com.miyin.klg.fragment.DDGLPayEdFragment;
+import com.miyin.klg.fragment.DDGLRevokedFragment;
 import com.miyin.klg.view.RedQRTitleBar;
 
 import java.util.ArrayList;
@@ -42,10 +44,13 @@ public class DDGLActivity extends BaseActivity implements RedQRTitleBar.ClickCal
         blackTitleBar.setClickCallback(this);
         blackTitleBar.setTitle("订单管理");
         viewPagerIndicator.setTabItemTitles(mDatas);
-        for (String title :
-                mDatas) {
-            list.add(DDGLFragment.newInstance(title));
-        }
+//        for (String title :
+//                mDatas) {
+            list.add(DDGLNonPayFragment.newInstance(mDatas.get(0)));
+            list.add(DDGLPayEdFragment.newInstance(mDatas.get(1)));
+            list.add(DDGLRevokedFragment.newInstance(mDatas.get(2)));
+
+        //}
         viewPager.setAdapter(new FragmentPagerBaseAdapter(getSupportFragmentManager(), list));
         viewPagerIndicator.setViewPager(viewPager, 0);
 

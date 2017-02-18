@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class OnUpgradeBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         final String msg="intent:"+intent+" action:"+intent.getAction();
-        Log.d("DEBUG",msg);
         Toast.makeText(context,msg,Toast.LENGTH_SHORT).show();
 
         if (intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED)) {

@@ -108,7 +108,6 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onTabSelected(MainNavigateTabBar.ViewHolder holder) {
                 iTabSelect=holder.tabIndex;
-                Log.i("setTabSelectListener","iTabSelect"+iTabSelect);
                 if (iTabSelect!=0)
                     StatusBarUtil.StatusBarDarkMode(HomeActivity.this,iStatusBarUtil);
 
